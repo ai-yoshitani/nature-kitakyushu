@@ -124,18 +124,23 @@
     .nature-spot {
       background: var(--bg-white);
       border-radius: var(--radius-lg);
-      padding: 24px;
+      overflow: hidden;
       box-shadow: 0 2px 12px var(--shadow);
-      border-top: 3px solid var(--secondary);
       transition: all 0.3s ease;
     }
     .nature-spot:hover {
       transform: translateY(-4px);
       box-shadow: 0 8px 24px var(--shadow-md);
     }
-    .nature-spot__icon {
-      font-size: 1.6rem;
-      margin-bottom: 8px;
+    .nature-spot__photo {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+    .nature-spot__body {
+      padding: 16px 20px 20px;
+      border-top: 3px solid var(--secondary);
     }
     .nature-spot__name {
       font-size: 1rem;
@@ -144,7 +149,7 @@
       margin-bottom: 6px;
     }
     .nature-spot__desc {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--text-light);
       line-height: 1.6;
     }
@@ -192,6 +197,11 @@
       color: var(--accent);
     }
 
+    @media (max-width: 480px) {
+      .nature-spots {
+        grid-template-columns: 1fr;
+      }
+    }
     @media (max-width: 768px) {
       .concept-pyramid__level {
         padding: 24px 20px;
@@ -214,7 +224,7 @@
         font-size: 1.1rem;
       }
       .nature-spots {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
       }
       .page-nav {
         grid-template-columns: 1fr;
@@ -419,34 +429,46 @@
 
         <div class="nature-spots">
           <div class="nature-spot">
-            <div class="nature-spot__icon">&#127754;</div>
-            <div class="nature-spot__name">曽根干潟</div>
-            <div class="nature-spot__desc">国際的に重要な渡り鳥の飛来地。カブトガニの繁殖地としても貴重な干潟環境が広がる。</div>
+            <img class="nature-spot__photo" src="../images/2025/04/IMG_8716-450x450.jpg" alt="曽根干潟" loading="lazy">
+            <div class="nature-spot__body">
+              <div class="nature-spot__name">曽根干潟</div>
+              <div class="nature-spot__desc">国際的に重要な渡り鳥の飛来地。カブトガニの繁殖地としても貴重な干潟環境が広がる。</div>
+            </div>
           </div>
           <div class="nature-spot">
-            <div class="nature-spot__icon">&#127968;</div>
-            <div class="nature-spot__name">響灘ビオトープ</div>
-            <div class="nature-spot__desc">日本最大級のビオトープ。廃棄物処分場跡地に多様な生態系が自然に回復した奇跡の場所。</div>
+            <img class="nature-spot__photo" src="../images/2025/03/biotope.jpg" alt="響灘ビオトープ" loading="lazy">
+            <div class="nature-spot__body">
+              <div class="nature-spot__name">響灘ビオトープ</div>
+              <div class="nature-spot__desc">日本最大級のビオトープ。廃棄物処分場跡地に多様な生態系が自然に回復した奇跡の場所。</div>
+            </div>
           </div>
           <div class="nature-spot">
-            <div class="nature-spot__icon">&#9968;</div>
-            <div class="nature-spot__name">皿倉山</div>
-            <div class="nature-spot__desc">新日本三大夜景の一つ。山頂から見渡す北九州の街並みと自然の調和は圧巻。</div>
+            <img class="nature-spot__photo" src="../images/2025/03/sarakurayama.jpg" alt="皿倉山" loading="lazy">
+            <div class="nature-spot__body">
+              <div class="nature-spot__name">皿倉山</div>
+              <div class="nature-spot__desc">新日本三大夜景の一つ。山頂から見渡す北九州の街並みと自然の調和は圧巻。</div>
+            </div>
           </div>
           <div class="nature-spot">
-            <div class="nature-spot__icon">&#127795;</div>
-            <div class="nature-spot__name">合馬竹林</div>
-            <div class="nature-spot__desc">良質なたけのこの産地として名高い美しい竹林。里山の暮らしと自然が共存する地域。</div>
+            <img class="nature-spot__photo" src="../images/2025/03/nature1.jpg" alt="合馬竹林" loading="lazy">
+            <div class="nature-spot__body">
+              <div class="nature-spot__name">合馬竹林</div>
+              <div class="nature-spot__desc">良質なたけのこの産地として名高い美しい竹林。里山の暮らしと自然が共存する地域。</div>
+            </div>
           </div>
           <div class="nature-spot">
-            <div class="nature-spot__icon">&#127754;</div>
-            <div class="nature-spot__name">関門海峡</div>
-            <div class="nature-spot__desc">激しい潮流が生む豊かな生態系。海峡を挟んで多様な海洋生物が生息。</div>
+            <img class="nature-spot__photo" src="../images/2025/03/wakamatsu-coast.jpg" alt="関門海峡" loading="lazy">
+            <div class="nature-spot__body">
+              <div class="nature-spot__name">関門海峡</div>
+              <div class="nature-spot__desc">激しい潮流が生む豊かな生態系。海峡を挟んで多様な海洋生物が生息。</div>
+            </div>
           </div>
           <div class="nature-spot">
-            <div class="nature-spot__icon">&#127758;</div>
-            <div class="nature-spot__name">玄海国定公園</div>
-            <div class="nature-spot__desc">若松区から小倉南区にかけての海岸線。白砂青松の美しい景観と希少な動植物が息づく。</div>
+            <img class="nature-spot__photo" src="../images/2025/03/nature2.jpg" alt="玄海国定公園" loading="lazy">
+            <div class="nature-spot__body">
+              <div class="nature-spot__name">玄海国定公園</div>
+              <div class="nature-spot__desc">若松区から小倉南区にかけての海岸線。白砂青松の美しい景観と希少な動植物が息づく。</div>
+            </div>
           </div>
         </div>
 
