@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="アーバンネイチャー北九州の全体像。生物多様性、ネイチャーポジティブ、アーバンネイチャーの3層構造で北九州の自然共生を理解する。">
+  <meta name="keywords" content="アーバンネイチャー,北九州,生物多様性,ネイチャーポジティブ,都市と自然">
+  <title>全体像 | アーバンネイチャー北九州</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* 全体像ページ固有スタイル */
+    .concept-pyramid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      margin: 48px auto;
+      max-width: 800px;
+    }
+    .concept-pyramid__level {
+      position: relative;
+      text-align: center;
+      padding: 32px 40px;
+      color: #fff;
+      border-radius: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    .concept-pyramid__level:hover {
+      transform: scale(1.02);
+    }
+    .concept-pyramid__level--base {
+      background: linear-gradient(135deg, #1e4320, #2C5F2D);
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%);
+      padding: 40px 60px;
+    }
+    .concept-pyramid__level--middle {
+      background: linear-gradient(135deg, #2C5F2D, #3a7a3c);
+      clip-path: polygon(10% 0%, 90% 0%, 95% 100%, 5% 100%);
+      padding: 36px 80px;
+      width: 90%;
+    }
+    .concept-pyramid__level--top {
+      background: linear-gradient(135deg, #97BC62, #7aa644);
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      clip-path: polygon(15% 0%, 85% 0%, 90% 100%, 10% 100%);
+      padding: 36px 100px;
+      width: 80%;
+    }
+    .concept-pyramid__number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.25);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .concept-pyramid__title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .concept-pyramid__desc {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+    .concept-pyramid__arrow {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin: -4px 0;
+      z-index: 1;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(44,95,45,0.06), rgba(151,188,98,0.1));
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 24px 28px;
+      margin: 24px 0;
+    }
+    .highlight-box__title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .highlight-box p {
+      margin-bottom: 0;
+    }
+
+    .nature-spots {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin: 32px 0;
+    }
+    .nature-spot {
+      background: var(--bg-white);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: 0 2px 12px var(--shadow);
+      border-top: 3px solid var(--secondary);
+      transition: all 0.3s ease;
+    }
+    .nature-spot:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px var(--shadow-md);
+    }
+    .nature-spot__icon {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+    }
+    .nature-spot__name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .nature-spot__desc {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    .page-nav {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin: 48px 0 0;
+    }
+    .page-nav__card {
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-white);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: 0 2px 12px var(--shadow);
+      text-decoration: none;
+      color: var(--text);
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+    .page-nav__card:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px var(--shadow-md);
+      color: var(--text);
+    }
+    .page-nav__card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .page-nav__card-desc {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .page-nav__card-link {
+      margin-top: 16px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    @media (max-width: 768px) {
+      .concept-pyramid__level {
+        padding: 24px 20px;
+      }
+      .concept-pyramid__level--base {
+        clip-path: polygon(2% 0%, 98% 0%, 100% 100%, 0% 100%);
+        padding: 28px 24px;
+      }
+      .concept-pyramid__level--middle {
+        clip-path: polygon(4% 0%, 96% 0%, 98% 100%, 2% 100%);
+        padding: 28px 24px;
+        width: 95%;
+      }
+      .concept-pyramid__level--top {
+        clip-path: polygon(6% 0%, 94% 0%, 96% 100%, 4% 100%);
+        padding: 28px 24px;
+        width: 90%;
+      }
+      .concept-pyramid__title {
+        font-size: 1.1rem;
+      }
+      .nature-spots {
+        grid-template-columns: 1fr;
+      }
+      .page-nav {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <img src="../images/2026/02/logo.png" alt="アーバンネイチャー北九州" width="160" height="40">
+      </a>
+      <nav class="header__nav">
+        <a href="../about/" class="active">アーバンネイチャー</a>
+        <a href="../center/">センター</a>
+        <a href="../network/">ネットワーク</a>
+        <a href="../join/">会員募集</a>
+        <a href="../news/">お知らせ</a>
+        <a href="../photos/">フリー素材</a>
+      </nav>
+      <div class="header__actions">
+        <a href="../join/" class="btn btn--primary btn--sm">参加する</a>
+        <button class="hamburger" aria-label="メニューを開く">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- モバイルナビ -->
+  <nav class="mobile-nav">
+    <a href="../about/">アーバンネイチャー</a>
+    <a href="../center/">センター</a>
+    <a href="../network/">ネットワーク</a>
+    <a href="../join/">会員募集</a>
+    <a href="../news/">お知らせ</a>
+    <a href="../photos/">フリー素材</a>
+    <div class="mobile-nav__cta">
+      <a href="../join/" class="btn btn--primary btn--block">参加する</a>
+    </div>
+  </nav>
+
+  <!-- パンくずリスト -->
+  <div class="breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb__list">
+        <li><a href="../">トップ</a></li>
+        <li>アーバンネイチャー北九州</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ページヘッダー -->
+  <section class="page-header">
+    <div class="container">
+      <h1 class="page-header__title">アーバンネイチャー北九州の全体像</h1>
+      <p class="page-header__desc">都市と自然が近接する北九州ならではの強みを活かし、ネイチャーポジティブな未来へ</p>
+    </div>
+  </section>
+
+  <!-- メインコンテンツ -->
+  <main>
+
+    <!-- コンセプト階層図 -->
+    <section class="section section--white">
+      <div class="container">
+        <h2 class="section__title">3つのキーコンセプト</h2>
+        <p class="section__subtitle">生物多様性を守るための世界目標と、北九州独自のアプローチ</p>
+
+        <div class="concept-pyramid">
+          <div class="concept-pyramid__level concept-pyramid__level--top">
+            <div class="concept-pyramid__number">3</div>
+            <div class="concept-pyramid__title">アーバンネイチャー</div>
+            <div class="concept-pyramid__desc">北九州の強み：都市と自然が近接した環境を活かし、暮らしの中で自然と共生する地域モデル</div>
+          </div>
+          <div class="concept-pyramid__arrow">&#9660;</div>
+          <div class="concept-pyramid__level concept-pyramid__level--middle">
+            <div class="concept-pyramid__number">2</div>
+            <div class="concept-pyramid__title">ネイチャーポジティブ</div>
+            <div class="concept-pyramid__desc">世界共通の目標：自然の損失を止め、回復に向かわせる。2030年までに生物多様性の減少傾向を反転</div>
+          </div>
+          <div class="concept-pyramid__arrow">&#9660;</div>
+          <div class="concept-pyramid__level concept-pyramid__level--base">
+            <div class="concept-pyramid__number">1</div>
+            <div class="concept-pyramid__title">生物多様性</div>
+            <div class="concept-pyramid__desc">守るべき対象：あらゆる生きものの「つながり」と「多様さ」。私たちの暮らしを支える基盤</div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <div class="highlight-box__title">この3つはどう関係するの？</div>
+          <p>「生物多様性」は私たちが守るべき自然そのもの。「ネイチャーポジティブ」はその生物多様性を回復させるという世界共通の目標。そして「アーバンネイチャー」は、都市部でありながら豊かな自然が息づく北九州だからこそ実現できる、独自の取り組みです。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ネイチャーポジティブとは -->
+    <section class="section section--gray">
+      <div class="container">
+        <div class="content">
+          <h2>ネイチャーポジティブとは</h2>
+          <p>ネイチャーポジティブとは、自然環境の損失を食い止め、回復の軌道に乗せるという世界的な目標です。2022年12月に採択された「昆明・モントリオール生物多様性枠組」では、2030年までに生物多様性の損失を反転させ、回復軌道に乗せることが掲げられました。</p>
+          <p>これは「自然を壊さない」だけでなく、「自然をより豊かにする」という積極的な姿勢を意味します。企業活動、まちづくり、日々の暮らしなど、あらゆる場面でネイチャーポジティブな選択が求められています。</p>
+
+          <div class="highlight-box">
+            <div class="highlight-box__title">ネイチャーポジティブの3つの柱</div>
+            <p><strong>保全（Protect）：</strong>残された自然を守る。<strong>回復（Restore）：</strong>失われた自然を取り戻す。<strong>持続可能な利用（Sustainable Use）：</strong>自然の恵みを将来にわたって活用する。</p>
+          </div>
+
+          <h3>なぜ今ネイチャーポジティブが必要なのか</h3>
+          <p>世界の野生生物の個体群は過去50年間で平均73%減少しています（WWF「生きている地球レポート2024」）。第6の大量絶滅とも呼ばれる現在の生物多様性の危機は、食料、水、気候、健康など私たちの生活基盤に直結する問題です。</p>
+          <p>国際社会は「30by30目標」（2030年までに陸と海のそれぞれ30%以上を保全する目標）などを掲げ、行動を加速しています。日本でも「生物多様性国家戦略2023-2030」が策定され、地域ごとの取り組みが重要視されています。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 北九州のアーバンネイチャー -->
+    <section class="section section--white">
+      <div class="container">
+        <div class="content">
+          <h2>北九州のアーバンネイチャー</h2>
+          <p>北九州市は、政令指定都市でありながら、海・山・川・干潟・里山など多様な自然環境が都市部から身近な距離にある、全国でも稀有な都市です。かつて公害を克服した歴史を持ち、環境問題への高い意識と市民力が、新たな自然共生のモデルを生み出しています。</p>
+
+          <h3>北九州の主な自然スポット</h3>
+        </div>
+
+        <div class="nature-spots">
+          <div class="nature-spot">
+            <div class="nature-spot__icon">&#127754;</div>
+            <div class="nature-spot__name">曽根干潟</div>
+            <div class="nature-spot__desc">国際的に重要な渡り鳥の飛来地。カブトガニの繁殖地としても貴重な干潟環境が広がる。</div>
+          </div>
+          <div class="nature-spot">
+            <div class="nature-spot__icon">&#127968;</div>
+            <div class="nature-spot__name">響灘ビオトープ</div>
+            <div class="nature-spot__desc">日本最大級のビオトープ。廃棄物処分場跡地に多様な生態系が自然に回復した奇跡の場所。</div>
+          </div>
+          <div class="nature-spot">
+            <div class="nature-spot__icon">&#9968;</div>
+            <div class="nature-spot__name">皿倉山</div>
+            <div class="nature-spot__desc">新日本三大夜景の一つ。山頂から見渡す北九州の街並みと自然の調和は圧巻。</div>
+          </div>
+          <div class="nature-spot">
+            <div class="nature-spot__icon">&#127795;</div>
+            <div class="nature-spot__name">合馬竹林</div>
+            <div class="nature-spot__desc">良質なたけのこの産地として名高い美しい竹林。里山の暮らしと自然が共存する地域。</div>
+          </div>
+          <div class="nature-spot">
+            <div class="nature-spot__icon">&#127754;</div>
+            <div class="nature-spot__name">関門海峡</div>
+            <div class="nature-spot__desc">激しい潮流が生む豊かな生態系。海峡を挟んで多様な海洋生物が生息。</div>
+          </div>
+          <div class="nature-spot">
+            <div class="nature-spot__icon">&#127758;</div>
+            <div class="nature-spot__name">玄海国定公園</div>
+            <div class="nature-spot__desc">若松区から小倉南区にかけての海岸線。白砂青松の美しい景観と希少な動植物が息づく。</div>
+          </div>
+        </div>
+
+        <div class="content">
+          <div class="highlight-box">
+            <div class="highlight-box__title">「都市と自然の近接」が北九州の最大の強み</div>
+            <p>市街地から車で30分以内に山・海・干潟・竹林にアクセスできる環境は、日本の政令指定都市の中でも際立っています。この地理的特性こそが「アーバンネイチャー」の原点であり、市民一人ひとりが自然と触れ合いやすい街だからこそ、ネイチャーポジティブの実現に大きな可能性を持っています。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 関連ページナビ -->
+    <section class="section section--gray">
+      <div class="container">
+        <h2 class="section__title">さらに詳しく知る</h2>
+        <p class="section__subtitle">アーバンネイチャー北九州を構成する2つの重要テーマ</p>
+
+        <div class="page-nav">
+          <a href="biodiversity.html" class="page-nav__card">
+            <div class="page-nav__card-title">生物多様性</div>
+            <div class="page-nav__card-desc">なぜ生物多様性が重要なのか。生態系サービスの仕組み、国内外の動向、北九州の自然資源を詳しく解説します。</div>
+            <div class="page-nav__card-link">詳しく見る &rarr;</div>
+          </a>
+          <a href="strategy.html" class="page-nav__card">
+            <div class="page-nav__card-title">北九州市生物多様性戦略</div>
+            <div class="page-nav__card-desc">北九州市の生物多様性戦略の基本方針・施策と、私たち一人ひとりにできる具体的なアクションを紹介します。</div>
+            <div class="page-nav__card-link">詳しく見る &rarr;</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-band">
+      <div class="container">
+        <h2 class="cta-band__title">アーバンネイチャー北九州の活動に参加しませんか？</h2>
+        <div class="cta-band__buttons">
+          <a href="../join/" class="btn btn--outline-white btn--lg">会員になる</a>
+          <a href="../events/" class="btn btn--outline-white btn--lg">イベントに参加する</a>
+          <a href="../contact/" class="btn btn--outline-white btn--lg">お問い合わせ</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">
+            <img src="../images/2026/02/logo.png" alt="アーバンネイチャー北九州" width="160" height="40">
+            <span class="footer__brand-name">アーバンネイチャー北九州</span>
+          </div>
+          <p class="footer__desc">都市と自然が近接する北九州の強みを活かし、市民・企業・行政が一体となってネイチャーポジティブの実現を目指すプラットフォームです。</p>
+        </div>
+        <div>
+          <h3 class="footer__heading">ナビゲーション</h3>
+          <div class="footer__links">
+            <a href="../about/">アーバンネイチャー</a>
+            <a href="../center/">センター</a>
+            <a href="../network/">ネットワーク</a>
+            <a href="../join/">会員募集</a>
+            <a href="../news/">お知らせ</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__heading">情報</h3>
+          <div class="footer__links">
+            <a href="../events/">イベント</a>
+            <a href="../photos/">フリー素材</a>
+            <a href="../blog/">ブログ</a>
+            <a href="../contact/">お問い合わせ</a>
+            <a href="../privacy/">プライバシーポリシー</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__heading">ソーシャル</h3>
+          <div class="footer__links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">X (Twitter)</a>
+            <a href="#">YouTube</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 アーバンネイチャー北九州</span>
+        <a href="../privacy/">プライバシーポリシー</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アーバンネイチャー北九州 | 都市と自然、近いからこそおもしろい。</title>
+  <meta name="description" content="アーバンネイチャー北九州は、北九州市の都市と自然の共生を推進するプラットフォームです。10の自然・環境施設が連携し、ネイチャーポジティブな地域づくりに取り組んでいます。">
+  <meta name="keywords" content="アーバンネイチャー,北九州,自然,環境,ネイチャーポジティブ,生物多様性,SDGs">
+
+  <!-- OGP -->
+  <meta property="og:title" content="アーバンネイチャー北九州 | 都市と自然、近いからこそおもしろい。">
+  <meta property="og:description" content="北九州市の都市と自然の共生を推進するプラットフォーム。10施設が連携し、ネイチャーポジティブな地域づくりに取り組んでいます。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://urban-nature-kitakyushu.jp/">
+  <meta property="og:image" content="images/2025/03/main1-scaled.jpg">
+  <meta property="og:site_name" content="アーバンネイチャー北九州">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="アーバンネイチャー北九州">
+  <meta name="twitter:description" content="都市と自然、近いからこそおもしろい。北九州のネイチャーポジティブを推進するプラットフォーム。">
+  <meta name="twitter:image" content="images/2025/03/main1-scaled.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ===== リセット & ベース ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --color-primary: #2C5F2D;
+      --color-secondary: #97BC62;
+      --color-accent: #028090;
+      --color-bg: #FAFAF5;
+      --color-text: #333333;
+      --color-text-light: #666666;
+      --color-white: #FFFFFF;
+      --color-dark: #1A3A1B;
+      --font-family: 'Noto Sans JP', sans-serif;
+      --header-height: 64px;
+      --section-padding: 80px 0;
+      --container-width: 1200px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-family);
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      max-width: var(--container-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: var(--color-text-light);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    /* ===== ヘッダー ===== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--color-white);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      height: var(--header-height);
+    }
+
+    .header-inner {
+      max-width: var(--container-width);
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .header-logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    .desktop-nav {
+      display: none;
+    }
+
+    .desktop-nav ul {
+      display: flex;
+      gap: 24px;
+    }
+
+    .desktop-nav a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-text);
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+
+    .desktop-nav a:hover {
+      color: var(--color-primary);
+    }
+
+    /* ハンバーガー */
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--color-text);
+      border-radius: 1px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .hamburger.is-active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.is-active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.is-active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* モバイルナビ */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: var(--header-height);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--color-white);
+      z-index: 999;
+      overflow-y: auto;
+      padding: 24px 20px;
+    }
+
+    .mobile-nav.is-open {
+      display: block;
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: 14px 0;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--color-text);
+      border-bottom: 1px solid #eee;
+    }
+
+    .mobile-nav a:hover {
+      color: var(--color-primary);
+    }
+
+    /* ===== ヒーロー ===== */
+    .hero {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('images/2025/03/main1-scaled.jpg') center/cover no-repeat;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(26, 58, 27, 0.55) 0%, rgba(26, 58, 27, 0.75) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: var(--color-white);
+      padding: 40px 20px;
+      max-width: 800px;
+    }
+
+    .hero-catch {
+      font-size: clamp(1.75rem, 5vw, 3rem);
+      font-weight: 900;
+      line-height: 1.4;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-sub {
+      font-size: clamp(0.875rem, 2vw, 1.1rem);
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 36px;
+      opacity: 0.92;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-primary {
+      background: var(--color-secondary);
+      color: var(--color-dark);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--color-white);
+      border: 2px solid var(--color-white);
+    }
+
+    .btn-outline:hover {
+      background: var(--color-white);
+      color: var(--color-primary);
+    }
+
+    .btn-accent {
+      background: var(--color-accent);
+      color: var(--color-white);
+    }
+
+    .btn-green {
+      background: var(--color-primary);
+      color: var(--color-white);
+    }
+
+    /* ===== ペルソナ選択 ===== */
+    .persona {
+      padding: var(--section-padding);
+      background: var(--color-white);
+    }
+
+    .persona-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .persona-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 24px;
+      border-radius: 16px;
+      background: var(--color-bg);
+      border: 2px solid transparent;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+
+    .persona-card:hover {
+      border-color: var(--color-secondary);
+      box-shadow: 0 4px 16px rgba(44, 95, 45, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .persona-icon {
+      font-size: 2.5rem;
+      flex-shrink: 0;
+    }
+
+    .persona-label {
+      font-size: 0.8rem;
+      color: var(--color-accent);
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .persona-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+
+    .persona-arrow {
+      margin-left: auto;
+      color: var(--color-secondary);
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    /* ===== イベント ===== */
+    .events {
+      padding: var(--section-padding);
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .event-card {
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--color-white);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .event-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .event-card-image {
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+    }
+
+    .event-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .event-card-body {
+      padding: 20px;
+    }
+
+    .event-date {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 8px;
+    }
+
+    .event-card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    .event-card-meta {
+      font-size: 0.8rem;
+      color: var(--color-text-light);
+    }
+
+    .section-more {
+      text-align: center;
+      margin-top: 36px;
+    }
+
+    .more-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      transition: gap 0.2s;
+    }
+
+    .more-link:hover {
+      gap: 12px;
+    }
+
+    /* ===== ネットワーク活動 ===== */
+    .network {
+      padding: var(--section-padding);
+      background: var(--color-white);
+    }
+
+    .network-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .blog-card {
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--color-bg);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .blog-card-image {
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+    }
+
+    .blog-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .blog-card-body {
+      padding: 20px;
+    }
+
+    .blog-card-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+
+    .tag-blog {
+      background: #E8F5E9;
+      color: var(--color-primary);
+    }
+
+    .tag-case {
+      background: #E0F7FA;
+      color: var(--color-accent);
+    }
+
+    .blog-card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    .blog-card-excerpt {
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      line-height: 1.6;
+    }
+
+    /* ===== 10施設 ===== */
+    .facilities {
+      padding: var(--section-padding);
+    }
+
+    .facilities-scroll {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 16px;
+    }
+
+    .facilities-scroll::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .facilities-scroll::-webkit-scrollbar-track {
+      background: #eee;
+      border-radius: 3px;
+    }
+
+    .facilities-scroll::-webkit-scrollbar-thumb {
+      background: var(--color-secondary);
+      border-radius: 3px;
+    }
+
+    .facility-card {
+      flex: 0 0 260px;
+      scroll-snap-align: start;
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--color-white);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .facility-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .facility-card-image {
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: #e0e0e0;
+    }
+
+    .facility-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .facility-card-name {
+      padding: 14px 16px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    /* ===== フリー素材 ===== */
+    .photos {
+      padding: var(--section-padding);
+      background: var(--color-white);
+    }
+
+    .photos-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .photo-category {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 1;
+      cursor: pointer;
+    }
+
+    .photo-category img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .photo-category:hover img {
+      transform: scale(1.08);
+    }
+
+    .photo-category-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.6) 100%);
+      display: flex;
+      align-items: flex-end;
+      padding: 16px;
+    }
+
+    .photo-category-name {
+      color: var(--color-white);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    /* ===== 数字バー ===== */
+    .stats {
+      background: var(--color-dark);
+      padding: 48px 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+
+    .stat-item-number {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 900;
+      color: var(--color-secondary);
+      line-height: 1.2;
+    }
+
+    .stat-item-label {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-top: 4px;
+    }
+
+    /* ===== CTAバンド ===== */
+    .cta-band {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .cta-band-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-white);
+      margin-bottom: 8px;
+    }
+
+    .cta-band-sub {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 32px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-buttons .btn {
+      min-width: 180px;
+    }
+
+    /* ===== フッター ===== */
+    .site-footer {
+      background: var(--color-dark);
+      color: rgba(255, 255, 255, 0.8);
+      padding: 60px 0 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+    }
+
+    .footer-brand img {
+      height: 36px;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand p {
+      font-size: 0.85rem;
+      line-height: 1.8;
+    }
+
+    .footer-heading {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--color-white);
+      margin-bottom: 16px;
+    }
+
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--color-secondary);
+    }
+
+    .footer-contact p {
+      font-size: 0.85rem;
+      margin-bottom: 4px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--color-white);
+      font-size: 0.8rem;
+      font-weight: 700;
+      transition: background 0.2s;
+    }
+
+    .footer-social a:hover {
+      background: var(--color-secondary);
+      color: var(--color-dark);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .footer-bottom-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+      font-size: 0.8rem;
+    }
+
+    .footer-bottom a {
+      transition: color 0.2s;
+    }
+
+    .footer-bottom a:hover {
+      color: var(--color-secondary);
+    }
+
+    /* ===== レスポンシブ ===== */
+    @media (min-width: 640px) {
+      .persona-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .photos-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 768px) {
+      .events-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .network-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hamburger {
+        display: none;
+      }
+
+      .desktop-nav {
+        display: block;
+      }
+
+      .persona-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .persona-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 32px 20px;
+      }
+
+      .persona-arrow {
+        display: none;
+      }
+
+      .network-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+      }
+
+      .footer-bottom-inner {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="./" class="header-logo">
+        <img src="images/2026/02/logo.png" alt="アーバンネイチャー北九州" width="180" height="40">
+      </a>
+      <nav class="desktop-nav" aria-label="メインナビゲーション">
+        <ul>
+          <li><a href="about/">アーバンネイチャー</a></li>
+          <li><a href="center/">センター</a></li>
+          <li><a href="network/">ネットワーク</a></li>
+          <li><a href="join/">会員募集</a></li>
+          <li><a href="news/">お知らせ</a></li>
+          <li><a href="photos/">フリー素材</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="js-hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- モバイルナビ -->
+  <nav class="mobile-nav" id="js-mobile-nav" aria-label="モバイルナビゲーション">
+    <a href="about/">アーバンネイチャー</a>
+    <a href="center/">センター</a>
+    <a href="network/">ネットワーク</a>
+    <a href="join/">会員募集</a>
+    <a href="news/">お知らせ</a>
+    <a href="events/">イベント</a>
+    <a href="blog/">ブログ</a>
+    <a href="photos/">フリー素材</a>
+    <a href="contact/">お問い合わせ</a>
+  </nav>
+
+  <main>
+
+    <!-- ===== ヒーロー ===== -->
+    <section class="hero">
+      <div class="hero-bg" role="img" aria-label="北九州の自然風景"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-catch">都市と自然、<br>近いからこそおもしろい。</h1>
+        <p class="hero-sub">北九州市の10の自然・環境施設が連携し、<br>市民・企業・団体とともにネイチャーポジティブな地域づくりに取り組んでいます。</p>
+        <div class="hero-buttons">
+          <a href="about/" class="btn btn-primary">アーバンネイチャーとは</a>
+          <a href="events/" class="btn btn-outline">イベントを探す</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ペルソナ選択 ===== -->
+    <section class="persona">
+      <div class="container">
+        <h2 class="section-title">あなたは誰？</h2>
+        <p class="section-subtitle">あなたに合った情報をお届けします</p>
+        <div class="persona-grid">
+          <a href="events/" class="persona-card">
+            <span class="persona-icon">&#x1F33F;</span>
+            <div>
+              <p class="persona-label">個人</p>
+              <p class="persona-name">「自然に関わりたい」</p>
+            </div>
+            <span class="persona-arrow">&rarr;</span>
+          </a>
+          <a href="network/cases/" class="persona-card">
+            <span class="persona-icon">&#x1F3E2;</span>
+            <div>
+              <p class="persona-label">企業</p>
+              <p class="persona-name">「地域貢献・ESGに取り組みたい」</p>
+            </div>
+            <span class="persona-arrow">&rarr;</span>
+          </a>
+          <a href="network/" class="persona-card">
+            <span class="persona-icon">&#x1F91D;</span>
+            <div>
+              <p class="persona-label">活動団体</p>
+              <p class="persona-name">「活動を広げたい」</p>
+            </div>
+            <span class="persona-arrow">&rarr;</span>
+          </a>
+          <a href="photos/" class="persona-card">
+            <span class="persona-icon">&#x1F4F7;</span>
+            <div>
+              <p class="persona-label">写真素材利用者</p>
+              <p class="persona-name">「自然素材を探している」</p>
+            </div>
+            <span class="persona-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 最新イベント ===== -->
+    <section class="events">
+      <div class="container">
+        <h2 class="section-title">最新イベント</h2>
+        <p class="section-subtitle">北九州の自然を体感するイベント情報</p>
+        <div class="events-grid">
+          <a href="events/" class="event-card">
+            <div class="event-card-image">
+              <img src="images/2026/04/カルストジャングル冒険ツアー-2-1024x768-1-450x450.jpg" alt="カルストジャングル冒険ツアー" width="450" height="450" loading="lazy">
+            </div>
+            <div class="event-card-body">
+              <span class="event-date">2026.04.26 (日)</span>
+              <h3 class="event-card-title">カルストジャングル冒険ツアー</h3>
+              <p class="event-card-meta">ソラランド平尾台 / 要予約</p>
+            </div>
+          </a>
+          <a href="events/" class="event-card">
+            <div class="event-card-image">
+              <img src="images/2026/04/平尾台シャボン玉-1-450x450.jpg" alt="平尾台シャボン玉イベント" width="450" height="450" loading="lazy">
+            </div>
+            <div class="event-card-body">
+              <span class="event-date">2026.05.03 (日)</span>
+              <h3 class="event-card-title">平尾台シャボン玉フェスティバル</h3>
+              <p class="event-card-meta">ソラランド平尾台 / 参加無料</p>
+            </div>
+          </a>
+          <a href="events/" class="event-card">
+            <div class="event-card-image">
+              <img src="images/2026/04/平尾台そば倶楽部2-1024x768-1-450x450.jpg" alt="平尾台そば倶楽部" width="450" height="450" loading="lazy">
+            </div>
+            <div class="event-card-body">
+              <span class="event-date">2026.05.10 (土)</span>
+              <h3 class="event-card-title">平尾台そば打ち体験教室</h3>
+              <p class="event-card-meta">平尾台自然の郷 / 要予約・有料</p>
+            </div>
+          </a>
+        </div>
+        <div class="section-more">
+          <a href="events/" class="more-link">すべてのイベントを見る <span>&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ネットワーク活動ハイライト ===== -->
+    <section class="network">
+      <div class="container">
+        <h2 class="section-title">ネットワーク活動</h2>
+        <p class="section-subtitle">企業・団体と連携した取り組みをご紹介</p>
+        <div class="network-grid">
+          <a href="blog/" class="blog-card">
+            <div class="blog-card-image">
+              <img src="images/2026/04/平尾台トゥクトゥク-450x450.jpg" alt="平尾台トゥクトゥクツアー" width="450" height="450" loading="lazy">
+            </div>
+            <div class="blog-card-body">
+              <span class="blog-card-tag tag-blog">ブログ</span>
+              <h3 class="blog-card-title">平尾台をトゥクトゥクで巡る新しい自然体験</h3>
+              <p class="blog-card-excerpt">地域の観光資源と自然を組み合わせた新たな取り組みが始まりました。</p>
+            </div>
+          </a>
+          <a href="blog/" class="blog-card">
+            <div class="blog-card-image">
+              <img src="images/2026/04/平尾台フクロウ-450x450.jpg" alt="平尾台のフクロウ" width="450" height="450" loading="lazy">
+            </div>
+            <div class="blog-card-body">
+              <span class="blog-card-tag tag-blog">ブログ</span>
+              <h3 class="blog-card-title">夜の平尾台でフクロウ観察会を開催しました</h3>
+              <p class="blog-card-excerpt">参加者30名が、静寂の中でフクロウの声に耳を傾けました。</p>
+            </div>
+          </a>
+          <a href="network/cases/" class="blog-card">
+            <div class="blog-card-image">
+              <img src="images/2026/04/mine-450x269.png" alt="マイン企業連携事例" width="450" height="269" loading="lazy">
+            </div>
+            <div class="blog-card-body">
+              <span class="blog-card-tag tag-case">企業事例</span>
+              <h3 class="blog-card-title">マイン ─ 商業施設と自然教育の融合</h3>
+              <p class="blog-card-excerpt">企業の地域貢献とネイチャーポジティブ活動を両立する先進事例をご紹介します。</p>
+            </div>
+          </a>
+        </div>
+        <div class="section-more">
+          <a href="network/" class="more-link">ネットワーク活動をもっと見る <span>&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== センター10施設 ===== -->
+    <section class="facilities">
+      <div class="container">
+        <h2 class="section-title">センター10施設</h2>
+        <p class="section-subtitle">北九州の自然と環境を体験できる拠点施設</p>
+      </div>
+      <div class="container">
+        <div class="facilities-scroll">
+          <a href="center/" class="facility-card">
+            <div class="facility-card-image">
+              <img src="images/2025/04/b-3-450x450.jpg" alt="タカミヤ環境ミュージアム" width="450" height="450" loading="lazy">
+            </div>
+            <p class="facility-card-name">タカミヤ環境ミュージアム</p>
+          </a>
+          <a href="center/" class="facility-card">
+            <div class="facility-card-image">
+              <img src="images/2025/04/b-5-450x450.jpg" alt="いのちのたび博物館" width="450" height="450" loading="lazy">
+            </div>
+            <p class="facility-card-name">いのちのたび博物館</p>
+          </a>
+          <a href="center/" class="facility-card">
+            <div class="facility-card-image">
+              <img src="images/2025/04/n-1-450x450.jpg" alt="山田緑地" width="450" height="450" loading="lazy">
+            </div>
+            <p class="facility-card-name">山田緑地</p>
+          </a>
+          <a href="center/" class="facility-card">
+            <div class="facility-card-image">
+              <img src="images/2025/04/h-0-450x450.jpg" alt="北九州市響灘ビオトープ" width="450" height="450" loading="lazy">
+            </div>
+            <p class="facility-card-name">北九州市響灘ビオトープ</p>
+          </a>
+          <a href="center/" class="facility-card">
+            <div class="facility-card-image">
+              <img src="images/2025/04/1-5-450x450.jpg" alt="響灘緑地グリーンパーク" width="450" height="450" loading="lazy">
+            </div>
+            <p class="facility-card-name">響灘緑地グリーンパーク</p>
+          </a>
+          <a href="center/" class="facility-card">
+            <div class="facility-card-image">
+              <img src="images/2025/04/152-450x450.jpg" alt="北九州市ほたる館" width="450" height="450" loading="lazy">
+            </div>
+            <p class="facility-card-name">北九州市ほたる館</p>
+          </a>
+          <a href="center/" class="facility-card">
+            <div class="facility-card-image">
+              <img src="images/2025/04/b-2-1-450x450.jpg" alt="香月・黒川ほたる館" width="450" height="450" loading="lazy">
+            </div>
+            <p class="facility-card-name">香月・黒川ほたる館</p>
+          </a>
+          <a href="center/" class="facility-card">
+            <div class="facility-card-image">
+              <img src="images/2025/04/sagisou-450x450.jpg" alt="到津の森公園" width="450" height="450" loading="lazy">
+            </div>
+            <p class="facility-card-name">到津の森公園</p>
+          </a>
+          <a href="center/" class="facility-card">
+            <div class="facility-card-image">
+              <img src="images/2025/04/IMG_2038-450x450.jpg" alt="水環境館" width="450" height="450" loading="lazy">
+            </div>
+            <p class="facility-card-name">水環境館</p>
+          </a>
+          <a href="center/" class="facility-card">
+            <div class="facility-card-image">
+              <img src="images/2025/04/羊群原とキス岩--450x450.jpg" alt="ソラランド平尾台" width="450" height="450" loading="lazy">
+            </div>
+            <p class="facility-card-name">ソラランド平尾台</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== フリー写真素材 ===== -->
+    <section class="photos">
+      <div class="container">
+        <h2 class="section-title">フリー写真素材</h2>
+        <p class="section-subtitle">北九州の自然写真を無料でご利用いただけます</p>
+        <div class="photos-grid">
+          <a href="photos/?category=sea" class="photo-category">
+            <img src="images/2025/04/IMG_8716-450x450.jpg" alt="海" width="450" height="450" loading="lazy">
+            <div class="photo-category-overlay">
+              <span class="photo-category-name">海</span>
+            </div>
+          </a>
+          <a href="photos/?category=mountain" class="photo-category">
+            <img src="images/2025/04/IMG_8742-450x450.jpg" alt="山" width="450" height="450" loading="lazy">
+            <div class="photo-category-overlay">
+              <span class="photo-category-name">山</span>
+            </div>
+          </a>
+          <a href="photos/?category=river" class="photo-category">
+            <img src="images/2025/04/IMG_8789-450x450.jpg" alt="川" width="450" height="450" loading="lazy">
+            <div class="photo-category-overlay">
+              <span class="photo-category-name">川</span>
+            </div>
+          </a>
+          <a href="photos/?category=animal" class="photo-category">
+            <img src="images/2025/04/カルガモ-450x450.jpg" alt="動物" width="450" height="450" loading="lazy">
+            <div class="photo-category-overlay">
+              <span class="photo-category-name">動物</span>
+            </div>
+          </a>
+          <a href="photos/?category=plant" class="photo-category">
+            <img src="images/2025/04/カノコソウ-450x450.jpg" alt="植物" width="450" height="450" loading="lazy">
+            <div class="photo-category-overlay">
+              <span class="photo-category-name">植物</span>
+            </div>
+          </a>
+          <a href="photos/?category=urban-nature" class="photo-category">
+            <img src="images/2025/04/IMG_8808-450x450.jpg" alt="街と自然" width="450" height="450" loading="lazy">
+            <div class="photo-category-overlay">
+              <span class="photo-category-name">街と自然</span>
+            </div>
+          </a>
+          <a href="photos/?category=agriculture" class="photo-category">
+            <img src="images/2025/04/IMG_8920-450x450.jpg" alt="農産品" width="450" height="450" loading="lazy">
+            <div class="photo-category-overlay">
+              <span class="photo-category-name">農産品</span>
+            </div>
+          </a>
+          <a href="photos/?category=insect" class="photo-category">
+            <img src="images/2025/04/ヨツボシトンボ-450x450.jpg" alt="昆虫・その他" width="450" height="450" loading="lazy">
+            <div class="photo-category-overlay">
+              <span class="photo-category-name">昆虫・その他</span>
+            </div>
+          </a>
+        </div>
+        <div class="section-more">
+          <a href="photos/" class="more-link">すべての写真素材を見る <span>&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 数字バー ===== -->
+    <section class="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <p class="stat-item-number">10</p>
+            <p class="stat-item-label">連携施設</p>
+          </div>
+          <div class="stat-item">
+            <p class="stat-item-number">34</p>
+            <p class="stat-item-label">企業会員</p>
+          </div>
+          <div class="stat-item">
+            <p class="stat-item-number">13</p>
+            <p class="stat-item-label">団体会員</p>
+          </div>
+          <div class="stat-item">
+            <p class="stat-item-number">800+</p>
+            <p class="stat-item-label">種の生物</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTAバンド ===== -->
+    <section class="cta-band">
+      <div class="container">
+        <h2 class="cta-band-title">自然とつながる一歩を、ここから。</h2>
+        <p class="cta-band-sub">あなたの参加が、北九州のネイチャーポジティブを加速します</p>
+        <div class="cta-buttons">
+          <a href="join/" class="btn btn-primary">会員登録する</a>
+          <a href="events/" class="btn btn-outline">イベントに参加する</a>
+          <a href="contact/" class="btn btn-outline">問合せる</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- ブランド情報 -->
+        <div class="footer-brand">
+          <img src="images/2026/02/logo.png" alt="アーバンネイチャー北九州" width="180" height="40">
+          <p>アーバンネイチャー北九州は、北九州市の10の自然・環境施設が連携し、市民・企業・団体とともにネイチャーポジティブな地域づくりに取り組むプラットフォームです。</p>
+        </div>
+
+        <!-- ナビゲーション -->
+        <div>
+          <h3 class="footer-heading">サイトマップ</h3>
+          <ul class="footer-links">
+            <li><a href="about/">アーバンネイチャーとは</a></li>
+            <li><a href="center/">センター10施設</a></li>
+            <li><a href="network/">ネットワーク</a></li>
+            <li><a href="events/">イベント</a></li>
+            <li><a href="blog/">ブログ</a></li>
+            <li><a href="photos/">フリー写真素材</a></li>
+          </ul>
+        </div>
+
+        <!-- 参加リンク -->
+        <div>
+          <h3 class="footer-heading">参加する</h3>
+          <ul class="footer-links">
+            <li><a href="join/">会員募集</a></li>
+            <li><a href="news/">お知らせ</a></li>
+            <li><a href="contact/">お問い合わせ</a></li>
+            <li><a href="privacy/">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+
+        <!-- 連絡先 -->
+        <div class="footer-contact">
+          <h3 class="footer-heading">お問い合わせ</h3>
+          <p>アーバンネイチャー北九州 事務局</p>
+          <p>〒805-0071</p>
+          <p>北九州市八幡東区東田二丁目2-6</p>
+          <p>TEL: 093-663-6751</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">FB</a>
+            <a href="https://www.instagram.com/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">IG</a>
+            <a href="https://www.youtube.com/" aria-label="YouTube" target="_blank" rel="noopener noreferrer">YT</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-inner">
+          <p>&copy; 2026 アーバンネイチャー北九州</p>
+          <a href="privacy/">プライバシーポリシー</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+  <script>
+    // ハンバーガーメニュー
+    const hamburger = document.getElementById('js-hamburger');
+    const mobileNav = document.getElementById('js-mobile-nav');
+
+    if (hamburger && mobileNav) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = mobileNav.classList.toggle('is-open');
+        hamburger.classList.toggle('is-active');
+        hamburger.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+    }
+  </script>
+</body>
+</html>

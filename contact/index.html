@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問合せ | アーバンネイチャー北九州</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .contact-layout { display: grid; grid-template-columns: 1fr 360px; gap: 48px; align-items: start; }
+    .contact-sidebar { background: var(--bg-white); border-radius: var(--radius-lg); padding: 32px; box-shadow: 0 2px 12px var(--shadow); position: sticky; top: calc(var(--header-height) + 24px); }
+    .contact-sidebar__title { font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--secondary); }
+    .contact-sidebar__item { margin-bottom: 20px; }
+    .contact-sidebar__label { font-size: 0.8rem; font-weight: 600; color: var(--text-muted); margin-bottom: 4px; }
+    .contact-sidebar__value { font-size: 0.9rem; line-height: 1.7; }
+    .contact-form-wrap { background: var(--bg-white); border-radius: var(--radius-lg); padding: 40px; box-shadow: 0 2px 12px var(--shadow); }
+    .contact-form-wrap__title { font-size: 1.2rem; font-weight: 700; color: var(--primary); margin-bottom: 24px; }
+    @media (max-width: 768px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      .contact-sidebar { position: static; order: -1; }
+      .contact-form-wrap { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <img src="../images/2026/02/logo.png" alt="アーバンネイチャー北九州">
+        <span>アーバンネイチャー北九州</span>
+      </a>
+      <nav class="header__nav">
+        <a href="../about/">アーバンネイチャー</a>
+        <a href="../center/">センター</a>
+        <a href="../network/">ネットワーク</a>
+        <a href="../join/">会員募集</a>
+        <a href="../news/">お知らせ</a>
+        <a href="../photos/">フリー素材</a>
+      </nav>
+      <div class="header__actions">
+        <a href="../contact/" class="btn btn--primary btn--sm active">お問合せ</a>
+      </div>
+      <button class="hamburger" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- モバイルナビ -->
+  <div class="mobile-nav">
+    <a href="../about/">アーバンネイチャー</a>
+    <a href="../center/">センター</a>
+    <a href="../network/">ネットワーク</a>
+    <a href="../join/">会員募集</a>
+    <a href="../news/">お知らせ</a>
+    <a href="../photos/">フリー素材</a>
+    <div class="mobile-nav__cta">
+      <a href="../contact/" class="btn btn--primary btn--block">お問合せ</a>
+    </div>
+  </div>
+
+  <!-- パンくずリスト -->
+  <nav class="breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb__list">
+        <li><a href="../">ホーム</a></li>
+        <li>お問合せ</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ページヘッダー -->
+  <div class="page-header">
+    <div class="container">
+      <h1 class="page-header__title">お問合せ</h1>
+      <p class="page-header__desc">ご質問・ご相談など、お気軽にお問合せください</p>
+    </div>
+  </div>
+
+  <!-- お問合せフォーム -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- フォーム -->
+        <div class="contact-form-wrap">
+          <h2 class="contact-form-wrap__title">お問合せフォーム</h2>
+          <form>
+            <div class="form-group">
+              <label>お名前<span class="required">*必須</span></label>
+              <input type="text" class="form-input" name="name" required placeholder="例：山田 太郎">
+            </div>
+            <div class="form-group">
+              <label>メールアドレス<span class="required">*必須</span></label>
+              <input type="email" class="form-input" name="email" required placeholder="例：example@email.com">
+            </div>
+            <div class="form-group">
+              <label>電話番号（任意）</label>
+              <input type="tel" class="form-input" name="phone" placeholder="例：093-000-0000">
+            </div>
+            <div class="form-group">
+              <label>お問合せ種別<span class="required">*必須</span></label>
+              <select class="form-select" name="category" required>
+                <option value="">選択してください</option>
+                <option value="一般問合せ">一般問合せ</option>
+                <option value="会員について">会員について</option>
+                <option value="イベントについて">イベントについて</option>
+                <option value="取材・メディア">取材・メディア</option>
+                <option value="その他">その他</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>お問合せ内容<span class="required">*必須</span></label>
+              <textarea class="form-textarea" name="message" required placeholder="お問合せ内容をご記入ください" style="min-height: 180px;"></textarea>
+            </div>
+            <div class="form-group">
+              <div class="form-checkbox">
+                <input type="checkbox" name="privacy" id="privacy-contact" required>
+                <label for="privacy-contact"><a href="../privacy/" target="_blank">プライバシーポリシー</a>に同意する<span class="required">*必須</span></label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn--primary btn--lg btn--block">送信する</button>
+          </form>
+        </div>
+
+        <!-- サイドバー -->
+        <aside class="contact-sidebar">
+          <h3 class="contact-sidebar__title">事務局情報</h3>
+          <div class="contact-sidebar__item">
+            <p class="contact-sidebar__label">事務局</p>
+            <p class="contact-sidebar__value">IGES北九州アーバンセンター<br>（公益財団法人 地球環境戦略研究機関）</p>
+          </div>
+          <div class="contact-sidebar__item">
+            <p class="contact-sidebar__label">所在地</p>
+            <p class="contact-sidebar__value">〒802-0001<br>福岡県北九州市小倉北区浅野三丁目8-1<br>AIMビル6階</p>
+          </div>
+          <div class="contact-sidebar__item">
+            <p class="contact-sidebar__label">電話番号</p>
+            <p class="contact-sidebar__value">093-513-3711</p>
+          </div>
+          <div class="contact-sidebar__item">
+            <p class="contact-sidebar__label">受付時間</p>
+            <p class="contact-sidebar__value">平日 9:00〜17:00<br>（土日祝日・年末年始を除く）</p>
+          </div>
+          <div class="contact-sidebar__item">
+            <p class="contact-sidebar__label">メール</p>
+            <p class="contact-sidebar__value">kuc@iges.or.jp</p>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">
+            <img src="../images/2026/02/logo.png" alt="アーバンネイチャー北九州">
+            <span class="footer__brand-name">アーバンネイチャー北九州</span>
+          </div>
+          <p class="footer__desc">北九州市の豊かな自然環境を守り、人と自然が共生する持続可能なまちづくりを推進するプラットフォームです。</p>
+        </div>
+        <div>
+          <h3 class="footer__heading">サイトマップ</h3>
+          <div class="footer__links">
+            <a href="../about/">アーバンネイチャー</a>
+            <a href="../center/">センター</a>
+            <a href="../network/">ネットワーク</a>
+            <a href="../join/">会員募集</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__heading">コンテンツ</h3>
+          <div class="footer__links">
+            <a href="../news/">お知らせ</a>
+            <a href="../events/">イベント</a>
+            <a href="../blog/">活動ブログ</a>
+            <a href="../photos/">フリー素材</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__heading">情報</h3>
+          <div class="footer__links">
+            <a href="../contact/">お問合せ</a>
+            <a href="../privacy/">プライバシーポリシー</a>
+            <a href="../nature-symbiosis/">自然共生サイト</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 アーバンネイチャー北九州</span>
+        <a href="../privacy/">プライバシーポリシー</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

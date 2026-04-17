@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お知らせ | アーバンネイチャー北九州</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .news-list { display: flex; flex-direction: column; gap: 0; }
+    .news-item { display: flex; align-items: flex-start; gap: 20px; padding: 24px 0; border-bottom: 1px solid var(--border-light); text-decoration: none; color: var(--text); transition: all var(--transition); }
+    .news-item:first-child { padding-top: 0; }
+    .news-item:hover { background: rgba(44, 95, 45, 0.02); }
+    .news-item__date { flex-shrink: 0; font-size: 0.85rem; color: var(--text-muted); min-width: 100px; padding-top: 2px; }
+    .news-item__tag { display: inline-block; padding: 2px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; flex-shrink: 0; min-width: 80px; text-align: center; }
+    .news-item__tag--info { background: rgba(2, 128, 144, 0.1); color: var(--accent); }
+    .news-item__tag--event { background: rgba(44, 95, 45, 0.1); color: var(--primary); }
+    .news-item__tag--report { background: rgba(151, 188, 98, 0.2); color: var(--primary-dark); }
+    .news-item__tag--press { background: rgba(255, 152, 0, 0.1); color: #e67e00; }
+    .news-item__tag--member { background: rgba(156, 39, 176, 0.1); color: #7b1fa2; }
+    .news-item__content { flex: 1; }
+    .news-item__title { font-size: 1rem; font-weight: 700; margin-bottom: 4px; line-height: 1.5; }
+    .news-item__excerpt { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+    .pagination { display: flex; justify-content: center; gap: 8px; margin-top: 48px; }
+    .pagination__item { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: var(--radius); border: 1px solid var(--border); font-size: 0.9rem; color: var(--text-light); text-decoration: none; transition: all var(--transition); }
+    .pagination__item:hover, .pagination__item.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+    .pagination__item--disabled { opacity: 0.4; pointer-events: none; }
+    @media (max-width: 768px) {
+      .news-item { flex-direction: column; gap: 8px; }
+      .news-item__date { min-width: auto; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <img src="../images/2026/02/logo.png" alt="アーバンネイチャー北九州">
+        <span>アーバンネイチャー北九州</span>
+      </a>
+      <nav class="header__nav">
+        <a href="../about/">アーバンネイチャー</a>
+        <a href="../center/">センター</a>
+        <a href="../network/">ネットワーク</a>
+        <a href="../join/">会員募集</a>
+        <a href="../news/" class="active">お知らせ</a>
+        <a href="../photos/">フリー素材</a>
+      </nav>
+      <div class="header__actions">
+        <a href="../contact/" class="btn btn--primary btn--sm">お問合せ</a>
+      </div>
+      <button class="hamburger" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- モバイルナビ -->
+  <div class="mobile-nav">
+    <a href="../about/">アーバンネイチャー</a>
+    <a href="../center/">センター</a>
+    <a href="../network/">ネットワーク</a>
+    <a href="../join/">会員募集</a>
+    <a href="../news/">お知らせ</a>
+    <a href="../photos/">フリー素材</a>
+    <div class="mobile-nav__cta">
+      <a href="../contact/" class="btn btn--primary btn--block">お問合せ</a>
+    </div>
+  </div>
+
+  <!-- パンくずリスト -->
+  <nav class="breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb__list">
+        <li><a href="../">ホーム</a></li>
+        <li>お知らせ</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ページヘッダー -->
+  <div class="page-header">
+    <div class="container">
+      <h1 class="page-header__title">お知らせ</h1>
+      <p class="page-header__desc">アーバンネイチャー北九州からの最新情報をお届けします</p>
+    </div>
+  </div>
+
+  <!-- お知らせ一覧 -->
+  <section class="section section--white">
+    <div class="container" style="max-width: 900px;">
+      <div class="news-list">
+
+        <a href="#" class="news-item">
+          <span class="news-item__date">2026.04.15</span>
+          <span class="news-item__tag news-item__tag--event">イベント</span>
+          <div class="news-item__content">
+            <h2 class="news-item__title">春の自然観察会「平尾台の野草を楽しむ」参加者募集中</h2>
+            <p class="news-item__excerpt">5月10日（日）に平尾台にて春の野草観察会を開催いたします。専門ガイドと一緒に、カルスト台地に咲く希少な植物を観察しましょう。</p>
+          </div>
+        </a>
+
+        <a href="#" class="news-item">
+          <span class="news-item__date">2026.04.08</span>
+          <span class="news-item__tag news-item__tag--info">お知らせ</span>
+          <div class="news-item__content">
+            <h2 class="news-item__title">ウェブサイトをリニューアルしました</h2>
+            <p class="news-item__excerpt">アーバンネイチャー北九州のウェブサイトを全面リニューアルしました。より見やすく、使いやすいサイトを目指して改善を行いました。</p>
+          </div>
+        </a>
+
+        <a href="#" class="news-item">
+          <span class="news-item__date">2026.03.25</span>
+          <span class="news-item__tag news-item__tag--report">活動報告</span>
+          <div class="news-item__content">
+            <h2 class="news-item__title">曽根干潟クリーンアップ活動報告 ― 参加者120名で海岸清掃を実施</h2>
+            <p class="news-item__excerpt">3月22日に実施した曽根干潟クリーンアップ活動の報告です。企業・個人合わせて120名の方にご参加いただきました。</p>
+          </div>
+        </a>
+
+        <a href="#" class="news-item">
+          <span class="news-item__date">2026.03.10</span>
+          <span class="news-item__tag news-item__tag--press">メディア</span>
+          <div class="news-item__content">
+            <h2 class="news-item__title">NHK北九州「自然共生のまちづくり」特集で紹介されました</h2>
+            <p class="news-item__excerpt">NHK北九州放送局の番組にて、アーバンネイチャー北九州の取り組みが紹介されました。番組では自然共生サイトの活動が取り上げられています。</p>
+          </div>
+        </a>
+
+        <a href="#" class="news-item">
+          <span class="news-item__date">2026.02.28</span>
+          <span class="news-item__tag news-item__tag--member">会員</span>
+          <div class="news-item__content">
+            <h2 class="news-item__title">2026年度会員募集を開始しました</h2>
+            <p class="news-item__excerpt">2026年度の個人会員・企業会員の募集を開始しました。北九州の自然を守り育てる活動に、ぜひご参加ください。</p>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- ページネーション -->
+      <div class="pagination">
+        <span class="pagination__item pagination__item--disabled">&lt;</span>
+        <a href="#" class="pagination__item active">1</a>
+        <a href="#" class="pagination__item">2</a>
+        <a href="#" class="pagination__item">3</a>
+        <a href="#" class="pagination__item">&gt;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">
+            <img src="../images/2026/02/logo.png" alt="アーバンネイチャー北九州">
+            <span class="footer__brand-name">アーバンネイチャー北九州</span>
+          </div>
+          <p class="footer__desc">北九州市の豊かな自然環境を守り、人と自然が共生する持続可能なまちづくりを推進するプラットフォームです。</p>
+        </div>
+        <div>
+          <h3 class="footer__heading">サイトマップ</h3>
+          <div class="footer__links">
+            <a href="../about/">アーバンネイチャー</a>
+            <a href="../center/">センター</a>
+            <a href="../network/">ネットワーク</a>
+            <a href="../join/">会員募集</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__heading">コンテンツ</h3>
+          <div class="footer__links">
+            <a href="../news/">お知らせ</a>
+            <a href="../events/">イベント</a>
+            <a href="../blog/">活動ブログ</a>
+            <a href="../photos/">フリー素材</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__heading">情報</h3>
+          <div class="footer__links">
+            <a href="../contact/">お問合せ</a>
+            <a href="../privacy/">プライバシーポリシー</a>
+            <a href="../nature-symbiosis/">自然共生サイト</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 アーバンネイチャー北九州</span>
+        <a href="../privacy/">プライバシーポリシー</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
