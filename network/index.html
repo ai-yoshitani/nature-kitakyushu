@@ -14,19 +14,203 @@
   <meta property="og:description" content="企業・団体・教育機関・個人がつながり、ネイチャーポジティブの取組を広げるネットワーク。参加費無料。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ai-yoshitani.github.io/nature-kitakyushu/network/">
-  <meta property="og:image" content="https://ai-yoshitani.github.io/nature-kitakyushu/images/2025/08/APC_9304-450x450.jpg">
+  <meta property="og:image" content="https://ai-yoshitani.github.io/nature-kitakyushu/images/2025/03/wakamatsu-coast.jpg">
   <meta property="og:site_name" content="アーバンネイチャー北九州">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ネットワーク | アーバンネイチャー北九州">
   <meta name="twitter:description" content="企業・団体・教育機関・個人がつながり、ネイチャーポジティブの取組を広げるネットワーク。参加費無料。">
-  <meta name="twitter:image" content="https://ai-yoshitani.github.io/nature-kitakyushu/images/2025/08/APC_9304-450x450.jpg">
+  <meta name="twitter:image" content="https://ai-yoshitani.github.io/nature-kitakyushu/images/2025/03/wakamatsu-coast.jpg">
   <title>地域との繋がり | アーバンネイチャー北九州</title>
   <meta name="description" content="企業・団体・教育機関・個人がつながり、ネイチャーポジティブの取組を広げるネットワーク。参加費無料。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+    /* 参加ステップ */
+    .join-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin: 40px 0 0;
+    }
+    .join-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 32px 24px;
+      position: relative;
+    }
+    .join-step:not(:last-child)::after {
+      content: '→';
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      color: var(--secondary, #97BC62);
+    }
+    .join-step__num {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--primary, #2C5F2D);
+      color: #fff;
+      font-size: 1.25rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      flex-shrink: 0;
+    }
+    .join-step__title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary, #2C5F2D);
+      margin-bottom: 8px;
+    }
+    .join-step__desc {
+      font-size: 0.85rem;
+      color: var(--text-light, #666);
+      line-height: 1.6;
+    }
+
+    /* 参加メリット */
+    .benefit-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .benefit-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .benefit-item__icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--primary, #2C5F2D);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .benefit-item__icon svg {
+      width: 26px;
+      height: 26px;
+    }
+    .benefit-item__title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary, #2C5F2D);
+      margin-bottom: 6px;
+    }
+    .benefit-item__desc {
+      font-size: 0.85rem;
+      color: var(--text-light, #666);
+      line-height: 1.7;
+    }
+
+    /* 中間CTA */
+    .mid-cta {
+      background: linear-gradient(135deg, #2C5F2D 0%, #3a7a3b 100%);
+      border-radius: 20px;
+      padding: 48px 40px;
+      text-align: center;
+      color: #fff;
+      margin: 48px 0 0;
+    }
+    .mid-cta__title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .mid-cta__sub {
+      font-size: 0.95rem;
+      opacity: 0.85;
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+    .mid-cta__note {
+      margin-top: 16px;
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+
+    /* 実績数字 */
+    .stats-highlight {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      background: var(--primary, #2C5F2D);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 40px;
+    }
+    .stats-highlight__item {
+      flex: 1;
+      text-align: center;
+      padding: 40px 20px;
+      color: #fff;
+      border-right: 1px solid rgba(255,255,255,0.15);
+    }
+    .stats-highlight__item:last-child { border-right: none; }
+    .stats-highlight__num {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1;
+      color: #97BC62;
+    }
+    .stats-highlight__unit {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .stats-highlight__label {
+      font-size: 0.85rem;
+      margin-top: 8px;
+      opacity: 0.8;
+    }
+
+    /* 会員ロゴグリッド */
+    .member-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .member-item {
+      background: #fff;
+      border: 1px solid #e8f0e8;
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 0.85rem;
+      text-align: center;
+      color: var(--text, #333);
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .join-steps { grid-template-columns: 1fr; gap: 16px; }
+      .join-step:not(:last-child)::after { content: '↓'; right: auto; top: auto; bottom: -20px; left: 50%; transform: translateX(-50%); }
+      .benefit-list { grid-template-columns: 1fr; }
+      .mid-cta { padding: 36px 24px; }
+      .mid-cta__title { font-size: 1.3rem; }
+      .stats-highlight { flex-direction: column; }
+      .stats-highlight__item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
+      .stats-highlight__item:last-child { border-bottom: none; }
+      .member-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
 </head>
 <body>
 
@@ -144,7 +328,7 @@
     <div class="container">
       <ol class="breadcrumb__list">
         <li><a href="../">ホーム</a></li>
-        <li>ネットワーク</li>
+        <li>地域との繋がり</li>
       </ol>
     </div>
   </nav>
@@ -152,115 +336,155 @@
   <!-- ページヘッダー -->
   <section class="page-header" style="background-image: url('../images/2025/03/wakamatsu-coast.jpg'); background-size: cover; background-position: center center;">
     <div class="container">
-      <h1 class="page-header__title">地域との繋がり</h1>
-      <p class="page-header__desc">企業・団体・教育機関・個人がつながり、ネイチャーポジティブの取組を広げる</p>
+      <h1 class="page-header__title">北九州ネイチャーポジティブネットワーク</h1>
+      <p class="page-header__desc">業種も規模も関係ない。自然を守る取り組みを、一緒に広げていきませんか。</p>
     </div>
   </section>
 
-  <!-- 概要セクション -->
+  <!-- 導入 -->
   <section class="section section--white">
-    <div class="container">
-      <h2 class="section__title">北九州ネイチャーポジティブネットワーク</h2>
-      <p class="section__subtitle">参加費無料で、どなたでもご参加いただけます</p>
-      <div class="content" style="max-width: 800px; margin: 0 auto;">
-        <p>アーバンネイチャー北九州ネットワークは、企業・団体・教育機関・個人がつながり、ネイチャーポジティブ（NP）の取組を広げるためのネットワークです。業種や規模を問わず、参加費無料でどなたでもご参加いただけます。</p>
-        <p>ネットワークに参加することで、最新の環境情報の共有、企業間の交流、実践的な学びの場を得ることができます。</p>
+    <div class="container" style="max-width: 820px;">
+      <h2 class="section__title">「できることから始めたい」<br>その一歩を、ここから。</h2>
+      <p class="section__subtitle">北九州には、自然のために動き出した企業・団体・個人が集まっています</p>
+      <div class="content" style="margin-top: 32px; line-height: 2; font-size: 1rem; color: #444;">
+        <p>ネイチャーポジティブ（自然を回復軌道に乗せること）は、難しい話ではありません。<br>
+        企業の緑地整備、学校の観察授業、地域清掃、写真記録——<br>
+        <strong>あなたが今すでにやっていることが、つながりになります。</strong></p>
+        <p style="margin-top: 16px;">北九州ネイチャーポジティブネットワークは、そんな取り組みを持ち寄り、<br>
+        互いに刺激しながら広げていくためのコミュニティです。<br>
+        参加費無料。登録は数分。退会も自由です。</p>
+      </div>
+
+      <!-- 参加ステップ -->
+      <div class="join-steps">
+        <div class="join-step">
+          <div class="join-step__num">1</div>
+          <div class="join-step__title">フォームで申し込む</div>
+          <div class="join-step__desc">お名前・所属・連絡先を入力するだけ。無料・審査なし。</div>
+        </div>
+        <div class="join-step">
+          <div class="join-step__num">2</div>
+          <div class="join-step__title">情報・イベントが届く</div>
+          <div class="join-step__desc">勉強会・現地見学・企業交流など、会員向けの案内が届きます。</div>
+        </div>
+        <div class="join-step">
+          <div class="join-step__num">3</div>
+          <div class="join-step__title">仲間と一緒に動く</div>
+          <div class="join-step__desc">参加したいものだけ参加。義務や課題はありません。</div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="../join/" class="btn btn--primary btn--lg">無料でエントリーする</a>
+        <p style="margin-top: 12px; font-size: 0.82rem; color: #888;">登録後も、いつでも退会できます</p>
       </div>
     </div>
   </section>
 
-  <!-- できること -->
+  <!-- メリット -->
   <section class="section section--gray">
     <div class="container">
-      <h2 class="section__title">ネットワークでできること</h2>
-      <p class="section__subtitle">会員の皆さまが活用できる5つのメリット</p>
-      <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
-        <div class="card" style="text-align: center; padding: 32px 20px;">
-          <div class="persona-card__icon" style="margin: 0 auto 16px;">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <h2 class="section__title">参加すると、こんなことが起きます</h2>
+      <p class="section__subtitle">メリットというより、変化のイメージです</p>
+      <div class="benefit-list">
+        <div class="benefit-item">
+          <div class="benefit-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: var(--primary);">ポータルサイトで紹介</h3>
-          <p style="font-size: 0.85rem; color: var(--text-light); line-height: 1.6;">会員企業・団体の取組をポータルサイトで広く紹介します。</p>
-        </div>
-        <div class="card" style="text-align: center; padding: 32px 20px;">
-          <div class="persona-card__icon" style="margin: 0 auto 16px;">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <div>
+            <div class="benefit-item__title">「同じ想いの人」と出会える</div>
+            <div class="benefit-item__desc">業種を超えた企業・NPO・研究者・市民が集まるコミュニティ。自分だけでは出会えなかった仲間と、具体的なプロジェクトが生まれることもあります。</div>
           </div>
-          <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: var(--primary);">最新情報の提供</h3>
-          <p style="font-size: 0.85rem; color: var(--text-light); line-height: 1.6;">NPに関する最新ニュースや政策動向をお届けします。</p>
         </div>
-        <div class="card" style="text-align: center; padding: 32px 20px;">
-          <div class="persona-card__icon" style="margin: 0 auto 16px;">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <div class="benefit-item">
+          <div class="benefit-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           </div>
-          <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: var(--primary);">勉強会・ワークショップ</h3>
-          <p style="font-size: 0.85rem; color: var(--text-light); line-height: 1.6;">実践的な勉強会やワークショップに参加できます。</p>
-        </div>
-        <div class="card" style="text-align: center; padding: 32px 20px;">
-          <div class="persona-card__icon" style="margin: 0 auto 16px;">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          <div>
+            <div class="benefit-item__title">取り組みが「見える」ようになる</div>
+            <div class="benefit-item__desc">会員の活動をポータルサイトで紹介。「やっているけど伝わらない」を解決し、CSRやESGのアピールにも活用できます。</div>
           </div>
-          <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: var(--primary);">施設連携</h3>
-          <p style="font-size: 0.85rem; color: var(--text-light); line-height: 1.6;">北九州市内の環境施設との連携事業に参加できます。</p>
         </div>
-        <div class="card" style="text-align: center; padding: 32px 20px;">
-          <div class="persona-card__icon" style="margin: 0 auto 16px;">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        <div class="benefit-item">
+          <div class="benefit-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
           </div>
-          <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: var(--primary);">企業間交流</h3>
-          <p style="font-size: 0.85rem; color: var(--text-light); line-height: 1.6;">業種を超えた企業間の交流やコラボレーションの機会を提供します。</p>
+          <div>
+            <div class="benefit-item__title">「何をすれば良いか」がわかる</div>
+            <div class="benefit-item__desc">ネイチャーポジティブの最新動向・政策情報・実践事例を定期的にお届け。勉強会や現地見学で、現場のノウハウを得られます。</div>
+          </div>
         </div>
+        <div class="benefit-item">
+          <div class="benefit-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+          </div>
+          <div>
+            <div class="benefit-item__title">施設・専門家とつながれる</div>
+            <div class="benefit-item__desc">響灘ビオトープ・いのちのたび博物館など10施設のプロとつながり、連携事業や社員研修・課外授業などの相談ができます。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 中間CTA -->
+      <div class="mid-cta">
+        <div class="mid-cta__title">まず、話だけ聞いてみませんか？</div>
+        <div class="mid-cta__sub">参加の義務はありません。イベントへの参加も任意です。<br>「どんな人がいるか見たい」だけでも大歓迎です。</div>
+        <a href="../join/" class="btn btn--outline-white btn--lg">エントリーフォームへ</a>
+        <div class="mid-cta__note">参加費無料 ／ 所要時間3分 ／ いつでも退会可</div>
       </div>
     </div>
   </section>
 
-  <!-- 実績 -->
-  <section class="section section--primary">
-    <div class="container">
-      <h2 class="section__title">ネットワーク会員数</h2>
-      <p class="section__subtitle">多くの企業・団体にご参加いただいています</p>
-      <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr);">
-        <div class="stat-item">
-          <div class="stat-item__number">34</div>
-          <div class="stat-item__label">企業会員</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-item__number">13</div>
-          <div class="stat-item__label">団体会員</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-item__number">9</div>
-          <div class="stat-item__label">賛助会員</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 実践事例リンク -->
+  <!-- 実績数字 -->
   <section class="section section--white">
     <div class="container">
-      <h2 class="section__title">実践事例</h2>
-      <p class="section__subtitle">ネットワーク会員によるネイチャーポジティブの実践事例をご紹介します</p>
-      <div class="section__more">
-        <a href="cases/" class="btn btn--primary btn--lg">実践事例を見る</a>
+      <h2 class="section__title">すでに多くの仲間が動いています</h2>
+      <p class="section__subtitle">2024年時点の参加状況</p>
+      <div class="stats-highlight">
+        <div class="stats-highlight__item">
+          <div class="stats-highlight__num">34<span class="stats-highlight__unit">社</span></div>
+          <div class="stats-highlight__label">企業会員</div>
+        </div>
+        <div class="stats-highlight__item">
+          <div class="stats-highlight__num">13<span class="stats-highlight__unit">団体</span></div>
+          <div class="stats-highlight__label">NPO・大学・市民団体</div>
+        </div>
+        <div class="stats-highlight__item">
+          <div class="stats-highlight__num">9<span class="stats-highlight__unit">名</span></div>
+          <div class="stats-highlight__label">賛助会員（個人）</div>
+        </div>
+        <div class="stats-highlight__item">
+          <div class="stats-highlight__num">56+<span class="stats-highlight__unit" style="font-size:0.8rem;"></span></div>
+          <div class="stats-highlight__label">会員合計（増加中）</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 活動実績リンク -->
+  <section class="section section--gray">
+    <div class="container" style="text-align: center;">
+      <h2 class="section__title">会員たちの活動実績</h2>
+      <p class="section__subtitle">「うちにも同じような取り組みがある」と気づくはずです</p>
+      <div style="margin-top: 32px;">
+        <a href="cases/" class="btn btn--primary btn--lg">活動実績を見る</a>
       </div>
     </div>
   </section>
 
   <!-- 会員一覧 -->
-  <section class="section section--gray" id="members">
+  <section class="section section--white" id="members">
     <div class="container">
       <h2 class="section__title">会員一覧</h2>
-      <p class="section__subtitle">ネットワークに参加する企業・団体</p>
+      <p class="section__subtitle">この中に、あなたの知っている名前はありますか？</p>
 
       <!-- タブ -->
-      <div class="tabs" id="member-tabs">
+      <div class="tabs" id="member-tabs" style="margin-top: 32px;">
         <button class="tab active" data-category="corporate">企業会員（34社）</button>
         <button class="tab" data-category="organization">団体・教育関連等会員（13団体）</button>
         <button class="tab" data-category="supporting">賛助会員（9名）</button>
       </div>
 
-      <!-- 企業会員 -->
       <div id="member-list">
         <div class="member-grid" data-category="corporate">
           <div class="member-item">エコプラン研究所</div>
@@ -297,7 +521,6 @@
           <div class="member-item">トヨタ自動車九州</div>
         </div>
 
-        <!-- 団体会員 -->
         <div class="member-grid" data-category="organization" style="display: none;">
           <div class="member-item">響灘ビオトープ共同事業体</div>
           <div class="member-item">北九州市立大学マネジメント研究科</div>
@@ -306,7 +529,7 @@
           <div class="member-item">九州大学うみつなぎ</div>
           <div class="member-item">北九州ビオトープ・ネットワーク研究会</div>
           <div class="member-item">IGES</div>
-          <div class="member-item">ジオ&バイオ研究会</div>
+          <div class="member-item">ジオ&amp;バイオ研究会</div>
           <div class="member-item">北九州高等学校魚部</div>
           <div class="member-item">SoELa</div>
           <div class="member-item">日本カブトガニを守る会福岡支部</div>
@@ -316,7 +539,6 @@
           <div class="member-item">九州工業大学環境デザイン研究室</div>
         </div>
 
-        <!-- 賛助会員 -->
         <div class="member-grid" data-category="supporting" style="display: none;">
           <div class="member-item" style="grid-column: 1 / -1; text-align: center; padding: 24px;">賛助会員：9名が参加しています</div>
         </div>
@@ -324,13 +546,15 @@
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- ボトムCTA -->
   <section class="cta-band">
     <div class="container">
-      <h2 class="cta-band__title">ネットワークに参加しませんか？</h2>
-      <p style="margin-bottom: 24px; opacity: 0.9;">参加費無料。企業・団体・個人を問わず、どなたでもご参加いただけます。</p>
+      <h2 class="cta-band__title">あなたの取り組みも、<br>ここから広げませんか？</h2>
+      <p style="margin-bottom: 8px; opacity: 0.9; font-size: 1rem;">参加費無料・審査なし・義務なし。まずはエントリーを。</p>
+      <p style="margin-bottom: 28px; opacity: 0.7; font-size: 0.85rem;">企業・団体・NPO・個人、どなたでも参加いただけます</p>
       <div class="cta-band__buttons">
-        <a href="../join/" class="btn btn--outline-white btn--lg">会員になる</a>
+        <a href="../join/" class="btn btn--outline-white btn--lg">無料でエントリーする</a>
+        <a href="cases/" class="btn btn--ghost btn--lg" style="color:#fff; border-color:rgba(255,255,255,0.4);">活動実績を見る</a>
       </div>
     </div>
   </section>
