@@ -131,7 +131,12 @@
 
     .desktop-nav ul {
       display: flex;
-      gap: 24px;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .desktop-nav > ul > li {
+      position: relative;
     }
 
     .desktop-nav a {
@@ -140,10 +145,61 @@
       color: var(--color-text);
       transition: color 0.2s;
       white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 8px 12px;
+      border-radius: 6px;
     }
 
     .desktop-nav a:hover {
       color: var(--color-primary);
+      background-color: rgba(44, 95, 45, 0.06);
+    }
+
+    /* ドロップダウン（TOPページ用） */
+    .desktop-nav .has-dropdown > a::after {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg) translateY(-2px);
+      opacity: 0.6;
+      flex-shrink: 0;
+    }
+
+    .desktop-nav .dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      background: #fff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      border-radius: 8px;
+      border: 1px solid #f0f0f0;
+      min-width: 200px;
+      z-index: 200;
+      padding: 6px 0;
+      list-style: none;
+    }
+
+    .desktop-nav .has-dropdown:hover .dropdown,
+    .desktop-nav .has-dropdown:focus-within .dropdown {
+      display: block;
+    }
+
+    .desktop-nav .dropdown li a {
+      display: block;
+      padding: 10px 16px;
+      border-radius: 0;
+      background: none;
+    }
+
+    .desktop-nav .dropdown li a:hover {
+      color: var(--color-primary);
+      background-color: rgba(44, 95, 45, 0.06);
     }
 
     /* ハンバーガー */
@@ -199,17 +255,80 @@
       display: block;
     }
 
-    .mobile-nav a {
+    .mobile-nav > a,
+    .mobile-nav__group {
+      border-bottom: 1px solid #eee;
+    }
+
+    .mobile-nav > a {
       display: block;
       padding: 14px 0;
       font-size: 1rem;
       font-weight: 500;
       color: var(--color-text);
-      border-bottom: 1px solid #eee;
     }
 
-    .mobile-nav a:hover {
+    .mobile-nav > a:hover {
       color: var(--color-primary);
+    }
+
+    /* TOPページ用モバイルアコーディオン */
+    .mobile-nav .mobile-nav__parent {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .mobile-nav .mobile-nav__parent > a {
+      display: block;
+      flex: 1;
+      padding: 14px 0;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--color-text);
+      border-bottom: none;
+    }
+
+    .mobile-nav .mobile-nav__toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 14px 8px;
+      color: var(--color-text);
+    }
+
+    .mobile-nav .mobile-nav__toggle-icon {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg);
+      transition: transform 0.2s ease;
+    }
+
+    .mobile-nav .mobile-nav__toggle[aria-expanded="true"] .mobile-nav__toggle-icon {
+      transform: rotate(-135deg);
+    }
+
+    .mobile-nav .mobile-nav__children {
+      display: none;
+      background-color: rgba(44, 95, 45, 0.03);
+      border-left: 3px solid #97BC62;
+      margin-bottom: 4px;
+    }
+
+    .mobile-nav .mobile-nav__children.is-open {
+      display: block;
+    }
+
+    .mobile-nav .mobile-nav__children a {
+      display: block;
+      padding: 11px 16px 11px 20px;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #666;
+      border-bottom: none;
     }
 
     /* ===== ヒーロー ===== */
@@ -855,9 +974,37 @@
       </a>
       <nav class="desktop-nav" aria-label="メインナビゲーション">
         <ul>
-          <li><a href="about/">アーバンネイチャー</a></li>
-          <li><a href="center/">センター</a></li>
-          <li><a href="network/">ネットワーク</a></li>
+          <li class="has-dropdown">
+            <a href="about/">アーバンネイチャー</a>
+            <ul class="dropdown">
+              <li><a href="about/">全体像</a></li>
+              <li><a href="about/biodiversity.html">生物多様性</a></li>
+              <li><a href="about/strategy.html">北九州市生物多様性戦略</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="center/">センター</a>
+            <ul class="dropdown">
+              <li><a href="center/">センター一覧</a></li>
+              <li><a href="center/biotope.html">響灘ビオトープ</a></li>
+              <li><a href="center/greenpark.html">グリーンパーク</a></li>
+              <li><a href="center/hotarukan.html">北九州市ほたる館</a></li>
+              <li><a href="center/inochi.html">いのちのたび博物館</a></li>
+              <li><a href="center/itouzu.html">到津の森公園</a></li>
+              <li><a href="center/katsuki-hotaru.html">香月・黒川ほたる館</a></li>
+              <li><a href="center/mizukankyokan.html">水環境館</a></li>
+              <li><a href="center/soraland.html">ソラランド平尾台</a></li>
+              <li><a href="center/takamiya.html">タカミヤ環境ミュージアム</a></li>
+              <li><a href="center/yamada.html">山田緑地</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="network/">ネットワーク</a>
+            <ul class="dropdown">
+              <li><a href="network/">ネットワーク</a></li>
+              <li><a href="network/cases/">実践事例</a></li>
+            </ul>
+          </li>
           <li><a href="join/">会員募集</a></li>
           <li><a href="news/">お知らせ</a></li>
           <li><a href="photos/">フリー素材</a></li>
@@ -873,9 +1020,52 @@
 
   <!-- モバイルナビ -->
   <nav class="mobile-nav" id="js-mobile-nav" aria-label="モバイルナビゲーション">
-    <a href="about/">アーバンネイチャー</a>
-    <a href="center/">センター</a>
-    <a href="network/">ネットワーク</a>
+    <div class="mobile-nav__group">
+      <div class="mobile-nav__parent">
+        <a href="about/">アーバンネイチャー</a>
+        <button class="mobile-nav__toggle" aria-expanded="false" aria-label="サブメニューを開く">
+          <span class="mobile-nav__toggle-icon"></span>
+        </button>
+      </div>
+      <div class="mobile-nav__children">
+        <a href="about/">全体像</a>
+        <a href="about/biodiversity.html">生物多様性</a>
+        <a href="about/strategy.html">北九州市生物多様性戦略</a>
+      </div>
+    </div>
+    <div class="mobile-nav__group">
+      <div class="mobile-nav__parent">
+        <a href="center/">センター</a>
+        <button class="mobile-nav__toggle" aria-expanded="false" aria-label="サブメニューを開く">
+          <span class="mobile-nav__toggle-icon"></span>
+        </button>
+      </div>
+      <div class="mobile-nav__children">
+        <a href="center/">センター一覧</a>
+        <a href="center/biotope.html">響灘ビオトープ</a>
+        <a href="center/greenpark.html">グリーンパーク</a>
+        <a href="center/hotarukan.html">北九州市ほたる館</a>
+        <a href="center/inochi.html">いのちのたび博物館</a>
+        <a href="center/itouzu.html">到津の森公園</a>
+        <a href="center/katsuki-hotaru.html">香月・黒川ほたる館</a>
+        <a href="center/mizukankyokan.html">水環境館</a>
+        <a href="center/soraland.html">ソラランド平尾台</a>
+        <a href="center/takamiya.html">タカミヤ環境ミュージアム</a>
+        <a href="center/yamada.html">山田緑地</a>
+      </div>
+    </div>
+    <div class="mobile-nav__group">
+      <div class="mobile-nav__parent">
+        <a href="network/">ネットワーク</a>
+        <button class="mobile-nav__toggle" aria-expanded="false" aria-label="サブメニューを開く">
+          <span class="mobile-nav__toggle-icon"></span>
+        </button>
+      </div>
+      <div class="mobile-nav__children">
+        <a href="network/">ネットワーク</a>
+        <a href="network/cases/">実践事例</a>
+      </div>
+    </div>
     <a href="join/">会員募集</a>
     <a href="news/">お知らせ</a>
     <a href="events/">イベント</a>
@@ -1274,6 +1464,20 @@
         document.body.style.overflow = isOpen ? 'hidden' : '';
       });
     }
+
+    // モバイルナビ サブメニューアコーディオン
+    document.querySelectorAll('#js-mobile-nav .mobile-nav__toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const children = btn.closest('.mobile-nav__parent').nextElementSibling;
+        const isOpen = children.classList.contains('is-open');
+        document.querySelectorAll('#js-mobile-nav .mobile-nav__children').forEach(el => el.classList.remove('is-open'));
+        document.querySelectorAll('#js-mobile-nav .mobile-nav__toggle').forEach(el => el.setAttribute('aria-expanded', 'false'));
+        if (!isOpen) {
+          children.classList.add('is-open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
   </script>
 </body>
 </html>

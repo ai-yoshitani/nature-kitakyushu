@@ -22,6 +22,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // モバイルナビ アコーディオン（サブメニュー開閉）
+  document.querySelectorAll('.mobile-nav__toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const children = btn.closest('.mobile-nav__parent').nextElementSibling;
+      const isOpen = children.classList.contains('is-open');
+      // 他を全て閉じる
+      document.querySelectorAll('.mobile-nav__children').forEach(el => el.classList.remove('is-open'));
+      document.querySelectorAll('.mobile-nav__toggle').forEach(el => el.setAttribute('aria-expanded', 'false'));
+      // クリックしたものをトグル
+      if (!isOpen) {
+        children.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
   // アコーディオン
   document.querySelectorAll('.accordion__header').forEach(header => {
     header.addEventListener('click', () => {

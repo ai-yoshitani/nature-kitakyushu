@@ -21,13 +21,41 @@
         <img src="../images/2026/02/logo.png" alt="アーバンネイチャー北九州">
         <span>アーバンネイチャー北九州</span>
       </a>
-      <nav class="header__nav">
-        <a href="../about/">アーバンネイチャー</a>
-        <a href="../center/" class="active">センター</a>
-        <a href="../network/">ネットワーク</a>
-        <a href="../join/">会員募集</a>
-        <a href="../news/">お知らせ</a>
-        <a href="../photos/">フリー素材</a>
+            <nav class="header__nav">
+        <div class="nav-item">
+          <a href="../about/" >アーバンネイチャー</a>
+          <ul class="dropdown">
+            <li><a href="../about/">全体像</a></li>
+            <li><a href="../about/biodiversity.html">生物多様性</a></li>
+            <li><a href="../about/strategy.html">北九州市生物多様性戦略</a></li>
+          </ul>
+        </div>
+        <div class="nav-item">
+          <a href="../center/" class="active" >センター</a>
+          <ul class="dropdown">
+            <li><a href="../center/">センター一覧</a></li>
+            <li><a href="../center/biotope.html">響灘ビオトープ</a></li>
+            <li><a href="../center/greenpark.html">グリーンパーク</a></li>
+            <li><a href="../center/hotarukan.html">北九州市ほたる館</a></li>
+            <li><a href="../center/inochi.html">いのちのたび博物館</a></li>
+            <li><a href="../center/itouzu.html">到津の森公園</a></li>
+            <li><a href="../center/katsuki-hotaru.html">香月・黒川ほたる館</a></li>
+            <li><a href="../center/mizukankyokan.html">水環境館</a></li>
+            <li><a href="../center/soraland.html">ソラランド平尾台</a></li>
+            <li><a href="../center/takamiya.html">タカミヤ環境ミュージアム</a></li>
+            <li><a href="../center/yamada.html">山田緑地</a></li>
+          </ul>
+        </div>
+        <div class="nav-item">
+          <a href="../network/" >ネットワーク</a>
+          <ul class="dropdown">
+            <li><a href="../network/">ネットワーク</a></li>
+            <li><a href="../network/cases/">実践事例</a></li>
+          </ul>
+        </div>
+        <a href="../join/" >会員募集</a>
+        <a href="../news/" >お知らせ</a>
+        <a href="../photos/" >フリー素材</a>
       </nav>
       <button class="hamburger" aria-label="メニューを開く">
         <span></span>
@@ -38,15 +66,58 @@
   </header>
 
   <!-- モバイルナビ -->
-  <nav class="mobile-nav">
-    <a href="../about/">アーバンネイチャー</a>
-    <a href="../center/">センター</a>
-    <a href="../network/">ネットワーク</a>
+  <nav class="mobile-nav" id="js-mobile-nav">
+    <div class="mobile-nav__group">
+      <div class="mobile-nav__parent">
+        <a href="../about/">アーバンネイチャー</a>
+        <button class="mobile-nav__toggle" aria-expanded="false" aria-label="サブメニューを開く">
+          <span class="mobile-nav__toggle-icon"></span>
+        </button>
+      </div>
+      <div class="mobile-nav__children">
+        <a href="../about/">全体像</a>
+        <a href="../about/biodiversity.html">生物多様性</a>
+        <a href="../about/strategy.html">北九州市生物多様性戦略</a>
+      </div>
+    </div>
+    <div class="mobile-nav__group">
+      <div class="mobile-nav__parent">
+        <a href="../center/">センター</a>
+        <button class="mobile-nav__toggle" aria-expanded="false" aria-label="サブメニューを開く">
+          <span class="mobile-nav__toggle-icon"></span>
+        </button>
+      </div>
+      <div class="mobile-nav__children">
+        <a href="../center/">センター一覧</a>
+        <a href="../center/biotope.html">響灘ビオトープ</a>
+        <a href="../center/greenpark.html">グリーンパーク</a>
+        <a href="../center/hotarukan.html">北九州市ほたる館</a>
+        <a href="../center/inochi.html">いのちのたび博物館</a>
+        <a href="../center/itouzu.html">到津の森公園</a>
+        <a href="../center/katsuki-hotaru.html">香月・黒川ほたる館</a>
+        <a href="../center/mizukankyokan.html">水環境館</a>
+        <a href="../center/soraland.html">ソラランド平尾台</a>
+        <a href="../center/takamiya.html">タカミヤ環境ミュージアム</a>
+        <a href="../center/yamada.html">山田緑地</a>
+      </div>
+    </div>
+    <div class="mobile-nav__group">
+      <div class="mobile-nav__parent">
+        <a href="../network/">ネットワーク</a>
+        <button class="mobile-nav__toggle" aria-expanded="false" aria-label="サブメニューを開く">
+          <span class="mobile-nav__toggle-icon"></span>
+        </button>
+      </div>
+      <div class="mobile-nav__children">
+        <a href="../network/">ネットワーク</a>
+        <a href="../network/cases/">実践事例</a>
+      </div>
+    </div>
     <a href="../join/">会員募集</a>
     <a href="../news/">お知らせ</a>
     <a href="../photos/">フリー素材</a>
     <div class="mobile-nav__cta">
-      <a href="../join/" class="btn btn--primary btn--block">会員になる</a>
+      <a href="../join/" class="btn btn--primary btn--block">参加する</a>
     </div>
   </nav>
 
