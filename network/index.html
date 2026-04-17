@@ -211,7 +211,26 @@
       font-weight: 500;
     }
 
+    /* 会員募集フォーム */
+    .member-tabs-join { display: flex; gap: 0; margin-bottom: 40px; border-bottom: 2px solid var(--border, #e0e0e0); }
+    .member-tab-join { padding: 14px 32px; font-size: 1rem; font-weight: 700; cursor: pointer; border: none; background: none; color: #999; border-bottom: 3px solid transparent; margin-bottom: -2px; transition: all 0.2s; }
+    .member-tab-join:hover { color: var(--primary, #2C5F2D); }
+    .member-tab-join.active { color: var(--primary, #2C5F2D); border-bottom-color: var(--primary, #2C5F2D); }
+    .member-form-join { display: none; }
+    .member-form-join.active { display: block; }
+    .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .join-checkbox-group { display: flex; flex-wrap: wrap; gap: 16px; }
+    .join-checkbox-group label { display: flex; align-items: center; gap: 6px; font-size: 0.9rem; cursor: pointer; }
+    .benefits-grid-net { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 48px; }
+    .benefit-card-net { background: #fff; border-radius: 16px; padding: 28px 20px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.07); border-top: 3px solid var(--secondary, #97BC62); }
+    .benefit-card-net__icon { font-size: 2.2rem; margin-bottom: 10px; }
+    .benefit-card-net__title { font-size: 0.95rem; font-weight: 700; color: var(--primary, #2C5F2D); margin-bottom: 6px; }
+    .benefit-card-net__desc { font-size: 0.82rem; color: #666; line-height: 1.6; }
+
     @media (max-width: 768px) {
+      .form-row-2 { grid-template-columns: 1fr; }
+      .benefits-grid-net { grid-template-columns: 1fr; }
+      .member-tab-join { padding: 12px 16px; font-size: 0.9rem; }
       .join-steps { grid-template-columns: 1fr; gap: 16px; }
       .benefit-list { grid-template-columns: 1fr; }
       .mid-cta { padding: 36px 24px; }
@@ -330,7 +349,7 @@
     <a href="../news/">お知らせ</a>
     <a href="../photos/">みんなの写真展</a>
     <div class="mobile-nav__cta">
-      <a href="../join/" class="btn btn--primary btn--block">参加する</a>
+      <a href="#join" class="btn btn--primary btn--block">参加する</a>
     </div>
   </nav>
 
@@ -443,7 +462,7 @@
       </div>
 
       <div style="text-align: center; margin-top: 40px;">
-        <a href="../join/" class="btn btn--primary btn--lg">無料でエントリーする</a>
+        <a href="#join" class="btn btn--primary btn--lg">無料でエントリーする</a>
         <p style="margin-top: 12px; font-size: 0.82rem; color: #888;">登録後も、いつでも退会できます</p>
       </div>
     </div>
@@ -497,7 +516,7 @@
       <div class="mid-cta">
         <div class="mid-cta__title">まず、話だけ聞いてみませんか？</div>
         <div class="mid-cta__sub">参加の義務はありません。イベントへの参加も任意です。<br>「どんな人がいるか見たい」だけでも大歓迎です。</div>
-        <a href="../join/" class="btn btn--outline-white btn--lg">エントリーフォームへ</a>
+        <a href="#join" class="btn btn--outline-white btn--lg">エントリーフォームへ</a>
         <div class="mid-cta__note">参加費無料 ／ 所要時間3分 ／ いつでも退会可</div>
       </div>
     </div>
@@ -614,6 +633,166 @@
     </div>
   </section>
 
+  <!-- 会員募集 -->
+  <section class="section section--white" id="join">
+    <div class="container">
+      <h2 class="section__title">会員募集</h2>
+      <p class="section__subtitle">参加費無料。企業・団体・個人を問わず、どなたでもご参加いただけます</p>
+
+      <!-- メリット -->
+      <div class="benefits-grid-net">
+        <div class="benefit-card-net">
+          <div class="benefit-card-net__icon">&#x1F91D;</div>
+          <div class="benefit-card-net__title">仲間とつながれる</div>
+          <div class="benefit-card-net__desc">業種・立場を超えた企業・NPO・市民との交流。新しいプロジェクトが生まれることもあります。</div>
+        </div>
+        <div class="benefit-card-net">
+          <div class="benefit-card-net__icon">&#x1F4E3;</div>
+          <div class="benefit-card-net__title">取り組みが広まる</div>
+          <div class="benefit-card-net__desc">会員の活動をポータルで紹介。CSR・ESGのアピールにも活用できます。</div>
+        </div>
+        <div class="benefit-card-net">
+          <div class="benefit-card-net__icon">&#x1F33F;</div>
+          <div class="benefit-card-net__title">現場で学べる</div>
+          <div class="benefit-card-net__desc">勉強会・現地見学・専門家講座など、会員向けの学びの機会が届きます。</div>
+        </div>
+        <div class="benefit-card-net">
+          <div class="benefit-card-net__icon">&#x1F3DB;</div>
+          <div class="benefit-card-net__title">施設・専門家と連携できる</div>
+          <div class="benefit-card-net__desc">10の環境施設のプロに相談。社員研修や課外授業などの企画が可能です。</div>
+        </div>
+        <div class="benefit-card-net">
+          <div class="benefit-card-net__icon">&#x1F4F7;</div>
+          <div class="benefit-card-net__title">自然写真を利用できる</div>
+          <div class="benefit-card-net__desc">北九州の自然写真を啓発・教育目的で無料でご利用いただけます。</div>
+        </div>
+        <div class="benefit-card-net">
+          <div class="benefit-card-net__icon">&#x1F4CB;</div>
+          <div class="benefit-card-net__title">最新情報が届く</div>
+          <div class="benefit-card-net__desc">ネイチャーポジティブの動向・政策・事例を定期的にお届けします。</div>
+        </div>
+      </div>
+
+      <!-- 申込フォーム -->
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div class="member-tabs-join" id="join-tabs">
+          <button class="member-tab-join active" data-target="join-individual">個人・市民の方</button>
+          <button class="member-tab-join" data-target="join-corporate">企業・団体の方</button>
+        </div>
+
+        <!-- 個人フォーム -->
+        <form class="member-form-join active" id="join-individual">
+          <div class="form-row-2">
+            <div class="form-group">
+              <label>氏名<span class="required">*必須</span></label>
+              <input type="text" class="form-input" name="name" required placeholder="例：山田 太郎">
+            </div>
+            <div class="form-group">
+              <label>フリガナ<span class="required">*必須</span></label>
+              <input type="text" class="form-input" name="furigana" required placeholder="例：ヤマダ タロウ">
+            </div>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label>メールアドレス<span class="required">*必須</span></label>
+              <input type="email" class="form-input" name="email" required placeholder="例：example@email.com">
+            </div>
+            <div class="form-group">
+              <label>電話番号</label>
+              <input type="tel" class="form-input" name="phone" placeholder="例：093-000-0000">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>関心のある分野（複数選択可）</label>
+            <div class="join-checkbox-group">
+              <label><input type="checkbox" name="interest" value="生態系保全"> 生態系保全</label>
+              <label><input type="checkbox" name="interest" value="環境教育"> 環境教育</label>
+              <label><input type="checkbox" name="interest" value="体験・レジャー"> 体験・レジャー</label>
+              <label><input type="checkbox" name="interest" value="ボランティア"> ボランティア</label>
+              <label><input type="checkbox" name="interest" value="写真"> 写真</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>メッセージ（任意）</label>
+            <textarea class="form-textarea" name="message" placeholder="ご質問やご要望があればご記入ください"></textarea>
+          </div>
+          <div class="form-group">
+            <div class="form-checkbox">
+              <input type="checkbox" name="privacy" id="privacy-net-individual" required>
+              <label for="privacy-net-individual"><a href="../privacy/" target="_blank">プライバシーポリシー</a>に同意する<span class="required">*必須</span></label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn--primary btn--lg btn--block">エントリーする（無料）</button>
+        </form>
+
+        <!-- 企業・団体フォーム -->
+        <form class="member-form-join" id="join-corporate">
+          <div class="form-row-2">
+            <div class="form-group">
+              <label>企業・団体名<span class="required">*必須</span></label>
+              <input type="text" class="form-input" name="company" required placeholder="例：株式会社〇〇">
+            </div>
+            <div class="form-group">
+              <label>担当者名<span class="required">*必須</span></label>
+              <input type="text" class="form-input" name="contact_name" required placeholder="例：山田 太郎">
+            </div>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label>メールアドレス<span class="required">*必須</span></label>
+              <input type="email" class="form-input" name="email" required placeholder="例：example@company.co.jp">
+            </div>
+            <div class="form-group">
+              <label>電話番号<span class="required">*必須</span></label>
+              <input type="tel" class="form-input" name="phone" required placeholder="例：093-000-0000">
+            </div>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label>業種<span class="required">*必須</span></label>
+              <select class="form-select" name="industry" required>
+                <option value="">選択してください</option>
+                <option>製造業</option><option>建設業</option><option>情報通信業</option>
+                <option>運輸業</option><option>卸売・小売業</option><option>金融・保険業</option>
+                <option>不動産業</option><option>サービス業</option><option>教育・学習支援</option>
+                <option>医療・福祉</option><option>その他</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>従業員数</label>
+              <select class="form-select" name="employees">
+                <option value="">選択してください</option>
+                <option>1〜10名</option><option>11〜50名</option><option>51〜100名</option>
+                <option>101〜300名</option><option>301〜1,000名</option><option>1,001名以上</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>関心のある分野（複数選択可）</label>
+            <div class="join-checkbox-group">
+              <label><input type="checkbox" name="interest" value="生態系保全"> 生態系保全</label>
+              <label><input type="checkbox" name="interest" value="環境教育"> 環境教育</label>
+              <label><input type="checkbox" name="interest" value="CSR活動"> CSR活動</label>
+              <label><input type="checkbox" name="interest" value="社員研修"> 社員研修</label>
+              <label><input type="checkbox" name="interest" value="スポンサー"> スポンサー</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>メッセージ（任意）</label>
+            <textarea class="form-textarea" name="message" placeholder="ご質問やご要望があればご記入ください"></textarea>
+          </div>
+          <div class="form-group">
+            <div class="form-checkbox">
+              <input type="checkbox" name="privacy" id="privacy-net-corporate" required>
+              <label for="privacy-net-corporate"><a href="../privacy/" target="_blank">プライバシーポリシー</a>に同意する<span class="required">*必須</span></label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn--primary btn--lg btn--block">エントリーする（無料）</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <!-- ボトムCTA -->
   <section class="cta-band">
     <div class="container">
@@ -621,7 +800,7 @@
       <p style="margin-bottom: 8px; opacity: 0.9; font-size: 1rem;">参加費無料・審査なし・義務なし。まずはエントリーを。</p>
       <p style="margin-bottom: 28px; opacity: 0.7; font-size: 0.85rem;">企業・団体・NPO・個人、どなたでも参加いただけます</p>
       <div class="cta-band__buttons">
-        <a href="../join/" class="btn btn--outline-white btn--lg">無料でエントリーする</a>
+        <a href="#join" class="btn btn--outline-white btn--lg">無料でエントリーする</a>
         <a href="cases/" class="btn btn--ghost btn--lg" style="color:#fff; border-color:rgba(255,255,255,0.4);">活動実績を見る</a>
       </div>
     </div>
@@ -672,7 +851,7 @@
 
   <script src="../js/main.js"></script>
   <script>
-    // 会員タブ切り替え
+    // 会員一覧タブ切り替え
     document.querySelectorAll('#member-tabs .tab').forEach(tab => {
       tab.addEventListener('click', () => {
         document.querySelectorAll('#member-tabs .tab').forEach(t => t.classList.remove('active'));
@@ -680,6 +859,18 @@
         const category = tab.dataset.category;
         document.querySelectorAll('#member-list .member-grid').forEach(grid => {
           grid.style.display = grid.dataset.category === category ? '' : 'none';
+        });
+      });
+    });
+
+    // 会員募集フォームタブ切り替え
+    document.querySelectorAll('#join-tabs .member-tab-join').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('#join-tabs .member-tab-join').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const target = tab.dataset.target;
+        document.querySelectorAll('.member-form-join').forEach(form => {
+          form.classList.toggle('active', form.id === target);
         });
       });
     });
