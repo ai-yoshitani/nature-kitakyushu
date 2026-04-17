@@ -334,26 +334,43 @@
     /* ===== ヒーロー ===== */
     .hero {
       position: relative;
-      min-height: 85vh;
+      height: 100vh;
+      min-height: 600px;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
     }
 
-    .hero-bg {
+    /* スライドショー */
+    .hero-slides {
       position: absolute;
       inset: 0;
-      background: url('images/2025/03/main1-scaled.jpg') center/cover no-repeat;
     }
 
-    .hero-overlay {
-      display: none;
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1.2s ease;
     }
+
+    .hero-slide.is-active {
+      opacity: 1;
+    }
+
+    /* スライドごとの写真 */
+    .hero-slide:nth-child(1) { background-image: url('images/2025/03/main1-scaled.jpg'); }
+    .hero-slide:nth-child(2) { background-image: url('images/2025/03/b-4.jpg'); background-position: center 40%; }
+    .hero-slide:nth-child(3) { background-image: url('images/2025/03/b-6.jpg'); }
+    .hero-slide:nth-child(4) { background-image: url('images/2025/08/APC_9304-450x450.jpg'); }
+    .hero-slide:nth-child(5) { background-image: url('images/2025/08/APC_6937-450x450.jpg'); }
 
     .hero-content {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       text-align: center;
       color: #ffffff;
       padding: 40px 20px;
@@ -361,21 +378,21 @@
     }
 
     .hero-catch {
-      font-size: clamp(1.75rem, 5vw, 3rem);
+      font-size: clamp(2rem, 5.5vw, 3.5rem);
       font-weight: 900;
-      line-height: 1.4;
+      line-height: 1.35;
       margin-bottom: 20px;
       color: #ffffff;
-      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
     }
 
     .hero-sub {
-      font-size: clamp(0.875rem, 2vw, 1.1rem);
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
       font-weight: 400;
-      line-height: 1.8;
-      margin-bottom: 36px;
+      line-height: 1.9;
+      margin-bottom: 40px;
       color: #ffffff;
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
     }
 
     .hero-buttons {
@@ -383,6 +400,64 @@
       gap: 16px;
       justify-content: center;
       flex-wrap: wrap;
+    }
+
+    /* ドットインジケーター */
+    .hero-dots {
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      gap: 10px;
+    }
+
+    .hero-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .hero-dot.is-active {
+      background: #ffffff;
+      transform: scale(1.3);
+    }
+
+    /* スクロール誘導 */
+    .hero-scroll {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: bounce 2s infinite;
+    }
+
+    .hero-scroll-arrow {
+      width: 20px;
+      height: 20px;
+      border-right: 2px solid rgba(255,255,255,0.8);
+      border-bottom: 2px solid rgba(255,255,255,0.8);
+      transform: rotate(45deg);
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
     }
 
     .btn {
@@ -1078,8 +1153,15 @@
 
     <!-- ===== ヒーロー ===== -->
     <section class="hero">
-      <div class="hero-bg" role="img" aria-label="北九州の自然風景"></div>
-      <div class="hero-overlay"></div>
+      <!-- スライドショー -->
+      <div class="hero-slides" aria-hidden="true">
+        <div class="hero-slide is-active"></div>
+        <div class="hero-slide"></div>
+        <div class="hero-slide"></div>
+        <div class="hero-slide"></div>
+        <div class="hero-slide"></div>
+      </div>
+
       <div class="hero-content">
         <h1 class="hero-catch">都市と自然、<br>近いからこそおもしろい。</h1>
         <p class="hero-sub">北九州市の10の自然・環境施設が連携し、<br>市民・企業・団体とともにネイチャーポジティブな地域づくりに取り組んでいます。</p>
@@ -1087,6 +1169,21 @@
           <a href="about/" class="btn btn-primary">アーバンネイチャーとは</a>
           <a href="events/" class="btn btn-outline">イベントを探す</a>
         </div>
+      </div>
+
+      <!-- ドットインジケーター -->
+      <div class="hero-dots" role="tablist" aria-label="スライド選択">
+        <button class="hero-dot is-active" role="tab" aria-selected="true" aria-label="スライド1"></button>
+        <button class="hero-dot" role="tab" aria-selected="false" aria-label="スライド2"></button>
+        <button class="hero-dot" role="tab" aria-selected="false" aria-label="スライド3"></button>
+        <button class="hero-dot" role="tab" aria-selected="false" aria-label="スライド4"></button>
+        <button class="hero-dot" role="tab" aria-selected="false" aria-label="スライド5"></button>
+      </div>
+
+      <!-- スクロール誘導 -->
+      <div class="hero-scroll" aria-hidden="true">
+        <div class="hero-scroll-arrow"></div>
+        <span>Scroll</span>
       </div>
     </section>
 
@@ -1464,6 +1561,43 @@
         document.body.style.overflow = isOpen ? 'hidden' : '';
       });
     }
+
+    // ヒーロースライドショー
+    (function () {
+      const slides = document.querySelectorAll('.hero-slide');
+      const dots = document.querySelectorAll('.hero-dot');
+      let current = 0;
+      let timer;
+
+      function goTo(index) {
+        slides[current].classList.remove('is-active');
+        dots[current].classList.remove('is-active');
+        dots[current].setAttribute('aria-selected', 'false');
+        current = index;
+        slides[current].classList.add('is-active');
+        dots[current].classList.add('is-active');
+        dots[current].setAttribute('aria-selected', 'true');
+      }
+
+      function next() {
+        goTo((current + 1) % slides.length);
+      }
+
+      function startTimer() {
+        timer = setInterval(next, 5000);
+      }
+
+      // ドットクリックで手動切り替え
+      dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+          clearInterval(timer);
+          goTo(i);
+          startTimer();
+        });
+      });
+
+      startTimer();
+    })();
 
     // モバイルナビ サブメニューアコーディオン
     document.querySelectorAll('#js-mobile-nav .mobile-nav__toggle').forEach(btn => {
