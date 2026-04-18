@@ -280,7 +280,7 @@
           <ul class="dropdown">
             <li><a href="../network/">北九州ネイチャーポジティブネットワーク</a></li>
             <li><a href="../network/cases/">活動実績</a></li>
-            <li><a href="../network/#join">会員募集</a></li>
+            <li><a href="../join/">会員募集</a></li>
           </ul>
         </div>
         <a href="../events/" >イベントを探す</a>
@@ -344,7 +344,7 @@
       <div class="mobile-nav__children">
         <a href="../network/">北九州ネイチャーポジティブネットワーク</a>
         <a href="../network/cases/">活動実績</a>
-        <a href="../network/#join">会員募集</a>
+        <a href="../join/">会員募集</a>
       </div>
     </div>
     <a href="../events/">イベントを探す</a>
@@ -675,122 +675,9 @@
         </div>
       </div>
 
-      <!-- 申込フォーム -->
-      <div style="max-width: 800px; margin: 0 auto;">
-        <div class="member-tabs-join" id="join-tabs">
-          <button class="member-tab-join active" data-target="join-individual">個人・市民の方</button>
-          <button class="member-tab-join" data-target="join-corporate">企業・団体の方</button>
-        </div>
-
-        <!-- 個人フォーム -->
-        <form class="member-form-join active" id="join-individual">
-          <div class="form-row-2">
-            <div class="form-group">
-              <label>氏名<span class="required">*必須</span></label>
-              <input type="text" class="form-input" name="name" required placeholder="例：山田 太郎">
-            </div>
-            <div class="form-group">
-              <label>フリガナ<span class="required">*必須</span></label>
-              <input type="text" class="form-input" name="furigana" required placeholder="例：ヤマダ タロウ">
-            </div>
-          </div>
-          <div class="form-row-2">
-            <div class="form-group">
-              <label>メールアドレス<span class="required">*必須</span></label>
-              <input type="email" class="form-input" name="email" required placeholder="例：example@email.com">
-            </div>
-            <div class="form-group">
-              <label>電話番号</label>
-              <input type="tel" class="form-input" name="phone" placeholder="例：093-000-0000">
-            </div>
-          </div>
-          <div class="form-group">
-            <label>関心のある分野（複数選択可）</label>
-            <div class="join-checkbox-group">
-              <label><input type="checkbox" name="interest" value="生態系保全"> 生態系保全</label>
-              <label><input type="checkbox" name="interest" value="環境教育"> 環境教育</label>
-              <label><input type="checkbox" name="interest" value="体験・レジャー"> 体験・レジャー</label>
-              <label><input type="checkbox" name="interest" value="ボランティア"> ボランティア</label>
-              <label><input type="checkbox" name="interest" value="写真"> 写真</label>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>メッセージ（任意）</label>
-            <textarea class="form-textarea" name="message" placeholder="ご質問やご要望があればご記入ください"></textarea>
-          </div>
-          <div class="form-group">
-            <div class="form-checkbox">
-              <input type="checkbox" name="privacy" id="privacy-net-individual" required>
-              <label for="privacy-net-individual"><a href="../privacy/" target="_blank">プライバシーポリシー</a>に同意する<span class="required">*必須</span></label>
-            </div>
-          </div>
-          <button type="submit" class="btn btn--primary btn--lg btn--block">エントリーする（無料）</button>
-        </form>
-
-        <!-- 企業・団体フォーム -->
-        <form class="member-form-join" id="join-corporate">
-          <div class="form-row-2">
-            <div class="form-group">
-              <label>企業・団体名<span class="required">*必須</span></label>
-              <input type="text" class="form-input" name="company" required placeholder="例：株式会社〇〇">
-            </div>
-            <div class="form-group">
-              <label>担当者名<span class="required">*必須</span></label>
-              <input type="text" class="form-input" name="contact_name" required placeholder="例：山田 太郎">
-            </div>
-          </div>
-          <div class="form-row-2">
-            <div class="form-group">
-              <label>メールアドレス<span class="required">*必須</span></label>
-              <input type="email" class="form-input" name="email" required placeholder="例：example@company.co.jp">
-            </div>
-            <div class="form-group">
-              <label>電話番号<span class="required">*必須</span></label>
-              <input type="tel" class="form-input" name="phone" required placeholder="例：093-000-0000">
-            </div>
-          </div>
-          <div class="form-row-2">
-            <div class="form-group">
-              <label>業種<span class="required">*必須</span></label>
-              <select class="form-select" name="industry" required>
-                <option value="">選択してください</option>
-                <option>製造業</option><option>建設業</option><option>情報通信業</option>
-                <option>運輸業</option><option>卸売・小売業</option><option>金融・保険業</option>
-                <option>不動産業</option><option>サービス業</option><option>教育・学習支援</option>
-                <option>医療・福祉</option><option>その他</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>従業員数</label>
-              <select class="form-select" name="employees">
-                <option value="">選択してください</option>
-                <option>1〜10名</option><option>11〜50名</option><option>51〜100名</option>
-                <option>101〜300名</option><option>301〜1,000名</option><option>1,001名以上</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>関心のある分野（複数選択可）</label>
-            <div class="join-checkbox-group">
-              <label><input type="checkbox" name="interest" value="生態系保全"> 生態系保全</label>
-              <label><input type="checkbox" name="interest" value="環境教育"> 環境教育</label>
-              <label><input type="checkbox" name="interest" value="CSR活動"> CSR活動</label>
-              <label><input type="checkbox" name="interest" value="社員研修"> 社員研修</label>
-              <label><input type="checkbox" name="interest" value="スポンサー"> スポンサー</label>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>メッセージ（任意）</label>
-            <textarea class="form-textarea" name="message" placeholder="ご質問やご要望があればご記入ください"></textarea>
-          </div>
-          <div class="form-group">
-            <div class="form-checkbox">
-              <input type="checkbox" name="privacy" id="privacy-net-corporate" required>
-              <label for="privacy-net-corporate"><a href="../privacy/" target="_blank">プライバシーポリシー</a>に同意する<span class="required">*必須</span></label>
-            </div>
-          </div>
-          <button type="submit" class="btn btn--primary btn--lg btn--block">エントリーする（無料）</button>
-        </form>
+      <!-- 会員募集ページへ誘導 -->
+      <div style="text-align:center; margin-top:40px;">
+        <a href="../join/" class="btn btn--primary btn--lg">会員募集ページへ（無料エントリー）</a>
       </div>
     </div>
   </section>
@@ -802,7 +689,7 @@
       <p style="margin-bottom: 8px; opacity: 0.9; font-size: 1rem;">参加費無料・審査なし・義務なし。まずはエントリーを。</p>
       <p style="margin-bottom: 28px; opacity: 0.7; font-size: 0.85rem;">企業・団体・NPO・個人、どなたでも参加いただけます</p>
       <div class="cta-band__buttons">
-        <a href="#join" class="btn btn--outline-white btn--lg">無料でエントリーする</a>
+        <a href="../join/" class="btn btn--outline-white btn--lg">無料でエントリーする</a>
         <a href="cases/" class="btn btn--ghost btn--lg" style="color:#fff; border-color:rgba(255,255,255,0.4);">活動実績を見る</a>
       </div>
     </div>
