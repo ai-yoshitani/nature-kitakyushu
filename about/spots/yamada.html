@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="山田緑地｜「30世紀の森」をテーマに、手つかずの大自然を保全する140haの緑地公園">
+  <title>山田緑地 | アーバンネイチャー北九州</title>
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .spot-hero { position: relative; height: 480px; overflow: hidden; }
+    .spot-hero img { width: 100%; height: 100%; object-fit: cover; }
+    .spot-hero__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 48px 0 40px;
+    }
+    .spot-hero__inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .spot-hero__title { font-size: 2.6rem; font-weight: 800; color: #fff; margin-bottom: 12px; line-height: 1.2; }
+    .spot-hero__sub { font-size: 1.05rem; color: rgba(255,255,255,0.9); margin-bottom: 20px; line-height: 1.6; }
+    .spot-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .spot-tag {
+      background: rgba(255,255,255,0.2); color: #fff;
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 20px; padding: 4px 14px; font-size: 0.82rem;
+      backdrop-filter: blur(4px);
+    }
+    .spot-overview {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;
+    }
+    .spot-overview__text h2 { font-size: 1.4rem; font-weight: 700; color: var(--primary); margin-bottom: 16px; }
+    .spot-overview__text p { line-height: 1.8; color: var(--text); margin-bottom: 16px; }
+    .spot-season {
+      background: rgba(44,95,45,0.06); border-left: 3px solid var(--primary);
+      border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 20px; margin-top: 20px;
+    }
+    .spot-season__title { font-size: 0.85rem; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+    .spot-season__list { font-size: 0.88rem; color: var(--text-light); line-height: 1.7; }
+    .spot-info-card {
+      background: var(--bg-white); border-radius: var(--radius-lg);
+      box-shadow: 0 2px 16px var(--shadow); overflow: hidden;
+    }
+    .spot-info-card__head {
+      background: var(--primary); color: #fff;
+      padding: 16px 20px; font-weight: 700; font-size: 0.95rem;
+    }
+    .spot-info-table { width: 100%; border-collapse: collapse; }
+    .spot-info-table th, .spot-info-table td {
+      padding: 12px 16px; font-size: 0.88rem; border-bottom: 1px solid var(--border);
+      text-align: left; vertical-align: top;
+    }
+    .spot-info-table th { width: 35%; color: var(--text-light); font-weight: 600; background: rgba(0,0,0,0.02); white-space: nowrap; }
+    .spot-info-table td { color: var(--text); line-height: 1.6; }
+    .spot-info-table tr:last-child th, .spot-info-table tr:last-child td { border-bottom: none; }
+    .spot-map { margin-top: 40px; }
+    .spot-map h2 { font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-bottom: 16px; }
+    .spot-map iframe { width: 100%; height: 360px; border: none; border-radius: var(--radius-lg); box-shadow: 0 2px 16px var(--shadow); }
+    .spot-bio-link {
+      background: rgba(2,128,144,0.06); border: 1px solid rgba(2,128,144,0.2);
+      border-radius: var(--radius-lg); padding: 20px 24px; margin-top: 32px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .spot-bio-link__icon { font-size: 1.8rem; flex-shrink: 0; }
+    .spot-bio-link__text { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; }
+    .spot-bio-link__text a { color: var(--accent); font-weight: 600; }
+    @media (max-width: 768px) {
+      .spot-hero { height: 360px; }
+      .spot-hero__title { font-size: 1.8rem; }
+      .spot-overview { grid-template-columns: 1fr; gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__inner">
+      <a href="../../" class="header__logo">
+        <img src="../../images/2026/02/logo.png" alt="アーバンネイチャー北九州" width="160" height="40">
+      </a>
+      <nav class="header__nav">
+        <div class="nav-item">
+          <a href="../../about/" class="active">アーバンネイチャーとは？</a>
+          <ul class="dropdown">
+            <li><a href="../../about/">全体像</a></li>
+            <li><a href="../../about/biodiversity.html">生物多様性とは？</a></li>
+            <li><a href="../../about/strategy.html">北九州市の取り組み</a></li>
+            <li><a href="../../about/spots.html">北九州市の自然スポット</a></li>
+          </ul>
+        </div>
+        <div class="nav-item">
+          <a href="../../center/">活動拠点</a>
+          <ul class="dropdown">
+            <li><a href="../../center/">拠点一覧</a></li>
+            <li><a href="../../center/biotope.html">響灘ビオトープ</a></li>
+            <li><a href="../../center/greenpark.html">グリーンパーク</a></li>
+            <li><a href="../../center/hotarukan.html">北九州市ほたる館</a></li>
+            <li><a href="../../center/inochi.html">いのちのたび博物館</a></li>
+            <li><a href="../../center/itouzu.html">到津の森公園</a></li>
+            <li><a href="../../center/katsuki-hotaru.html">香月・黒川ほたる館</a></li>
+            <li><a href="../../center/mizukankyokan.html">水環境館</a></li>
+            <li><a href="../../center/soraland.html">ソラランド平尾台</a></li>
+            <li><a href="../../center/takamiya.html">タカミヤ環境ミュージアム</a></li>
+            <li><a href="../../center/yamada.html">山田緑地</a></li>
+          </ul>
+        </div>
+        <div class="nav-item">
+          <a href="../../network/">地域との繋がり</a>
+          <ul class="dropdown">
+            <li><a href="../../network/">北九州ネイチャーポジティブネットワーク</a></li>
+            <li><a href="../../network/cases/">活動実績</a></li>
+            <li><a href="../../join/">会員募集</a></li>
+          </ul>
+        </div>
+        <a href="../../events/">イベントを探す</a>
+        <a href="../../news/">お知らせ</a>
+        <a href="../../photos/">みんなの写真展</a>
+      </nav>
+      <div class="header__actions">
+        <a href="../../contact/" class="btn btn--primary btn--sm">お問い合わせ</a>
+        <button class="hamburger" aria-label="メニューを開く">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="js-mobile-nav">
+    <div class="mobile-nav__group">
+      <div class="mobile-nav__parent">
+        <a href="../../about/">アーバンネイチャーとは？</a>
+        <button class="mobile-nav__toggle" aria-expanded="false" aria-label="サブメニューを開く">
+          <span class="mobile-nav__toggle-icon"></span>
+        </button>
+      </div>
+      <div class="mobile-nav__children">
+        <a href="../../about/">全体像</a>
+        <a href="../../about/biodiversity.html">生物多様性とは？</a>
+        <a href="../../about/strategy.html">北九州市の取り組み</a>
+        <a href="../../about/spots.html">北九州市の自然スポット</a>
+      </div>
+    </div>
+    <div class="mobile-nav__group">
+      <div class="mobile-nav__parent">
+        <a href="../../center/">活動拠点</a>
+        <button class="mobile-nav__toggle" aria-expanded="false" aria-label="サブメニューを開く">
+          <span class="mobile-nav__toggle-icon"></span>
+        </button>
+      </div>
+      <div class="mobile-nav__children">
+        <a href="../../center/">拠点一覧</a>
+        <a href="../../center/biotope.html">響灘ビオトープ</a>
+        <a href="../../center/greenpark.html">グリーンパーク</a>
+        <a href="../../center/hotarukan.html">北九州市ほたる館</a>
+        <a href="../../center/inochi.html">いのちのたび博物館</a>
+        <a href="../../center/itouzu.html">到津の森公園</a>
+        <a href="../../center/katsuki-hotaru.html">香月・黒川ほたる館</a>
+        <a href="../../center/mizukankyokan.html">水環境館</a>
+        <a href="../../center/soraland.html">ソラランド平尾台</a>
+        <a href="../../center/takamiya.html">タカミヤ環境ミュージアム</a>
+        <a href="../../center/yamada.html">山田緑地</a>
+      </div>
+    </div>
+    <div class="mobile-nav__group">
+      <div class="mobile-nav__parent">
+        <a href="../../network/">地域との繋がり</a>
+        <button class="mobile-nav__toggle" aria-expanded="false" aria-label="サブメニューを開く">
+          <span class="mobile-nav__toggle-icon"></span>
+        </button>
+      </div>
+      <div class="mobile-nav__children">
+        <a href="../../network/">北九州ネイチャーポジティブネットワーク</a>
+        <a href="../../network/cases/">活動実績</a>
+        <a href="../../join/">会員募集</a>
+      </div>
+    </div>
+    <a href="../../events/">イベントを探す</a>
+    <a href="../../news/">お知らせ</a>
+    <a href="../../photos/">みんなの写真展</a>
+    <div class="mobile-nav__cta">
+      <a href="../../join/" class="btn btn--primary btn--block">参加する</a>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb__list">
+        <li><a href="../../">トップ</a></li>
+        <li><a href="../../about/">アーバンネイチャーとは？</a></li>
+        <li><a href="../../about/spots.html">北九州市の自然スポット</a></li>
+        <li>山田緑地</li>
+      </ol>
+    </div>
+  </div>
+
+  <section class="spot-hero">
+    <img src="../../images/2025/03/n-1-450x450.jpg" alt="山田緑地の豊かな森と湿生生態園の風景" width="1200" height="480">
+    <div class="spot-hero__overlay">
+      <div class="spot-hero__inner">
+        <h1 class="spot-hero__title">山田緑地</h1>
+        <p class="spot-hero__sub">「30世紀の森」をテーマに、手つかずの大自然を保全する140haの緑地公園</p>
+        <div class="spot-tags"><span class="spot-tag">#小倉北区</span><span class="spot-tag">#森・緑地</span><span class="spot-tag">#バードウォッチング</span><span class="spot-tag">#無料</span></div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="section section--white">
+      <div class="container">
+        <div class="spot-overview">
+          <div class="spot-overview__text">
+            <h2>見どころ・体験できること</h2>
+            <p>「30世紀の森づくり」をコンセプトに、できる限り自然の状態を保つことを大切にした広大な緑地公園です。約140haの園内には湿生生態園・樹木園・野草広場など多様な自然環境が広がり、四季折々の動植物と出合えます。</p>
+            <p>毎月第2日曜はバードウォッチングプログラムを開催。木製遊具や芝生広場、夏の水遊びエリアもあり、子どもから大人まで楽しめます。セグウェイ体験など自然を体感するアクティビティも充実。入園無料で1日ゆっくり過ごせる、北九州を代表する自然公園です。</p>
+            <div class="spot-season">
+              <div class="spot-season__title">🗓 おすすめシーズン</div>
+              <div class="spot-season__list">
+                <strong>春〜夏</strong>：新緑・水遊び・昆虫観察<br>
+                <strong>秋（10〜11月）</strong>：紅葉の散策路<br>
+                <strong>通年</strong>：バードウォッチング（毎月第2日曜プログラムあり）
+              </div>
+            </div>
+            <div class="spot-bio-link">
+              <div class="spot-bio-link__icon">🌿</div>
+              <div class="spot-bio-link__text">山田緑地の森が担う生態系サービスや、都市緑地の生物多様性については <a href="../../about/biodiversity.html">生物多様性とは？</a></div>
+            </div>
+          </div>
+          <div>
+            <div class="spot-info-card">
+              <div class="spot-info-card__head">📍 基本情報・アクセス</div>
+              <table class="spot-info-table">
+<tr><th>所在地</th><td>〒803-0865 福岡県北九州市小倉北区山田町</td></tr><tr><th>入園料</th><td>無料（森のゲート奥の入場受付は15:00まで）</td></tr><tr><th>開園時間</th><td>9:00〜17:00　火曜・年末年始休園</td></tr><tr><th>車でのアクセス</th><td>北九州都市高速・大谷出入口より約15分</td></tr><tr><th>公共交通</th><td>JR小倉駅バスセンター→西鉄バス45番「蒲生入口」下車→徒歩15分<br>土日祝は45番バスが「山田緑地」まで直接乗り入れ</td></tr><tr><th>駐車場</th><td>有料：普通車300円/日・中大型車1,000円/日（9:00〜17:00）</td></tr><tr><th>公式サイト</th><td><a href="https://yamada-park.jimdofree.com/" target="_blank" rel="noopener">北九州市立山田緑地</a></td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="spot-map">
+          <h2>地図・場所</h2>
+          <iframe
+            src="https://maps.google.com/maps?q=北九州市立山田緑地&output=embed&hl=ja"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="山田緑地の地図"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('../../images/cta-bg.png'); background-size: cover; background-position: center;">
+      <div class="container">
+        <h2 class="cta-band__title">お気軽にお問い合わせください</h2>
+        <div class="cta-band__buttons">
+          <a href="../../contact/" class="btn btn--solid-white btn--lg" style="color:#fff;border-color:#fff;background:transparent;">お問い合わせ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <span class="footer__brand-name">アーバンネイチャー北九州</span>
+          <p class="footer__desc">都市と自然が近接する北九州の強みを活かし、市民・企業・行政が一体となってネイチャーポジティブの実現を目指すプラットフォームです。</p>
+        </div>
+        <div>
+          <h3 class="footer__heading">アーバンネイチャーとは？</h3>
+          <div class="footer__links">
+            <a href="../../about/">全体像</a>
+            <a href="../../about/biodiversity.html">生物多様性とは？</a>
+            <a href="../../about/strategy.html">北九州市の取り組み</a>
+            <a href="../../about/spots.html">北九州市の自然スポット</a>
+          </div>
+          <h3 class="footer__heading" style="margin-top:24px">地域との繋がり</h3>
+          <div class="footer__links">
+            <a href="../../network/">北九州NPネットワーク</a>
+            <a href="../../network/cases/">活動実績</a>
+            <a href="../../join/">会員募集</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__heading">活動拠点</h3>
+          <div class="footer__links">
+            <a href="../../center/">拠点一覧</a>
+            <a href="../../center/biotope.html">響灘ビオトープ</a>
+            <a href="../../center/greenpark.html">グリーンパーク</a>
+            <a href="../../center/hotarukan.html">北九州市ほたる館</a>
+            <a href="../../center/inochi.html">いのちのたび博物館</a>
+            <a href="../../center/itouzu.html">到津の森公園</a>
+            <a href="../../center/katsuki-hotaru.html">香月・黒川ほたる館</a>
+            <a href="../../center/mizukankyokan.html">水環境館</a>
+            <a href="../../center/soraland.html">ソラランド平尾台</a>
+            <a href="../../center/takamiya.html">タカミヤ環境ミュージアム</a>
+            <a href="../../center/yamada.html">山田緑地</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__heading">その他</h3>
+          <div class="footer__links">
+            <a href="../../events/">イベントを探す</a>
+            <a href="../../news/">お知らせ</a>
+            <a href="../../photos/">みんなの写真展</a>
+            <a href="../../blog/">ブログ</a>
+            <a href="../../contact/">お問い合わせ</a>
+            <a href="../../privacy/">プライバシーポリシー</a>
+          </div>
+          <h3 class="footer__heading" style="margin-top:24px">ソーシャル</h3>
+          <div class="footer__links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">YouTube</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 アーバンネイチャー北九州</span>
+        <a href="../../privacy/">プライバシーポリシー</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>
