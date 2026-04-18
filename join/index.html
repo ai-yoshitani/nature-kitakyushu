@@ -52,6 +52,7 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">メインコンテンツへスキップ</a>
   <!-- ヘッダー -->
   <header class="header">
     <div class="header__inner">
@@ -221,50 +222,52 @@
 
       <div style="max-width: 800px; margin: 0 auto;" class="form-card">
         <!-- タブ -->
-        <div class="member-tabs">
-          <button class="member-tab active" data-target="individual">個人会員</button>
-          <button class="member-tab" data-target="corporate">企業会員</button>
+        <div class="member-tabs" role="tablist" aria-label="会員種別">
+          <button class="member-tab active" role="tab" aria-selected="true" aria-controls="individual" data-target="individual">個人会員</button>
+          <button class="member-tab" role="tab" aria-selected="false" aria-controls="corporate" data-target="corporate">企業会員</button>
         </div>
 
         <!-- 個人会員フォーム -->
-        <form class="member-form active" id="individual">
+        <form class="member-form active" id="individual" role="tabpanel" aria-labelledby="tab-individual">
           <div class="form-row">
             <div class="form-group">
-              <label>氏名<span class="required">*必須</span></label>
-              <input type="text" class="form-input" name="name" required placeholder="例：山田 太郎">
+              <label for="i-name">氏名<span class="required">*必須</span></label>
+              <input type="text" id="i-name" class="form-input" name="name" required placeholder="例：山田 太郎">
             </div>
             <div class="form-group">
-              <label>フリガナ<span class="required">*必須</span></label>
-              <input type="text" class="form-input" name="furigana" required placeholder="例：ヤマダ タロウ">
+              <label for="i-furigana">フリガナ<span class="required">*必須</span></label>
+              <input type="text" id="i-furigana" class="form-input" name="furigana" required placeholder="例：ヤマダ タロウ">
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label>メールアドレス<span class="required">*必須</span></label>
-              <input type="email" class="form-input" name="email" required placeholder="例：example@email.com">
+              <label for="i-email">メールアドレス<span class="required">*必須</span></label>
+              <input type="email" id="i-email" class="form-input" name="email" required placeholder="例：example@email.com">
             </div>
             <div class="form-group">
-              <label>電話番号<span class="required">*必須</span></label>
-              <input type="tel" class="form-input" name="phone" required placeholder="例：093-000-0000">
+              <label for="i-phone">電話番号<span class="required">*必須</span></label>
+              <input type="tel" id="i-phone" class="form-input" name="phone" required placeholder="例：093-000-0000">
             </div>
           </div>
           <div class="form-group">
-            <label>住所<span class="required">*必須</span></label>
-            <input type="text" class="form-input" name="address" required placeholder="例：福岡県北九州市小倉北区...">
+            <label for="i-address">住所<span class="required">*必須</span></label>
+            <input type="text" id="i-address" class="form-input" name="address" required placeholder="例：福岡県北九州市小倉北区...">
           </div>
           <div class="form-group">
-            <label>関心のある分野（複数選択可）</label>
-            <div class="checkbox-group">
-              <label><input type="checkbox" name="interest" value="生態系保全"> 生態系保全</label>
-              <label><input type="checkbox" name="interest" value="環境教育"> 環境教育</label>
-              <label><input type="checkbox" name="interest" value="体験・レジャー"> 体験・レジャー</label>
-              <label><input type="checkbox" name="interest" value="ボランティア"> ボランティア</label>
-              <label><input type="checkbox" name="interest" value="写真"> 写真</label>
-            </div>
+            <fieldset style="border:none;padding:0;margin:0;">
+              <legend style="font-size:inherit;margin-bottom:8px;">関心のある分野（複数選択可）</legend>
+              <div class="checkbox-group">
+                <label><input type="checkbox" name="interest" value="生態系保全"> 生態系保全</label>
+                <label><input type="checkbox" name="interest" value="環境教育"> 環境教育</label>
+                <label><input type="checkbox" name="interest" value="体験・レジャー"> 体験・レジャー</label>
+                <label><input type="checkbox" name="interest" value="ボランティア"> ボランティア</label>
+                <label><input type="checkbox" name="interest" value="写真"> 写真</label>
+              </div>
+            </fieldset>
           </div>
           <div class="form-group">
-            <label>メッセージ（任意）</label>
-            <textarea class="form-textarea" name="message" placeholder="ご質問やご要望があればご記入ください"></textarea>
+            <label for="i-message">メッセージ（任意）</label>
+            <textarea id="i-message" class="form-textarea" name="message" placeholder="ご質問やご要望があればご記入ください"></textarea>
           </div>
           <div class="form-group">
             <div class="form-checkbox">
@@ -276,31 +279,31 @@
         </form>
 
         <!-- 企業会員フォーム -->
-        <form class="member-form" id="corporate">
+        <form class="member-form" id="corporate" role="tabpanel" aria-labelledby="tab-corporate">
           <div class="form-row">
             <div class="form-group">
-              <label>企業名<span class="required">*必須</span></label>
-              <input type="text" class="form-input" name="company" required placeholder="例：株式会社〇〇">
+              <label for="c-company">企業名<span class="required">*必須</span></label>
+              <input type="text" id="c-company" class="form-input" name="company" required placeholder="例：株式会社〇〇">
             </div>
             <div class="form-group">
-              <label>担当者名<span class="required">*必須</span></label>
-              <input type="text" class="form-input" name="contact_name" required placeholder="例：山田 太郎">
+              <label for="c-contact">担当者名<span class="required">*必須</span></label>
+              <input type="text" id="c-contact" class="form-input" name="contact_name" required placeholder="例：山田 太郎">
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label>メールアドレス<span class="required">*必須</span></label>
-              <input type="email" class="form-input" name="email" required placeholder="例：example@company.co.jp">
+              <label for="c-email2">メールアドレス<span class="required">*必須</span></label>
+              <input type="email" id="c-email2" class="form-input" name="email" required placeholder="例：example@company.co.jp">
             </div>
             <div class="form-group">
-              <label>電話番号<span class="required">*必須</span></label>
-              <input type="tel" class="form-input" name="phone" required placeholder="例：093-000-0000">
+              <label for="c-phone">電話番号<span class="required">*必須</span></label>
+              <input type="tel" id="c-phone" class="form-input" name="phone" required placeholder="例：093-000-0000">
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label>業種<span class="required">*必須</span></label>
-              <select class="form-select" name="industry" required>
+              <label for="c-industry">業種<span class="required">*必須</span></label>
+              <select id="c-industry" class="form-select" name="industry" required>
                 <option value="">選択してください</option>
                 <option value="製造業">製造業</option>
                 <option value="建設業">建設業</option>
@@ -316,8 +319,8 @@
               </select>
             </div>
             <div class="form-group">
-              <label>従業員数</label>
-              <select class="form-select" name="employees">
+              <label for="c-employees">従業員数</label>
+              <select id="c-employees" class="form-select" name="employees">
                 <option value="">選択してください</option>
                 <option value="1-10">1〜10名</option>
                 <option value="11-50">11〜50名</option>
@@ -329,18 +332,20 @@
             </div>
           </div>
           <div class="form-group">
-            <label>関心のある分野（複数選択可）</label>
-            <div class="checkbox-group">
-              <label><input type="checkbox" name="interest" value="生態系保全"> 生態系保全</label>
-              <label><input type="checkbox" name="interest" value="環境教育"> 環境教育</label>
-              <label><input type="checkbox" name="interest" value="CSR活動"> CSR活動</label>
-              <label><input type="checkbox" name="interest" value="社員研修"> 社員研修</label>
-              <label><input type="checkbox" name="interest" value="スポンサー"> スポンサー</label>
-            </div>
+            <fieldset style="border:none;padding:0;margin:0;">
+              <legend style="font-size:inherit;margin-bottom:8px;">関心のある分野（複数選択可）</legend>
+              <div class="checkbox-group">
+                <label><input type="checkbox" name="interest" value="生態系保全"> 生態系保全</label>
+                <label><input type="checkbox" name="interest" value="環境教育"> 環境教育</label>
+                <label><input type="checkbox" name="interest" value="CSR活動"> CSR活動</label>
+                <label><input type="checkbox" name="interest" value="社員研修"> 社員研修</label>
+                <label><input type="checkbox" name="interest" value="スポンサー"> スポンサー</label>
+              </div>
+            </fieldset>
           </div>
           <div class="form-group">
-            <label>メッセージ（任意）</label>
-            <textarea class="form-textarea" name="message" placeholder="ご質問やご要望があればご記入ください"></textarea>
+            <label for="c-message">メッセージ（任意）</label>
+            <textarea id="c-message" class="form-textarea" name="message" placeholder="ご質問やご要望があればご記入ください"></textarea>
           </div>
           <div class="form-group">
             <div class="form-checkbox">
@@ -432,12 +437,16 @@
 
   <script src="../js/main.js"></script>
   <script>
-    // 会員タブ切り替え
+    // 会員タブ切り替え（aria-selected 同期）
     document.querySelectorAll('.member-tab').forEach(tab => {
       tab.addEventListener('click', () => {
-        document.querySelectorAll('.member-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.member-tab').forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
         document.querySelectorAll('.member-form').forEach(f => f.classList.remove('active'));
         tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
         document.getElementById(tab.dataset.target).classList.add('active');
       });
     });

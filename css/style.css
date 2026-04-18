@@ -28,6 +28,72 @@
   --transition: 0.3s ease;
 }
 
+/* --- アクセシビリティ --- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 9999;
+  background: var(--primary);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 0 0 var(--radius) var(--radius);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.15s;
+  white-space: nowrap;
+}
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* --- インタラクティブカード（hover lift）--- */
+.spot-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.spot-card-link:hover,
+.spot-card-link:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+.mine-card {
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.mine-card:hover,
+.mine-card:focus-visible {
+  box-shadow: 0 8px 40px rgba(0,0,0,0.14) !important;
+  transform: translateY(-4px);
+}
+.news-item-link {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s;
+}
+.news-item-link:hover,
+.news-item-link:focus-visible {
+  background: #f5f7f5;
+}
+
 /* --- リセット・ベース --- */
 *, *::before, *::after {
   box-sizing: border-box;

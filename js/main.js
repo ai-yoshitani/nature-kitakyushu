@@ -9,7 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
       mobileNav.classList.toggle('active');
-      document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+      const isOpen = mobileNav.classList.contains('active');
+      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     // モバイルナビのリンククリックで閉じる
@@ -49,12 +51,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // タブフィルタ
+  // タブフィルタ（events ページ: aria-pressed 管理）
   document.querySelectorAll('.tabs').forEach(tabGroup => {
     tabGroup.querySelectorAll('.tab').forEach(tab => {
       tab.addEventListener('click', () => {
-        tabGroup.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        tabGroup.querySelectorAll('.tab').forEach(t => {
+          t.classList.remove('active');
+          if (t.hasAttribute('aria-pressed')) t.setAttribute('aria-pressed', 'false');
+        });
         tab.classList.add('active');
+        if (tab.hasAttribute('aria-pressed')) tab.setAttribute('aria-pressed', 'true');
         const category = tab.dataset.category;
         const grid = tabGroup.nextElementSibling;
         if (grid) {

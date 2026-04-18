@@ -51,6 +51,7 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">メインコンテンツへスキップ</a>
   <!-- ヘッダー -->
   <header class="header">
     <div class="header__inner">
@@ -180,24 +181,24 @@
       <div class="filter-section">
         <div class="filter-row">
           <p class="filter-section__label">タイプ：</p>
-          <button class="filter-btn active" data-filter-type="all">すべて</button>
-          <button class="filter-btn" data-filter-type="募集">双方向募集型</button>
-          <button class="filter-btn" data-filter-type="告知">告知型</button>
+          <button class="filter-btn active" aria-pressed="true" data-filter-type="all">すべて</button>
+          <button class="filter-btn" aria-pressed="false" data-filter-type="募集">双方向募集型</button>
+          <button class="filter-btn" aria-pressed="false" data-filter-type="告知">告知型</button>
         </div>
         <div class="filter-row">
           <p class="filter-section__label">カテゴリ：</p>
-          <button class="filter-btn active" data-filter-cat="all">すべて</button>
-          <button class="filter-btn" data-filter-cat="循環・資源">循環・資源</button>
-          <button class="filter-btn" data-filter-cat="生態系保全">生態系保全</button>
-          <button class="filter-btn" data-filter-cat="教育・啓発">教育・啓発</button>
-          <button class="filter-btn" data-filter-cat="体験・レジャー">体験・レジャー</button>
+          <button class="filter-btn active" aria-pressed="true" data-filter-cat="all">すべて</button>
+          <button class="filter-btn" aria-pressed="false" data-filter-cat="循環・資源">循環・資源</button>
+          <button class="filter-btn" aria-pressed="false" data-filter-cat="生態系保全">生態系保全</button>
+          <button class="filter-btn" aria-pressed="false" data-filter-cat="教育・啓発">教育・啓発</button>
+          <button class="filter-btn" aria-pressed="false" data-filter-cat="体験・レジャー">体験・レジャー</button>
         </div>
         <div class="filter-row">
           <p class="filter-section__label">対象：</p>
-          <button class="filter-btn active" data-filter-target="all">すべて</button>
-          <button class="filter-btn" data-filter-target="子ども">子ども</button>
-          <button class="filter-btn" data-filter-target="個人">個人</button>
-          <button class="filter-btn" data-filter-target="企業">企業</button>
+          <button class="filter-btn active" aria-pressed="true" data-filter-target="all">すべて</button>
+          <button class="filter-btn" aria-pressed="false" data-filter-target="子ども">子ども</button>
+          <button class="filter-btn" aria-pressed="false" data-filter-target="個人">個人</button>
+          <button class="filter-btn" aria-pressed="false" data-filter-target="企業">企業</button>
         </div>
       </div>
 
