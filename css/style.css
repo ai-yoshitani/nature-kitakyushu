@@ -744,11 +744,17 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 
-.cta-band a {
+.cta-band a:not(.btn) {
   color: #fff;
 }
 
-.cta-band a:hover {
+.cta-band a:not(.btn):hover {
+  color: var(--primary);
+}
+
+.cta-band .btn--solid-white:hover {
+  background-color: #fff;
+  border-color: #fff;
   color: var(--primary);
 }
 
