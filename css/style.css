@@ -216,15 +216,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn--solid-white {
-  background-color: #fff;
-  color: var(--primary);
-  border-color: var(--primary);
+  background-color: transparent;
+  color: #fff;
+  border-color: #fff;
 }
 
 .btn--solid-white:hover {
-  background-color: var(--primary);
-  border-color: var(--primary);
-  color: #fff;
+  background-color: #fff;
+  border-color: #fff;
+  color: var(--primary);
 }
 
 .btn--lg {
