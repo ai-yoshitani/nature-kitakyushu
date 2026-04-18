@@ -517,80 +517,83 @@
     /* ===== ペルソナ選択 ===== */
     .persona {
       padding: var(--section-padding);
-      background: var(--color-white);
+      background: #f4f7f4;
     }
 
     .persona-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
     }
 
     .persona-card {
       display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 24px;
+      flex-direction: column;
+      gap: 12px;
+      padding: 32px 28px;
       border-radius: 16px;
-      background: var(--color-bg);
+      background: #fff;
       border: 2px solid transparent;
+      border-bottom: 4px solid var(--color-secondary);
       transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+      text-decoration: none;
     }
 
     .persona-card:hover {
-      border-color: var(--color-secondary);
-      box-shadow: 0 4px 16px rgba(44, 95, 45, 0.1);
-      transform: translateY(-2px);
+      border-color: var(--color-primary);
+      border-bottom-color: var(--color-primary);
+      box-shadow: 0 8px 24px rgba(44, 95, 45, 0.14);
+      transform: translateY(-4px);
     }
 
     .persona-icon {
-      width: 52px;
-      height: 52px;
+      width: 64px;
+      height: 64px;
       flex-shrink: 0;
-      background: var(--color-primary);
-      border-radius: 50%;
+      background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-bottom: 4px;
     }
 
     .persona-icon svg {
-      width: 26px;
-      height: 26px;
+      width: 34px;
+      height: 34px;
       fill: none;
-      stroke: #fff;
-      stroke-width: 2;
+      stroke: var(--color-primary);
+      stroke-width: 1.8;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
 
     .persona-label {
-      font-size: 0.75rem;
-      color: var(--color-accent);
-      font-weight: 600;
-      margin-bottom: 4px;
-      letter-spacing: 0.03em;
+      font-size: 1.15rem;
+      color: var(--color-primary);
+      font-weight: 800;
+      line-height: 1.3;
     }
 
     .persona-name {
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 700;
       color: var(--color-text);
-      line-height: 1.4;
-    }
-
-    .persona-desc {
-      font-size: 0.82rem;
-      color: var(--color-text-light, #666);
-      margin-top: 4px;
       line-height: 1.5;
     }
 
+    .persona-desc {
+      font-size: 0.83rem;
+      color: var(--color-text-light, #666);
+      line-height: 1.7;
+      flex-grow: 1;
+    }
+
     .persona-arrow {
-      margin-left: auto;
       color: var(--color-secondary);
-      font-size: 1.25rem;
-      flex-shrink: 0;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-top: 4px;
     }
 
     /* ===== イベント ===== */
@@ -1005,6 +1008,12 @@
     }
 
     /* ===== レスポンシブ ===== */
+    @media (max-width: 639px) {
+      .persona-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (min-width: 640px) {
       .persona-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1056,14 +1065,7 @@
       }
 
       .persona-card {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 32px 20px;
-      }
-
-      .persona-arrow {
-        display: none;
+        padding: 28px 20px;
       }
 
       .network-grid {
@@ -1276,53 +1278,79 @@
     <!-- ===== ペルソナ選択 ===== -->
     <section class="persona">
       <div class="container">
-        <h2 class="section-title">どんな方ですか？</h2>
-        <p class="section-subtitle">あてはまるカードをタップして、ぴったりのページへどうぞ</p>
         <div class="persona-grid">
+
           <a href="events/" class="persona-card">
             <span class="persona-icon">
-              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <svg viewBox="0 0 24 24">
+                <!-- 人物 -->
+                <circle cx="12" cy="5" r="2.5"/>
+                <path d="M12 9c-2 0-3.5 1.2-4 3l-1.5 5h2l1-3v5h5v-5l1 3h2l-1.5-5c-.5-1.8-2-3-4-3z"/>
+                <!-- 葉 -->
+                <path d="M18 4c-2 0-3.5 1.5-3.5 3.5 0 1 .4 1.9 1 2.5C16.2 11 18 11 18 11s1.8 0 2.5-1C21.1 9.4 21.5 8.5 21.5 7.5 21.5 5.5 20 4 18 4z" stroke-width="1.5"/>
+              </svg>
             </span>
-            <div>
-              <p class="persona-label">個人・市民の方</p>
-              <p class="persona-name">自然のなかで<br>何かしてみたい</p>
-              <p class="persona-desc">イベントや体験プログラムをご案内します</p>
-            </div>
-            <span class="persona-arrow">&rarr;</span>
+            <p class="persona-label">個人・市民の方へ</p>
+            <p class="persona-name">週末、自然のなかへ<br>出かけませんか。</p>
+            <p class="persona-desc">北九州には、森・海・湿地・カルストなど多様な自然が市内に広がっています。体験イベントや10の施設で、あなたのペースで自然と関わってみてください。</p>
+            <span class="persona-arrow">イベントを探す &rarr;</span>
           </a>
+
           <a href="network/cases/" class="persona-card">
             <span class="persona-icon">
-              <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+              <svg viewBox="0 0 24 24">
+                <!-- ビル -->
+                <rect x="3" y="6" width="8" height="15" rx="1"/>
+                <rect x="13" y="10" width="8" height="11" rx="1"/>
+                <!-- 窓 -->
+                <rect x="5" y="8" width="2" height="2"/><rect x="9" y="8" width="1" height="2"/>
+                <rect x="5" y="12" width="2" height="2"/><rect x="9" y="12" width="1" height="2"/>
+                <!-- 葉 -->
+                <path d="M15 5c0 2.5 2 4 4 4-2 0-4 1.5-4 4 0-2.5-2-4-4-4 2 0 4-1.5 4-4z"/>
+              </svg>
             </span>
-            <div>
-              <p class="persona-label">企業・団体の方</p>
-              <p class="persona-name">CSR・ESGで<br>地域に貢献したい</p>
-              <p class="persona-desc">企業連携・活動事例をご紹介します</p>
-            </div>
-            <span class="persona-arrow">&rarr;</span>
+            <p class="persona-label">企業・団体の方へ</p>
+            <p class="persona-name">自然への貢献が、<br>企業価値になる時代へ。</p>
+            <p class="persona-desc">生物多様性保全はCSR・ESGの重要課題です。北九州での先進的な取り組み事例をご覧いただき、自社の活動のヒントにしてください。連携のご相談も歓迎します。</p>
+            <span class="persona-arrow">活動事例を見る &rarr;</span>
           </a>
+
           <a href="network/" class="persona-card">
             <span class="persona-icon">
-              <svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 21v-2a4 4 0 0 0-3-3.85"/></svg>
+              <svg viewBox="0 0 24 24">
+                <!-- 3人のシルエット -->
+                <circle cx="12" cy="5" r="2"/>
+                <circle cx="5" cy="8" r="1.8"/>
+                <circle cx="19" cy="8" r="1.8"/>
+                <path d="M8 21v-2a3 3 0 0 1 3-3h2a3 3 0 0 1 3 3v2"/>
+                <path d="M2 21v-1.5a2.5 2.5 0 0 1 2.5-2.5H6"/>
+                <path d="M22 21v-1.5a2.5 2.5 0 0 0-2.5-2.5H18"/>
+              </svg>
             </span>
-            <div>
-              <p class="persona-label">NPO・市民団体の方</p>
-              <p class="persona-name">仲間と一緒に<br>活動を広げたい</p>
-              <p class="persona-desc">ネットワークへの参加方法をご案内します</p>
-            </div>
-            <span class="persona-arrow">&rarr;</span>
+            <p class="persona-label">NPO・市民団体の方へ</p>
+            <p class="persona-name">活動の輪を、<br>もっと広く、もっと深く。</p>
+            <p class="persona-desc">自然保全や環境教育に取り組む団体同士がつながるネットワークです。情報共有・共同事業・行政との連携など、ひとりではできないことを一緒に実現しましょう。</p>
+            <span class="persona-arrow">ネットワークを知る &rarr;</span>
           </a>
+
           <a href="photos/" class="persona-card">
             <span class="persona-icon">
-              <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              <svg viewBox="0 0 24 24">
+                <!-- カメラ -->
+                <rect x="2" y="7" width="20" height="14" rx="2"/>
+                <circle cx="12" cy="14" r="4"/>
+                <circle cx="12" cy="14" r="2" stroke-width="1.5"/>
+                <path d="M8 7l1.5-3h5L16 7"/>
+                <!-- 星（クリエイティブ） -->
+                <circle cx="18" cy="10" r="1" fill="currentColor" stroke="none"/>
+              </svg>
             </span>
-            <div>
-              <p class="persona-label">クリエイター・教育関係の方</p>
-              <p class="persona-name">北九州の自然写真を<br>使いたい</p>
-              <p class="persona-desc">フリー素材をまとめています</p>
-            </div>
-            <span class="persona-arrow">&rarr;</span>
+            <p class="persona-label">クリエイターの方へ</p>
+            <p class="persona-name">北九州の自然を、<br>あなたの表現に。</p>
+            <p class="persona-desc">教育・広報・制作活動に使える北九州の自然写真素材を無料で公開しています。美しい生態系の記録を、学校・行政・メディア・デザインの現場でご活用ください。</p>
+            <span class="persona-arrow">写真素材を見る &rarr;</span>
           </a>
+
         </div>
       </div>
     </section>
