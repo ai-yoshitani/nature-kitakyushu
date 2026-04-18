@@ -218,12 +218,12 @@ h1, h2, h3, h4, h5, h6 {
 .btn--solid-white {
   background-color: #fff;
   color: var(--primary);
-  border-color: #fff;
+  border-color: var(--primary);
 }
 
 .btn--solid-white:hover {
-  background-color: var(--secondary);
-  border-color: var(--secondary);
+  background-color: var(--primary);
+  border-color: var(--primary);
   color: #fff;
 }
 
