@@ -91,6 +91,14 @@
       opacity: 0.9;
       line-height: 1.6;
     }
+    .concept-pyramid__icon {
+      margin: 10px auto 12px;
+      display: flex;
+      justify-content: center;
+    }
+    .concept-pyramid__icon svg {
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.18));
+    }
     .concept-pyramid__arrow {
       font-size: 1.5rem;
       color: var(--primary);
@@ -378,19 +386,77 @@
 
         <div class="concept-pyramid">
           <div class="concept-pyramid__level concept-pyramid__level--top">
-            <div class="concept-pyramid__number">3</div>
+            <div class="concept-pyramid__number">③</div>
+            <div class="concept-pyramid__icon">
+              <!-- アーバンネイチャー: ビル＋木の融合 -->
+              <svg width="64" height="52" viewBox="0 0 64 52" fill="none" aria-hidden="true">
+                <!-- 建物群 -->
+                <rect x="2" y="22" width="9" height="24" rx="1.5" fill="white" opacity="0.9"/>
+                <rect x="13" y="14" width="11" height="32" rx="1.5" fill="white" opacity="0.9"/>
+                <!-- 窓 -->
+                <rect x="4" y="25" width="3" height="3" rx="0.5" fill="rgba(0,80,40,0.3)"/>
+                <rect x="4" y="31" width="3" height="3" rx="0.5" fill="rgba(0,80,40,0.3)"/>
+                <rect x="15" y="17" width="3" height="3" rx="0.5" fill="rgba(0,80,40,0.3)"/>
+                <rect x="15" y="23" width="3" height="3" rx="0.5" fill="rgba(0,80,40,0.3)"/>
+                <rect x="15" y="29" width="3" height="3" rx="0.5" fill="rgba(0,80,40,0.3)"/>
+                <!-- 大きな木 -->
+                <circle cx="42" cy="20" r="12" fill="white" opacity="0.92"/>
+                <rect x="39" y="32" width="6" height="14" rx="3" fill="white" opacity="0.9"/>
+                <!-- 小さい木 -->
+                <circle cx="58" cy="26" r="7" fill="white" opacity="0.82"/>
+                <rect x="56" y="33" width="4" height="10" rx="2" fill="white" opacity="0.8"/>
+                <!-- 地面線 -->
+                <line x1="2" y1="47" x2="62" y2="47" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/>
+              </svg>
+            </div>
             <div class="concept-pyramid__title">アーバンネイチャー</div>
             <div class="concept-pyramid__desc">北九州の強み：都市と自然が近接した環境を活かし、暮らしの中で自然と共生する地域モデル</div>
           </div>
           <div class="concept-pyramid__arrow">&#9660;</div>
           <div class="concept-pyramid__level concept-pyramid__level--middle">
-            <div class="concept-pyramid__number">2</div>
+            <div class="concept-pyramid__number">②</div>
+            <div class="concept-pyramid__icon">
+              <!-- ネイチャーポジティブ: 植物＋上昇矢印 -->
+              <svg width="56" height="56" viewBox="0 0 56 56" fill="none" aria-hidden="true">
+                <!-- 矢印の軸 -->
+                <line x1="28" y1="50" x2="28" y2="14" stroke="white" stroke-width="3.5" stroke-linecap="round" opacity="0.85"/>
+                <!-- 矢印の頭 -->
+                <path d="M17 26 L28 12 L39 26" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <!-- 左の葉 -->
+                <path d="M28 38 C23 32 12 32 10 39 C17 39 23 37 28 38Z" fill="white" opacity="0.92"/>
+                <!-- 右の葉 -->
+                <path d="M28 29 C33 23 44 23 46 30 C39 30 33 28 28 29Z" fill="white" opacity="0.92"/>
+              </svg>
+            </div>
             <div class="concept-pyramid__title">ネイチャーポジティブ</div>
             <div class="concept-pyramid__desc">世界共通の目標：自然の損失を止め、回復に向かわせる。2030年までに生物多様性の減少傾向を反転</div>
           </div>
           <div class="concept-pyramid__arrow">&#9660;</div>
           <div class="concept-pyramid__level concept-pyramid__level--base">
-            <div class="concept-pyramid__number">1</div>
+            <div class="concept-pyramid__number">①</div>
+            <div class="concept-pyramid__icon">
+              <!-- 生物多様性: 木＋鳥＋水中生物（生態系） -->
+              <svg width="64" height="56" viewBox="0 0 64 56" fill="none" aria-hidden="true">
+                <!-- 幹 -->
+                <rect x="29" y="34" width="6" height="16" rx="3" fill="white" opacity="0.9"/>
+                <!-- 根 -->
+                <path d="M20 50 Q26 44 32 50 Q38 44 44 50" stroke="white" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.65"/>
+                <!-- 葉群（中央） -->
+                <circle cx="32" cy="22" r="11" fill="white" opacity="0.92"/>
+                <!-- 葉群（左） -->
+                <circle cx="18" cy="27" r="8" fill="white" opacity="0.82"/>
+                <!-- 葉群（右） -->
+                <circle cx="46" cy="27" r="8" fill="white" opacity="0.82"/>
+                <!-- 鳥（左上） -->
+                <path d="M6 10 Q10 6 14 10" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                <path d="M14 10 Q18 6 22 10" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                <!-- 蝶（右上） -->
+                <path d="M44 8 Q48 4 52 8 Q48 12 44 8Z" fill="white" opacity="0.8"/>
+                <path d="M44 8 Q48 12 52 14 Q48 16 44 12 Q44 10 44 8Z" fill="white" opacity="0.65"/>
+                <!-- 体 -->
+                <line x1="48" y1="8" x2="48" y2="14" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+              </svg>
+            </div>
             <div class="concept-pyramid__title">生物多様性</div>
             <div class="concept-pyramid__desc">守るべき対象：あらゆる生きものの「つながり」と「多様さ」。私たちの暮らしを支える基盤</div>
           </div>
