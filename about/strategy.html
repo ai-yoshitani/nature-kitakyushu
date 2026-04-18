@@ -222,6 +222,21 @@
         grid-template-columns: repeat(2, 1fr);
       }
     }
+    /* ピクトグラムエリア */
+    .policy-card__icon-area,
+    .measure-card__icon-area {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 16 / 10;
+    }
+    .action-item__icon-area {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1;
+    }
+
     @media (max-width: 768px) {
       .policy-cards,
       .measure-section,
@@ -389,7 +404,14 @@
 
         <div class="policy-cards">
           <div class="policy-card">
-            <img src="../images/2026/01/s1.png" alt="保全・回復と持続可能な利用" class="policy-card__image" width="400" height="250" loading="lazy">
+            <div class="policy-card__icon-area" style="background:linear-gradient(135deg,#2c5f2d,#5a8a3c)">
+              <svg width="80" height="80" viewBox="0 0 64 64" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="32" y1="56" x2="32" y2="40"/>
+                <line x1="24" y1="56" x2="40" y2="56"/>
+                <path d="M32 8 L8 42 L56 42 Z" fill="rgba(255,255,255,0.2)"/>
+                <path d="M20 34 L32 16 L44 34"/>
+              </svg>
+            </div>
             <div class="policy-card__body">
               <div class="policy-card__number">1</div>
               <div class="policy-card__title">生物多様性の保全・回復と持続可能な利用</div>
@@ -397,7 +419,15 @@
             </div>
           </div>
           <div class="policy-card">
-            <img src="../images/2026/01/s2.png" alt="自然を活かした地域づくり" class="policy-card__image" width="400" height="250" loading="lazy">
+            <div class="policy-card__icon-area" style="background:linear-gradient(135deg,#028090,#2c5f2d)">
+              <svg width="80" height="80" viewBox="0 0 64 64" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="34" width="16" height="24" rx="1" fill="rgba(255,255,255,0.15)"/>
+                <rect x="22" y="20" width="20" height="38" rx="1" fill="rgba(255,255,255,0.2)"/>
+                <rect x="46" y="28" width="16" height="30" rx="1" fill="rgba(255,255,255,0.15)"/>
+                <path d="M44 8 Q54 4 58 14 Q50 22 42 16 Q48 10 44 8Z" fill="rgba(255,255,255,0.85)"/>
+                <line x1="2" y1="58" x2="62" y2="58"/>
+              </svg>
+            </div>
             <div class="policy-card__body">
               <div class="policy-card__number">2</div>
               <div class="policy-card__title">自然を活かした地域づくり</div>
@@ -405,19 +435,22 @@
             </div>
           </div>
           <div class="policy-card">
-            <img src="../images/2026/01/s3.png" alt="企業のNP経営推進" class="policy-card__image" width="400" height="250" loading="lazy">
+            <div class="policy-card__icon-area" style="background:linear-gradient(135deg,#1a5276,#028090)">
+              <svg width="80" height="80" viewBox="0 0 64 64" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M24 10 Q32 6 40 10"/>
+                <polyline points="36,6 40,10 36,14"/>
+                <path d="M46 16 Q56 30 46 50"/>
+                <polyline points="50,46 46,50 42,46"/>
+                <path d="M18 50 Q8 30 18 16"/>
+                <polyline points="14,20 18,16 22,20"/>
+              </svg>
+            </div>
             <div class="policy-card__body">
               <div class="policy-card__number">3</div>
               <div class="policy-card__title">企業のネイチャーポジティブ経営の推進</div>
               <div class="policy-card__desc">企業が自然資本を考慮した経営を実践し、事業活動を通じて生物多様性の保全に貢献する「ネイチャーポジティブ経営」を支援・推進します。</div>
             </div>
           </div>
-        </div>
-
-        <div class="strategy-image-row">
-          <img src="../images/2026/01/s4.png" alt="戦略イメージ1" width="400" height="250" loading="lazy">
-          <img src="../images/2026/01/s5.png" alt="戦略イメージ2" width="400" height="250" loading="lazy">
-          <img src="../images/2026/01/s6.png" alt="戦略イメージ3" width="400" height="250" loading="lazy">
         </div>
       </div>
     </section>
@@ -430,7 +463,19 @@
 
         <div class="measure-section">
           <div class="measure-card">
-            <img src="../images/2026/01/s7.png" alt="市民の理解醸成" class="measure-card__image" width="400" height="250" loading="lazy">
+            <div class="measure-card__icon-area" style="background:linear-gradient(135deg,#c68415,#e8a838)">
+              <svg width="80" height="80" viewBox="0 0 64 64" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M32 8 A14 14 0 0 1 46 22 C46 30 42 34 40 38 L24 38 C22 34 18 30 18 22 A14 14 0 0 1 32 8Z" fill="rgba(255,255,255,0.2)"/>
+                <path d="M24 44 L40 44"/>
+                <path d="M26 50 L38 50"/>
+                <path d="M30 56 L34 56"/>
+                <line x1="32" y1="2" x2="32" y2="6"/>
+                <line x1="46" y1="6" x2="44" y2="9"/>
+                <line x1="18" y1="6" x2="20" y2="9"/>
+                <line x1="52" y1="20" x2="48" y2="22"/>
+                <line x1="12" y1="20" x2="16" y2="22"/>
+              </svg>
+            </div>
             <div class="measure-card__body">
               <div class="measure-card__badge">施策 1</div>
               <div class="measure-card__title">市民の理解醸成</div>
@@ -438,7 +483,14 @@
             </div>
           </div>
           <div class="measure-card">
-            <img src="../images/2026/01/s8.png" alt="生物多様性の保全と回復" class="measure-card__image" width="400" height="250" loading="lazy">
+            <div class="measure-card__icon-area" style="background:linear-gradient(135deg,#2c5f2d,#028090)">
+              <svg width="80" height="80" viewBox="0 0 64 64" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M32 58 L32 30"/>
+                <path d="M32 44 Q18 40 14 24 Q28 18 34 34"/>
+                <path d="M32 36 Q46 32 50 16 Q36 10 30 26"/>
+                <line x1="20" y1="58" x2="44" y2="58"/>
+              </svg>
+            </div>
             <div class="measure-card__body">
               <div class="measure-card__badge">施策 2</div>
               <div class="measure-card__title">生物多様性の保全と回復</div>
@@ -446,7 +498,14 @@
             </div>
           </div>
           <div class="measure-card">
-            <img src="../images/2026/01/s9.png" alt="課題解決と成長" class="measure-card__image" width="400" height="250" loading="lazy">
+            <div class="measure-card__icon-area" style="background:linear-gradient(135deg,#1a5276,#2c5f2d)">
+              <svg width="80" height="80" viewBox="0 0 64 64" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="8,54 20,40 30,46 44,26 56,12"/>
+                <polyline points="50,12 56,12 56,18"/>
+                <line x1="8" y1="58" x2="58" y2="58"/>
+                <line x1="8" y1="10" x2="8" y2="58"/>
+              </svg>
+            </div>
             <div class="measure-card__body">
               <div class="measure-card__badge">施策 3</div>
               <div class="measure-card__title">課題解決と持続的な成長</div>
@@ -465,7 +524,15 @@
 
         <div class="action-grid">
           <div class="action-item">
-            <img src="../images/2026/01/a.png" alt="地元食材を選ぶ" class="action-item__image" width="280" height="280" loading="lazy">
+            <div class="action-item__icon-area" style="background:linear-gradient(135deg,#2c5f2d,#5a8a3c)">
+              <svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="20" y1="10" x2="20" y2="54"/>
+                <path d="M14 10 L14 26 Q14 34 20 34 Q26 34 26 26 L26 10"/>
+                <line x1="38" y1="10" x2="38" y2="54"/>
+                <path d="M38 10 Q50 14 50 24 Q50 34 38 36"/>
+                <path d="M48 46 Q56 42 58 50 Q52 56 46 50 Q50 48 48 46Z" fill="rgba(255,255,255,0.7)"/>
+              </svg>
+            </div>
             <div class="action-item__body">
               <div class="action-item__number">1</div>
               <div class="action-item__title">地元食材を選ぶ</div>
@@ -473,7 +540,16 @@
             </div>
           </div>
           <div class="action-item">
-            <img src="../images/2026/01/b.png" alt="自然に触れる" class="action-item__image" width="280" height="280" loading="lazy">
+            <div class="action-item__icon-area" style="background:linear-gradient(135deg,#028090,#1a5276)">
+              <svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="2,54 22,20 36,40 46,26 62,54"/>
+                <line x1="2" y1="54" x2="62" y2="54"/>
+                <circle cx="50" cy="14" r="7" fill="rgba(255,255,255,0.2)"/>
+                <line x1="50" y1="4" x2="50" y2="6"/>
+                <line x1="58" y1="8" x2="60" y2="6"/>
+                <line x1="60" y1="14" x2="62" y2="14"/>
+              </svg>
+            </div>
             <div class="action-item__body">
               <div class="action-item__number">2</div>
               <div class="action-item__title">自然に触れる</div>
@@ -481,7 +557,17 @@
             </div>
           </div>
           <div class="action-item">
-            <img src="../images/2026/01/c.png" alt="緑を育てる" class="action-item__image" width="280" height="280" loading="lazy">
+            <div class="action-item__icon-area" style="background:linear-gradient(135deg,#5a8a3c,#97bc62)">
+              <svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 22 L8 44 Q8 48 12 48 L36 48 Q40 48 40 44 L40 22 Q40 18 36 18 L12 18 Q8 18 8 22Z" fill="rgba(255,255,255,0.15)"/>
+                <path d="M40 28 L50 22 L54 26 L50 22 L50 14"/>
+                <line x1="16" y1="52" x2="16" y2="56"/>
+                <line x1="24" y1="52" x2="24" y2="58"/>
+                <line x1="32" y1="52" x2="32" y2="54"/>
+                <line x1="46" y1="58" x2="46" y2="40"/>
+                <path d="M46 50 Q54 46 56 38 Q48 34 44 42"/>
+              </svg>
+            </div>
             <div class="action-item__body">
               <div class="action-item__number">3</div>
               <div class="action-item__title">緑を育てる</div>
@@ -489,7 +575,19 @@
             </div>
           </div>
           <div class="action-item">
-            <img src="../images/2026/01/d.png" alt="知る" class="action-item__image" width="280" height="280" loading="lazy">
+            <div class="action-item__icon-area" style="background:linear-gradient(135deg,#028090,#2c5f2d)">
+              <svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M32 12 L32 54"/>
+                <path d="M32 12 Q22 8 8 10 L8 54 Q22 52 32 56"/>
+                <path d="M32 12 Q42 8 56 10 L56 54 Q42 52 32 56"/>
+                <line x1="14" y1="20" x2="28" y2="19"/>
+                <line x1="14" y1="27" x2="28" y2="26"/>
+                <line x1="14" y1="34" x2="28" y2="33"/>
+                <line x1="36" y1="20" x2="50" y2="19"/>
+                <line x1="36" y1="27" x2="50" y2="26"/>
+                <line x1="36" y1="34" x2="50" y2="33"/>
+              </svg>
+            </div>
             <div class="action-item__body">
               <div class="action-item__number">4</div>
               <div class="action-item__title">知る</div>
@@ -497,7 +595,12 @@
             </div>
           </div>
           <div class="action-item">
-            <img src="../images/2026/01/e.png" alt="伝える" class="action-item__image" width="280" height="280" loading="lazy">
+            <div class="action-item__icon-area" style="background:linear-gradient(135deg,#97bc62,#5a8a3c)">
+              <svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 10 Q8 6 12 6 L52 6 Q56 6 56 10 L56 38 Q56 42 52 42 L22 42 L12 52 L12 42 Q8 42 8 38 Z" fill="rgba(255,255,255,0.15)"/>
+                <path d="M25 20 Q25 16 29 16 Q32 16 32 20 Q32 16 35 16 Q39 16 39 20 Q39 24 32 30 Q25 24 25 20Z" fill="rgba(255,255,255,0.7)"/>
+              </svg>
+            </div>
             <div class="action-item__body">
               <div class="action-item__number">5</div>
               <div class="action-item__title">伝える</div>
@@ -505,7 +608,16 @@
             </div>
           </div>
           <div class="action-item">
-            <img src="../images/2026/01/f.png" alt="活動に参加する" class="action-item__image" width="280" height="280" loading="lazy">
+            <div class="action-item__icon-area" style="background:linear-gradient(135deg,#1a5276,#028090)">
+              <svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="32" cy="16" r="8" fill="rgba(255,255,255,0.2)"/>
+                <path d="M18 54 Q18 38 32 38 Q46 38 46 54"/>
+                <circle cx="10" cy="22" r="6" fill="rgba(255,255,255,0.15)"/>
+                <path d="M2 50 Q2 36 10 36 Q18 36 18 50"/>
+                <circle cx="54" cy="22" r="6" fill="rgba(255,255,255,0.15)"/>
+                <path d="M46 50 Q46 36 54 36 Q62 36 62 50"/>
+              </svg>
+            </div>
             <div class="action-item__body">
               <div class="action-item__number">6</div>
               <div class="action-item__title">活動に参加する</div>
@@ -513,7 +625,16 @@
             </div>
           </div>
           <div class="action-item">
-            <img src="../images/2026/01/g.png" alt="環境配慮商品を選ぶ" class="action-item__image" width="280" height="280" loading="lazy">
+            <div class="action-item__icon-area" style="background:linear-gradient(135deg,#2c5f2d,#028090)">
+              <svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M24 10 Q32 6 40 10"/>
+                <polyline points="36,6 40,10 36,14"/>
+                <path d="M46 16 Q56 30 46 50"/>
+                <polyline points="50,46 46,50 42,46"/>
+                <path d="M18 50 Q8 30 18 16"/>
+                <polyline points="14,20 18,16 22,20"/>
+              </svg>
+            </div>
             <div class="action-item__body">
               <div class="action-item__number">7</div>
               <div class="action-item__title">環境配慮商品を選ぶ</div>
@@ -521,19 +642,22 @@
             </div>
           </div>
           <div class="action-item">
-            <img src="../images/2026/01/h.png" alt="ごみを減らす" class="action-item__image" width="280" height="280" loading="lazy">
+            <div class="action-item__icon-area" style="background:linear-gradient(135deg,#028090,#97bc62)">
+              <svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20 L16 54 Q16 58 20 58 L44 58 Q48 58 48 54 L52 20"/>
+                <line x1="8" y1="20" x2="56" y2="20"/>
+                <path d="M24 16 L24 12 Q24 8 28 8 L36 8 Q40 8 40 12 L40 16"/>
+                <line x1="28" y1="28" x2="28" y2="50"/>
+                <line x1="36" y1="28" x2="36" y2="50"/>
+                <path d="M40 34 Q50 30 52 38 Q46 44 40 40 Q44 36 40 34Z" fill="rgba(255,255,255,0.7)"/>
+              </svg>
+            </div>
             <div class="action-item__body">
               <div class="action-item__number">8</div>
               <div class="action-item__title">ごみを減らす</div>
               <div class="action-item__desc">ごみの削減・分別・リサイクルで、自然環境への負荷を最小限に。</div>
             </div>
           </div>
-        </div>
-
-        <div class="strategy-image-row">
-          <img src="../images/2026/01/s10.png" alt="アクションイメージ1" width="400" height="250" loading="lazy">
-          <img src="../images/2026/01/s11.png" alt="アクションイメージ2" width="400" height="250" loading="lazy">
-          <img src="../images/2026/01/k.png" alt="アクションイメージ3" width="400" height="250" loading="lazy">
         </div>
 
         <!-- ビジョンバナー -->
