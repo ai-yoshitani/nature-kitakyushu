@@ -726,6 +726,14 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 
+.cta-band a {
+  color: #fff;
+}
+
+.cta-band a:hover {
+  color: var(--primary);
+}
+
 .cta-band__buttons {
   display: flex;
   gap: 16px;
