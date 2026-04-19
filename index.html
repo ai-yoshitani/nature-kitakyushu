@@ -357,11 +357,6 @@
       inset: 0;
     }
 
-    @keyframes hero-zoom-out {
-      from { transform: scale(1.12); }
-      to   { transform: scale(1.0); }
-    }
-
     .hero-slide {
       position: absolute;
       inset: 0;
@@ -374,7 +369,6 @@
 
     .hero-slide.is-active {
       opacity: 1;
-      animation: hero-zoom-out 7s ease-out forwards;
     }
 
     /* スライドごとの写真 */
@@ -1780,21 +1774,37 @@
       let current = 0;
       let timer;
 
+      function activateSlide(slide) {
+        // scale(1.12) からスタートして scale(1.0) へゆっくり引く
+        slide.style.transition = 'opacity 1.2s ease';
+        slide.style.transform = 'scale(1.12)';
+        slide.offsetHeight; // reflow
+        slide.style.transition = 'opacity 1.2s ease, transform 7s ease-out';
+        slide.style.transform = 'scale(1.0)';
+      }
+
+      function deactivateSlide(slide) {
+        // フェードアウト中はtransformを固定、完了後にリセット
+        const currentScale = getComputedStyle(slide).transform;
+        slide.style.transition = 'opacity 1.2s ease';
+        slide.style.transform = currentScale;
+        setTimeout(() => {
+          slide.style.transition = '';
+          slide.style.transform = 'scale(1.12)';
+        }, 1200);
+      }
+
       function goTo(index) {
         const prev = slides[current];
         prev.classList.remove('is-active');
         dots[current].classList.remove('is-active');
         dots[current].setAttribute('aria-selected', 'false');
-        // フェードアウト完了後にアニメーションをリセット（1200ms = opacity transition）
-        setTimeout(() => {
-          prev.style.animation = 'none';
-          prev.offsetHeight;
-          prev.style.animation = '';
-        }, 1200);
+        deactivateSlide(prev);
         current = index;
         slides[current].classList.add('is-active');
         dots[current].classList.add('is-active');
         dots[current].setAttribute('aria-selected', 'true');
+        activateSlide(slides[current]);
       }
 
       function next() {
@@ -1814,6 +1824,8 @@
         });
       });
 
+      // 最初のスライドもズームアウト開始
+      activateSlide(slides[0]);
       startTimer();
     })();
 
