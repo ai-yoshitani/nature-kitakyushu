@@ -1785,10 +1785,12 @@
         prev.classList.remove('is-active');
         dots[current].classList.remove('is-active');
         dots[current].setAttribute('aria-selected', 'false');
-        // アニメーションをリセットして次回も scale(1.12) から始める
-        prev.style.animation = 'none';
-        prev.offsetHeight; // reflow
-        prev.style.animation = '';
+        // フェードアウト完了後にアニメーションをリセット（1200ms = opacity transition）
+        setTimeout(() => {
+          prev.style.animation = 'none';
+          prev.offsetHeight;
+          prev.style.animation = '';
+        }, 1200);
         current = index;
         slides[current].classList.add('is-active');
         dots[current].classList.add('is-active');
