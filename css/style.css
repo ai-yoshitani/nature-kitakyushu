@@ -1229,3 +1229,9 @@ tr:nth-child(even) {
     gap: 16px;
   }
 }
+
+@media (max-width: 640px) {
+  .urban-center-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
