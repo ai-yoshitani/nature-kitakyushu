@@ -1781,9 +1781,14 @@
       let timer;
 
       function goTo(index) {
-        slides[current].classList.remove('is-active');
+        const prev = slides[current];
+        prev.classList.remove('is-active');
         dots[current].classList.remove('is-active');
         dots[current].setAttribute('aria-selected', 'false');
+        // アニメーションをリセットして次回も scale(1.12) から始める
+        prev.style.animation = 'none';
+        prev.offsetHeight; // reflow
+        prev.style.animation = '';
         current = index;
         slides[current].classList.add('is-active');
         dots[current].classList.add('is-active');
