@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>写真を投稿する | みんなの写真展 | アーバンネイチャー北九州</title>
+  <meta name="description" content="北九州の自然写真をアーバンネイチャー北九州の写真アーカイブに投稿できます。">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .submit-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    /* 利用規約ボックス */
+    .terms-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    .terms-box__header {
+      background: var(--primary);
+      color: #fff;
+      padding: 16px 24px;
+      font-weight: 700;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .terms-box__body {
+      padding: 24px;
+    }
+    .terms-item {
+      display: flex;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    .terms-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .terms-item__num {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      background: var(--secondary);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+    .terms-item__text strong {
+      display: block;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    /* 同意チェックリスト */
+    .consent-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+    .consent-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: rgba(44,95,45,0.04);
+      border: 1px solid rgba(44,95,45,0.15);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      cursor: pointer;
+      transition: background var(--transition);
+    }
+    .consent-item:has(input:checked) {
+      background: rgba(44,95,45,0.10);
+      border-color: var(--primary);
+    }
+    .consent-item input[type="checkbox"] {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary);
+      margin-top: 2px;
+      cursor: pointer;
+    }
+    .consent-item label {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    /* フォームフィールド */
+    .form-section {
+      margin-bottom: 40px;
+    }
+    .form-section__title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--secondary);
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .form-group label .required {
+      color: #e53e3e;
+      margin-left: 4px;
+      font-size: 0.8rem;
+    }
+    .form-group label .optional {
+      color: var(--text-muted);
+      margin-left: 4px;
+      font-size: 0.78rem;
+      font-weight: 400;
+    }
+    .form-control {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      font-family: inherit;
+      color: var(--text);
+      background: #fff;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      line-height: 1.6;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(44,95,45,0.12);
+    }
+    textarea.form-control {
+      resize: vertical;
+      min-height: 100px;
+    }
+    select.form-control {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23666' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+    }
+
+    /* ファイルアップロード */
+    .upload-area {
+      border: 2px dashed var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px 24px;
+      text-align: center;
+      background: #fafafa;
+      cursor: pointer;
+      transition: border-color var(--transition), background var(--transition);
+      position: relative;
+    }
+    .upload-area:hover,
+    .upload-area.dragover {
+      border-color: var(--primary);
+      background: rgba(44,95,45,0.04);
+    }
+    .upload-area input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+    }
+    .upload-area__icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 12px;
+      color: var(--text-muted);
+    }
+    .upload-area__text {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin-bottom: 6px;
+    }
+    .upload-area__sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .upload-preview {
+      display: none;
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 12px;
+    }
+    .upload-preview img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+
+    /* 送信ボタンエリア */
+    .submit-area {
+      background: rgba(44,95,45,0.04);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      text-align: center;
+    }
+    .submit-area p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    .btn--submit {
+      min-width: 240px;
+    }
+    .btn--submit:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      transform: none !important;
+      box-shadow: none !important;
+    }
+
+    /* 注記バナー */
+    .notice-banner {
+      background: #fff8e1;
+      border: 1px solid #f6c90e;
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      font-size: 0.85rem;
+      color: #7a6000;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    .notice-banner strong { color: #5a4600; }
+
+    @media (max-width: 640px) {
+      .terms-item { flex-direction: row; }
+      .submit-area { padding: 24px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">メインコンテンツへスキップ</a>
+
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <img src="../images/2026/02/logo.png" alt="アーバンネイチャー北九州" width="160" height="40">
+      </a>
+      <nav class="header__nav">
+        <div class="nav-item">
+          <a href="../about/">アーバンネイチャーとは？</a>
+          <ul class="dropdown">
+            <li><a href="../about/">全体像</a></li>
+            <li><a href="../about/biodiversity.html">生物多様性とは？</a></li>
+            <li><a href="../about/strategy.html">北九州市の取り組み</a></li>
+            <li><a href="../about/spots.html">北九州市の自然スポット</a></li>
+          </ul>
+        </div>
+        <div class="nav-item">
+          <a href="../center/">活動拠点</a>
+          <ul class="dropdown">
+            <li><a href="../center/">拠点一覧</a></li>
+            <li class="nav-sub"><a class="nav-sub" href="../center/biotope.html">響灘ビオトープ</a></li>
+            <li class="nav-sub"><a class="nav-sub" href="../center/greenpark.html">グリーンパーク</a></li>
+            <li class="nav-sub"><a class="nav-sub" href="../center/hotarukan.html">北九州市ほたる館</a></li>
+            <li class="nav-sub"><a class="nav-sub" href="../center/inochi.html">いのちのたび博物館</a></li>
+            <li class="nav-sub"><a class="nav-sub" href="../center/itouzu.html">到津の森公園</a></li>
+            <li class="nav-sub"><a class="nav-sub" href="../center/katsuki-hotaru.html">香月・黒川ほたる館</a></li>
+            <li class="nav-sub"><a class="nav-sub" href="../center/mizukankyokan.html">水環境館</a></li>
+            <li class="nav-sub"><a class="nav-sub" href="../center/soraland.html">ソラランド平尾台</a></li>
+            <li class="nav-sub"><a class="nav-sub" href="../center/takamiya.html">タカミヤ環境ミュージアム</a></li>
+            <li class="nav-sub"><a class="nav-sub" href="../center/yamada.html">山田緑地</a></li>
+          </ul>
+        </div>
+        <div class="nav-item">
+          <a href="../network/">地域との繋がり</a>
+          <ul class="dropdown">
+            <li><a href="../network/">北九州ネイチャーポジティブネットワーク</a></li>
+            <li><a href="../network/cases/">活動実績</a></li>
+            <li><a href="../blog/">活動ブログ</a></li>
+            <li><a href="../join/">会員募集</a></li>
+          </ul>
+        </div>
+        <a href="../events/">イベントを探す</a>
+        <a href="../news/">お知らせ</a>
+        <a href="../photos/" class="active">みんなの写真展</a>
+      </nav>
+      <div class="header__actions">
+        <a href="../contact/" class="btn btn--primary btn--sm">お問い合わせ</a>
+        <button class="hamburger" aria-label="メニューを開く" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- モバイルナビ -->
+  <nav class="mobile-nav" id="js-mobile-nav">
+    <div class="mobile-nav__group">
+      <div class="mobile-nav__parent">
+        <a href="../about/">アーバンネイチャーとは？</a>
+        <button class="mobile-nav__toggle" aria-expanded="false" aria-label="サブメニューを開く">
+          <span class="mobile-nav__toggle-icon"></span>
+        </button>
+      </div>
+      <div class="mobile-nav__children">
+        <a href="../about/">全体像</a>
+        <a href="../about/biodiversity.html">生物多様性とは？</a>
+        <a href="../about/strategy.html">北九州市の取り組み</a>
+        <a href="../about/spots.html">北九州市の自然スポット</a>
+      </div>
+    </div>
+    <div class="mobile-nav__group">
+      <div class="mobile-nav__parent">
+        <a href="../center/">活動拠点</a>
+        <button class="mobile-nav__toggle" aria-expanded="false" aria-label="サブメニューを開く">
+          <span class="mobile-nav__toggle-icon"></span>
+        </button>
+      </div>
+      <div class="mobile-nav__children">
+        <a href="../center/">拠点一覧</a>
+        <a class="nav-sub" href="../center/biotope.html">響灘ビオトープ</a>
+        <a class="nav-sub" href="../center/greenpark.html">グリーンパーク</a>
+        <a class="nav-sub" href="../center/hotarukan.html">北九州市ほたる館</a>
+        <a class="nav-sub" href="../center/inochi.html">いのちのたび博物館</a>
+        <a class="nav-sub" href="../center/itouzu.html">到津の森公園</a>
+        <a class="nav-sub" href="../center/katsuki-hotaru.html">香月・黒川ほたる館</a>
+        <a class="nav-sub" href="../center/mizukankyokan.html">水環境館</a>
+        <a class="nav-sub" href="../center/soraland.html">ソラランド平尾台</a>
+        <a class="nav-sub" href="../center/takamiya.html">タカミヤ環境ミュージアム</a>
+        <a class="nav-sub" href="../center/yamada.html">山田緑地</a>
+      </div>
+    </div>
+    <div class="mobile-nav__group">
+      <div class="mobile-nav__parent">
+        <a href="../network/">地域との繋がり</a>
+        <button class="mobile-nav__toggle" aria-expanded="false" aria-label="サブメニューを開く">
+          <span class="mobile-nav__toggle-icon"></span>
+        </button>
+      </div>
+      <div class="mobile-nav__children">
+        <a href="../network/">北九州ネイチャーポジティブネットワーク</a>
+        <a href="../network/cases/">活動実績</a>
+        <a href="../blog/">活動ブログ</a>
+        <a href="../join/">会員募集</a>
+      </div>
+    </div>
+    <a href="../events/">イベントを探す</a>
+    <a href="../news/">お知らせ</a>
+    <a href="../photos/">みんなの写真展</a>
+    <div class="mobile-nav__cta">
+      <a href="../join/" class="btn btn--primary btn--block">参加する</a>
+    </div>
+  </nav>
+
+  <!-- パンくずリスト -->
+  <nav class="breadcrumb" aria-label="パンくずリスト" id="main-content">
+    <div class="container">
+      <ol class="breadcrumb__list">
+        <li><a href="../">トップ</a></li>
+        <li><a href="../photos/">みんなの写真展</a></li>
+        <li>写真を投稿する</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ページヘッダー -->
+  <div class="page-header" style="background-image: url('../images/2025/03/nature2.jpg'); background-size: cover; background-position: center center;">
+    <div class="container">
+      <h1 class="page-header__title">写真を投稿する</h1>
+      <p class="page-header__desc">北九州の自然写真をアーカイブに提供していただけますか</p>
+    </div>
+  </div>
+
+  <!-- メインコンテンツ -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="submit-wrap">
+
+        <!-- バックエンド未設定の注記（設定後に削除） -->
+        <div class="notice-banner">
+          <strong>【運営者向け】</strong> このフォームは現在バックエンド未接続です。送信を有効にするには、フォームサービス（Formspreeなど）を設定し、<code>&lt;form&gt;</code> の <code>action</code> 属性にエンドポイントURLを設定してください。
+        </div>
+
+        <!-- 利用規約 -->
+        <div class="terms-box">
+          <div class="terms-box__header">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            写真投稿に関する利用規約
+          </div>
+          <div class="terms-box__body">
+            <div class="terms-item">
+              <div class="terms-item__num">1</div>
+              <div class="terms-item__text">
+                <strong>著作権の帰属</strong>
+                投稿された写真の著作権は、投稿者本人に帰属します。アーバンネイチャー北九州が著作権を取得することはありません。
+              </div>
+            </div>
+            <div class="terms-item">
+              <div class="terms-item__num">2</div>
+              <div class="terms-item__text">
+                <strong>使用許諾の付与</strong>
+                投稿者は、アーバンネイチャー北九州に対して、投稿写真を以下の目的で使用する非独占的・無償・無期限のライセンスを付与することに同意します。<br>
+                ・当サイトおよびSNSへの掲載<br>
+                ・パンフレット・報告書などの印刷物への掲載<br>
+                ・報道・広報・普及啓発を目的とした使用<br>
+                ・北九州市など関係機関との共有
+              </div>
+            </div>
+            <div class="terms-item">
+              <div class="terms-item__num">3</div>
+              <div class="terms-item__text">
+                <strong>報酬・対価の不発生</strong>
+                写真の使用に対して、報酬・対価・謝礼等は一切発生しません。
+              </div>
+            </div>
+            <div class="terms-item">
+              <div class="terms-item__num">4</div>
+              <div class="terms-item__text">
+                <strong>掲載取り下げについて</strong>
+                Webサイトからの掲載削除は、メールにてお申し出いただければ対応します。ただし、すでに印刷・配布された冊子・資料等からの取り下げは技術的に対応できない場合があります。
+              </div>
+            </div>
+            <div class="terms-item">
+              <div class="terms-item__num">5</div>
+              <div class="terms-item__text">
+                <strong>第三者の権利</strong>
+                投稿する写真が第三者の著作権・肖像権・プライバシー権を侵害していないことを保証してください。権利侵害が生じた場合、投稿者が責任を負うものとします。
+              </div>
+            </div>
+            <div class="terms-item">
+              <div class="terms-item__num">6</div>
+              <div class="terms-item__text">
+                <strong>未成年者が写っている場合</strong>
+                写真に未成年者が写っている場合は、保護者の同意を得た上で投稿してください。
+              </div>
+            </div>
+            <div class="terms-item">
+              <div class="terms-item__num">7</div>
+              <div class="terms-item__text">
+                <strong>掲載の可否</strong>
+                投稿いただいた写真は、内容・品質・テーマへの適合性などを考慮し、アーバンネイチャー北九州が掲載の可否を判断します。すべての投稿写真の掲載を保証するものではありません。
+              </div>
+            </div>
+            <div class="terms-item">
+              <div class="terms-item__num">8</div>
+              <div class="terms-item__text">
+                <strong>禁止事項</strong>
+                公序良俗に反する内容、個人を特定できる情報が含まれる写真、北九州の自然とは無関係な写真の投稿はお断りします。
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 同意チェックリスト -->
+        <h2 style="font-size:1.05rem; font-weight:700; color:var(--text); margin-bottom:16px;">上記の規約に同意してください <span style="color:#e53e3e; font-size:0.85rem;">（全項目必須）</span></h2>
+        <div class="consent-list" id="consent-list">
+          <div class="consent-item">
+            <input type="checkbox" id="c1" name="consent[]" value="著作権帰属に同意" required>
+            <label for="c1">著作権は自分に帰属し、アーバンネイチャー北九州に対して使用許諾を付与することに同意します（第1・2条）</label>
+          </div>
+          <div class="consent-item">
+            <input type="checkbox" id="c2" name="consent[]" value="無償使用に同意" required>
+            <label for="c2">写真の使用に対して報酬・対価が発生しないことに同意します（第3条）</label>
+          </div>
+          <div class="consent-item">
+            <input type="checkbox" id="c3" name="consent[]" value="取り下げ条件に同意" required>
+            <label for="c3">Webサイトからの削除は申請可能ですが、印刷・配布済み資料からの取り下げは保証されない場合があることに同意します（第4条）</label>
+          </div>
+          <div class="consent-item">
+            <input type="checkbox" id="c4" name="consent[]" value="第三者権利保証" required>
+            <label for="c4">投稿する写真が第三者の著作権・肖像権等を侵害していないことを保証します（第5・6条）</label>
+          </div>
+          <div class="consent-item">
+            <input type="checkbox" id="c5" name="consent[]" value="掲載可否に同意" required>
+            <label for="c5">掲載の可否はアーバンネイチャー北九州が判断することに同意します（第7条）</label>
+          </div>
+        </div>
+
+        <!-- 投稿フォーム -->
+        <!-- TODO: action属性にFormspree等のエンドポイントを設定してください -->
+        <form id="photo-submit-form" action="#" method="POST" enctype="multipart/form-data" novalidate>
+
+          <!-- 投稿者情報 -->
+          <div class="form-section">
+            <h2 class="form-section__title">投稿者情報</h2>
+            <div class="form-group">
+              <label for="name">お名前 <span class="required">*必須</span></label>
+              <input type="text" id="name" name="name" class="form-control" placeholder="山田 太郎" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="email">メールアドレス <span class="required">*必須</span></label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="example@email.com" required autocomplete="email">
+              <p style="font-size:0.8rem; color:var(--text-muted); margin-top:4px;">掲載可否のご連絡に使用します。第三者への提供は行いません。</p>
+            </div>
+            <div class="form-group">
+              <label for="display-name">表示名 <span class="optional">任意（省略時は「匿名」で表示）</span></label>
+              <input type="text" id="display-name" name="display_name" class="form-control" placeholder="例：山田 太郎 / 山田さん / 匿名">
+            </div>
+          </div>
+
+          <!-- 写真情報 -->
+          <div class="form-section">
+            <h2 class="form-section__title">写真の情報</h2>
+            <div class="form-group">
+              <label for="photo-file">写真ファイル <span class="required">*必須（最大5枚・各10MBまで）</span></label>
+              <div class="upload-area" id="upload-area">
+                <input type="file" id="photo-file" name="photos[]" accept="image/jpeg,image/png,image/webp" multiple required aria-label="写真ファイルを選択">
+                <svg class="upload-area__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+                </svg>
+                <p class="upload-area__text">クリックまたはドラッグ＆ドロップで写真を選択</p>
+                <p class="upload-area__sub">JPEG・PNG・WebP対応 ／ 1枚あたり最大10MB ／ 最大5枚まで</p>
+              </div>
+              <div class="upload-preview" id="upload-preview"></div>
+            </div>
+            <div class="form-group">
+              <label for="location">撮影場所 <span class="required">*必須</span></label>
+              <input type="text" id="location" name="location" class="form-control" placeholder="例：響灘ビオトープ、平尾台、紫川など" required>
+            </div>
+            <div class="form-group">
+              <label for="shoot-date">撮影日 <span class="optional">任意</span></label>
+              <input type="date" id="shoot-date" name="shoot_date" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="category">カテゴリ <span class="required">*必須</span></label>
+              <select id="category" name="category" class="form-control" required>
+                <option value="">選択してください</option>
+                <option value="海・干潟・ビオトープ">海・干潟・ビオトープ</option>
+                <option value="山">山</option>
+                <option value="川">川</option>
+                <option value="動物">動物</option>
+                <option value="植物">植物</option>
+                <option value="街と自然">街と自然</option>
+                <option value="農産品">農産品</option>
+                <option value="昆虫・その他">昆虫・その他</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="description">写真の説明 <span class="optional">任意</span></label>
+              <textarea id="description" name="description" class="form-control" placeholder="写真に写っている生き物や風景、撮影時のエピソードなどをお書きください。"></textarea>
+            </div>
+          </div>
+
+          <!-- 送信 -->
+          <div class="submit-area">
+            <p>すべての同意項目にチェックを入れ、必須項目を入力してから送信してください。<br>投稿内容を確認後、2週間以内にご登録のメールアドレスへご連絡します。</p>
+            <button type="submit" class="btn btn--primary btn--lg btn--submit" id="submit-btn" disabled>
+              上記に同意して写真を投稿する
+            </button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <span class="footer__brand-name">アーバンネイチャー北九州</span>
+          <p class="footer__desc">都市と自然が近接する北九州の強みを活かし、市民・企業・行政が一体となってネイチャーポジティブの実現を目指すプラットフォームです。</p>
+        </div>
+        <div>
+          <h3 class="footer__heading">アーバンネイチャーとは？</h3>
+          <div class="footer__links">
+            <a href="../about/">全体像</a>
+            <a href="../about/biodiversity.html">生物多様性とは？</a>
+            <a href="../about/strategy.html">北九州市の取り組み</a>
+            <a href="../about/spots.html">北九州市の自然スポット</a>
+          </div>
+          <h3 class="footer__heading" style="margin-top:24px">地域との繋がり</h3>
+          <div class="footer__links">
+            <a href="../network/">北九州NPネットワーク</a>
+            <a href="../network/cases/">活動実績</a>
+            <a href="../blog/">活動ブログ</a>
+            <a href="../join/">会員募集</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__heading">活動拠点</h3>
+          <div class="footer__links">
+            <a href="../center/">拠点一覧</a>
+            <a class="nav-sub" href="../center/biotope.html">響灘ビオトープ</a>
+            <a class="nav-sub" href="../center/greenpark.html">グリーンパーク</a>
+            <a class="nav-sub" href="../center/hotarukan.html">北九州市ほたる館</a>
+            <a class="nav-sub" href="../center/inochi.html">いのちのたび博物館</a>
+            <a class="nav-sub" href="../center/itouzu.html">到津の森公園</a>
+            <a class="nav-sub" href="../center/katsuki-hotaru.html">香月・黒川ほたる館</a>
+            <a class="nav-sub" href="../center/mizukankyokan.html">水環境館</a>
+            <a class="nav-sub" href="../center/soraland.html">ソラランド平尾台</a>
+            <a class="nav-sub" href="../center/takamiya.html">タカミヤ環境ミュージアム</a>
+            <a class="nav-sub" href="../center/yamada.html">山田緑地</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__heading">その他</h3>
+          <div class="footer__links">
+            <a href="../events/">イベントを探す</a>
+            <a href="../news/">お知らせ</a>
+            <a href="../photos/">みんなの写真展</a>
+            <a href="../contact/">お問い合わせ</a>
+            <a href="../privacy/">プライバシーポリシー</a>
+          </div>
+          <h3 class="footer__heading" style="margin-top:24px">ソーシャル</h3>
+          <div class="footer__links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">YouTube</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 アーバンネイチャー北九州</span>
+        <a href="../privacy/">プライバシーポリシー</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    (function () {
+      const checkboxes = document.querySelectorAll('#consent-list input[type="checkbox"]');
+      const submitBtn = document.getElementById('submit-btn');
+
+      function updateSubmitState() {
+        const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+        submitBtn.disabled = !allChecked;
+      }
+
+      checkboxes.forEach(cb => cb.addEventListener('change', updateSubmitState));
+
+      // ファイルプレビュー
+      const fileInput = document.getElementById('photo-file');
+      const preview = document.getElementById('upload-preview');
+      const uploadArea = document.getElementById('upload-area');
+
+      fileInput.addEventListener('change', function () {
+        preview.innerHTML = '';
+        const files = Array.from(this.files).slice(0, 5);
+        if (files.length > 0) {
+          preview.style.display = 'grid';
+          files.forEach(function (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+              const img = document.createElement('img');
+              img.src = e.target.result;
+              img.alt = file.name;
+              preview.appendChild(img);
+            };
+            reader.readAsDataURL(file);
+          });
+        } else {
+          preview.style.display = 'none';
+        }
+      });
+
+      // ドラッグ＆ドロップ
+      uploadArea.addEventListener('dragover', function (e) {
+        e.preventDefault();
+        this.classList.add('dragover');
+      });
+      uploadArea.addEventListener('dragleave', function () {
+        this.classList.remove('dragover');
+      });
+      uploadArea.addEventListener('drop', function (e) {
+        e.preventDefault();
+        this.classList.remove('dragover');
+        fileInput.files = e.dataTransfer.files;
+        fileInput.dispatchEvent(new Event('change'));
+      });
+    })();
+  </script>
+</body>
+</html>
