@@ -50,8 +50,6 @@
       --color-text-light: #666666;
       --color-white: #FFFFFF;
       --color-dark: #1A3A1B;
-      --font-family: 'Noto Sans JP', sans-serif;
-      --header-height: 64px;
       --section-padding: 80px 0;
       --container-width: 1200px;
     }
@@ -61,7 +59,7 @@
     }
 
     body {
-      font-family: var(--font-family);
+      font-family: 'Noto Sans JP', sans-serif;
       color: var(--color-text);
       background-color: var(--color-bg);
       line-height: 1.8;
@@ -234,50 +232,6 @@
     @keyframes bounce {
       0%, 100% { transform: translateX(-50%) translateY(0); }
       50% { transform: translateX(-50%) translateY(6px); }
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 32px;
-      border-radius: 50px;
-      font-size: 0.95rem;
-      font-weight: 700;
-      transition: transform 0.2s, box-shadow 0.2s;
-      cursor: pointer;
-      border: none;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .btn-primary {
-      background: var(--color-secondary);
-      color: var(--color-dark);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--color-white);
-      border: 2px solid var(--color-white);
-    }
-
-    .btn-outline:hover {
-      background: var(--color-white);
-      color: var(--color-primary);
-    }
-
-    .btn-accent {
-      background: var(--color-accent);
-      color: var(--color-white);
-    }
-
-    .btn-green {
-      background: var(--color-primary);
-      color: var(--color-white);
     }
 
     /* ===== ペルソナ選択 ===== */
