@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="響灘ビオトープ共同事業体 - 廃棄物処分場跡地に生まれた日本最大級41haの自然再生拠点。ベッコウトンボ・チュウヒなど希少種が生息し、都市と自然の共生を体現する北九州のネイチャーポジティブ拠点。">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../favicon.svg">
+  <meta property="og:title" content="響灘ビオトープ共同事業体 | アーバンネイチャー北九州">
+  <meta property="og:description" content="廃棄物処分場跡地に生まれた日本最大級41haの自然再生拠点。ネイチャーポジティブ北九州ネットワーク会員。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://ai-yoshitani.github.io/nature-kitakyushu/images/2025/03/biotope.jpg">
+  <meta property="og:site_name" content="アーバンネイチャー北九州">
+  <meta property="og:locale" content="ja_JP">
+  <title>響灘ビオトープ共同事業体 | アーバンネイチャー北九州</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .hb-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .hb-feature {
+      background: var(--bg-white);
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      box-shadow: 0 2px 12px var(--shadow);
+      text-align: center;
+    }
+    .hb-feature__icon {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .hb-feature__number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .hb-feature__unit {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-bottom: 12px;
+    }
+    .hb-feature__title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .hb-feature__desc {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.65;
+    }
+
+    .hb-activities {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 32px;
+    }
+    .hb-activity {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: var(--bg-white);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: 0 2px 12px var(--shadow);
+    }
+    .hb-activity__icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(44,95,45,0.1), rgba(151,188,98,0.15));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hb-activity__body h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .hb-activity__body p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .hb-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .hb-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--primary);
+      border: 1.5px solid var(--primary);
+      border-radius: 100px;
+      padding: 5px 14px;
+    }
+
+    .hb-info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 24px;
+      font-size: 0.9rem;
+    }
+    .hb-info-table th {
+      width: 130px;
+      padding: 14px 16px;
+      background: rgba(44,95,45,0.06);
+      color: var(--primary);
+      font-weight: 700;
+      text-align: left;
+      border-bottom: 1px solid #e8f0e8;
+      vertical-align: top;
+    }
+    .hb-info-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #e8f0e8;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .hb-cta-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    @media (max-width: 768px) {
+      .hb-features { grid-template-columns: 1fr; }
+      .hb-activities { grid-template-columns: 1fr; }
+      .hb-info-table th { width: 100px; }
+    }
+    @media (max-width: 480px) {
+      .hb-cta-row { flex-direction: column; }
+      .hb-cta-row .btn { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">メインコンテンツへスキップ</a>
+
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <img src="../images/2026/02/logo.png" alt="アーバンネイチャー北九州" width="160" height="40">
+      </a>
+      <nav class="header__nav">
+        <div class="nav-item">
+          <a href="../about/">アーバンネイチャーとは？</a>
+          <ul class="dropdown">
+            <li><a href="../about/">全体像</a></li>
+            <li><a href="../about/biodiversity.html">生物多様性とは？</a></li>
+            <li><a href="../about/strategy.html">北九州市の取り組み</a></li>
+            <li><a href="../about/spots.html">北九州市の自然スポット</a></li>
+          </ul>
+        </div>
+        <div class="nav-item">
+          <a href="../center/">活動拠点</a>
+          <ul class="dropdown">
+            <li><a href="../center/">拠点一覧</a></li>
+            <li class="nav-sub"><a class="nav-sub" href="../center/biotope.html">響灘ビオトープ</a></li>
+            <li class="nav-sub"><a class="nav-sub" href="../center/greenpark.html">グリーンパーク</a></li>
+            <li class="nav-sub"><a class="nav-sub" href="../center/hotarukan.html">北九州市ほたる館</a></li>
+            <li class="nav-sub"><a class="nav-sub" href="../center/inochi.html">いのちのたび博物館</a></li>
+            <li class="nav-sub"><a class="nav-sub" href="../center/itouzu.html">到津の森公園</a></li>
+            <li class="nav-sub"><a class="nav-sub" href="../center/katsuki-hotaru.html">香月・黒川ほたる館</a></li>
+            <li class="nav-sub"><a class="nav-sub" href="../center/mizukankyokan.html">水環境館</a></li>
+            <li class="nav-sub"><a class="nav-sub" href="../center/soraland.html">ソラランド平尾台</a></li>
+            <li class="nav-sub"><a class="nav-sub" href="../center/takamiya.html">タカミヤ環境ミュージアム</a></li>
+            <li class="nav-sub"><a class="nav-sub" href="../center/yamada.html">山田緑地</a></li>
+          </ul>
+        </div>
+        <div class="nav-item">
+          <a href="../network/" class="active">地域との繋がり</a>
+          <ul class="dropdown">
+            <li><a href="../network/">北九州ネイチャーポジティブネットワーク</a></li>
+            <li><a href="../network/cases/">活動実績</a></li>
+            <li><a href="../blog/">活動ブログ</a></li>
+            <li><a href="../join/">会員募集</a></li>
+          </ul>
+        </div>
+        <a href="../events/">イベントを探す</a>
+        <a href="../news/">お知らせ</a>
+        <a href="../photos/">みんなの写真展</a>
+      </nav>
+      <div class="header__actions">
+        <a href="../contact/" class="btn btn--primary btn--sm">お問い合わせ</a>
+        <button class="hamburger" aria-label="メニューを開く" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- モバイルナビ -->
+  <nav class="mobile-nav" id="js-mobile-nav">
+    <div class="mobile-nav__group">
+      <div class="mobile-nav__parent">
+        <a href="../about/">アーバンネイチャーとは？</a>
+        <button class="mobile-nav__toggle" aria-expanded="false" aria-label="サブメニューを開く">
+          <span class="mobile-nav__toggle-icon"></span>
+        </button>
+      </div>
+      <div class="mobile-nav__children">
+        <a href="../about/">全体像</a>
+        <a href="../about/biodiversity.html">生物多様性とは？</a>
+        <a href="../about/strategy.html">北九州市の取り組み</a>
+        <a href="../about/spots.html">北九州市の自然スポット</a>
+      </div>
+    </div>
+    <div class="mobile-nav__group">
+      <div class="mobile-nav__parent">
+        <a href="../center/">活動拠点</a>
+        <button class="mobile-nav__toggle" aria-expanded="false" aria-label="サブメニューを開く">
+          <span class="mobile-nav__toggle-icon"></span>
+        </button>
+      </div>
+      <div class="mobile-nav__children">
+        <a href="../center/">拠点一覧</a>
+        <a class="nav-sub" href="../center/biotope.html">響灘ビオトープ</a>
+        <a class="nav-sub" href="../center/greenpark.html">グリーンパーク</a>
+        <a class="nav-sub" href="../center/hotarukan.html">北九州市ほたる館</a>
+        <a class="nav-sub" href="../center/inochi.html">いのちのたび博物館</a>
+        <a class="nav-sub" href="../center/itouzu.html">到津の森公園</a>
+        <a class="nav-sub" href="../center/katsuki-hotaru.html">香月・黒川ほたる館</a>
+        <a class="nav-sub" href="../center/mizukankyokan.html">水環境館</a>
+        <a class="nav-sub" href="../center/soraland.html">ソラランド平尾台</a>
+        <a class="nav-sub" href="../center/takamiya.html">タカミヤ環境ミュージアム</a>
+        <a class="nav-sub" href="../center/yamada.html">山田緑地</a>
+      </div>
+    </div>
+    <div class="mobile-nav__group">
+      <div class="mobile-nav__parent">
+        <a href="../network/">地域との繋がり</a>
+        <button class="mobile-nav__toggle" aria-expanded="false" aria-label="サブメニューを開く">
+          <span class="mobile-nav__toggle-icon"></span>
+        </button>
+      </div>
+      <div class="mobile-nav__children">
+        <a href="../network/">北九州ネイチャーポジティブネットワーク</a>
+        <a href="../network/cases/">活動実績</a>
+        <a href="../blog/">活動ブログ</a>
+        <a href="../join/">会員募集</a>
+      </div>
+    </div>
+    <a href="../events/">イベントを探す</a>
+    <a href="../news/">お知らせ</a>
+    <a href="../photos/">みんなの写真展</a>
+    <div class="mobile-nav__cta">
+      <a href="../join/" class="btn btn--primary btn--block">参加する</a>
+    </div>
+  </nav>
+
+  <!-- パンくずリスト -->
+  <div class="breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb__list">
+        <li><a href="../">トップ</a></li>
+        <li><a href="../network/">地域との繋がり</a></li>
+        <li>響灘ビオトープ共同事業体</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ページヘッダー -->
+  <section class="page-header" style="background-image: url('../images/2025/03/biotope.jpg'); background-size: cover; background-position: center center;">
+    <div class="container">
+      <h1 class="page-header__title">響灘ビオトープ共同事業体</h1>
+      <p class="page-header__desc">廃棄物処分場跡地から生まれた、日本最大級の自然再生拠点</p>
+    </div>
+  </section>
+
+  <!-- メインコンテンツ -->
+  <main id="main-content">
+
+    <!-- 概要・バッジ -->
+    <section class="section section--white">
+      <div class="container">
+        <div class="content" style="max-width:800px; margin:0 auto;">
+          <div class="hb-badge-row">
+            <span class="hb-badge">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M6 3v3l2 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+              ネイチャーポジティブ北九州ネットワーク会員
+            </span>
+            <span class="hb-badge">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M6 1l1.2 3.6H11L8.4 6.8l.9 3.6L6 8.5l-3.3 1.9.9-3.6L1 4.6h3.8z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+              </svg>
+              福岡県OneHealth登録（FOH-000694）
+            </span>
+            <span class="hb-badge">OECM登録（福岡県初）</span>
+          </div>
+
+          <p style="margin-top:24px; font-size:1rem; line-height:1.85;">響灘ビオトープ共同事業体は、北九州市若松区に位置する日本最大級のビオトープ（約41ha）を運営する団体です。かつての廃棄物処分場跡地に、湿地・草原・淡水池など多様な環境を創出し、絶滅危惧種を含む多くの野生生物が生息する自然再生のモデルケースとして、国内外から注目を集めています。</p>
+          <p style="font-size:1rem; line-height:1.85;">「都市と自然との共生するまち」をビジョンに掲げ、工業都市・北九州の環境回復の歴史を体現する場として、市民・企業・行政が連携したネイチャーポジティブな取り組みを続けています。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3つの数字 -->
+    <section class="section section--gray">
+      <div class="container">
+        <h2 class="section__title">響灘ビオトープ 3つの特徴</h2>
+        <div class="hb-features">
+
+          <div class="hb-feature">
+            <div class="hb-feature__icon">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <circle cx="24" cy="24" r="20" fill="rgba(44,95,45,0.08)"/>
+                <path d="M24 12 C28 10 36 14 36 22 C36 30 24 38 24 38 C24 38 12 30 12 22 C12 14 20 10 24 12Z" fill="#2C5F2D" opacity="0.2"/>
+                <path d="M24 16 C27 14 33 17 33 23 C33 29 24 35 24 35 C24 35 15 29 15 23 C15 17 21 14 24 16Z" fill="#2C5F2D" opacity="0.5"/>
+                <circle cx="24" cy="23" r="5" fill="#2C5F2D"/>
+              </svg>
+            </div>
+            <div class="hb-feature__number">41<span style="font-size:1.2rem;">ha</span></div>
+            <div class="hb-feature__unit">面積</div>
+            <div class="hb-feature__title">日本最大級のビオトープ</div>
+            <div class="hb-feature__desc">廃棄物処分場跡地約41ヘクタールを自然再生。湿地・草原・淡水池など多様な生息環境が広がる。</div>
+          </div>
+
+          <div class="hb-feature">
+            <div class="hb-feature__icon">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <circle cx="24" cy="24" r="20" fill="rgba(44,95,45,0.08)"/>
+                <!-- 鳥（チュウヒ） -->
+                <path d="M10 20 Q16 14 22 18" stroke="#2C5F2D" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                <path d="M22 18 Q28 14 34 20" stroke="#2C5F2D" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                <!-- トンボ -->
+                <line x1="24" y1="28" x2="24" y2="38" stroke="#97BC62" stroke-width="2" stroke-linecap="round"/>
+                <path d="M18 30 Q24 26 30 30" stroke="#97BC62" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <path d="M19 33 Q24 29 29 33" stroke="#97BC62" stroke-width="2" stroke-linecap="round" fill="none"/>
+              </svg>
+            </div>
+            <div class="hb-feature__number" style="font-size:1.4rem; padding-top:8px;">希少種</div>
+            <div class="hb-feature__unit">の生息拠点</div>
+            <div class="hb-feature__title">絶滅危惧種が生きる場所</div>
+            <div class="hb-feature__desc">ベッコウトンボ・チュウヒ・コアジサシなど国・県指定の絶滅危惧種が多数生息・繁殖する。</div>
+          </div>
+
+          <div class="hb-feature">
+            <div class="hb-feature__icon">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <circle cx="24" cy="24" r="20" fill="rgba(44,95,45,0.08)"/>
+                <!-- 人 -->
+                <circle cx="20" cy="16" r="4" fill="#2C5F2D"/>
+                <rect x="17" y="20" width="6" height="10" rx="3" fill="#2C5F2D"/>
+                <!-- 望遠鏡/双眼鏡 -->
+                <rect x="27" y="22" width="8" height="5" rx="2" fill="#97BC62"/>
+                <rect x="30" y="20" width="2" height="3" rx="1" fill="#97BC62"/>
+              </svg>
+            </div>
+            <div class="hb-feature__number">100<span style="font-size:1rem;">円</span></div>
+            <div class="hb-feature__unit">一般入園料（小中学生無料）</div>
+            <div class="hb-feature__title">市民に開かれた学びの場</div>
+            <div class="hb-feature__desc">低価格で誰でも訪れられる自然体験・環境学習の拠点。野鳥観察会や環境教育プログラムを常時開催。</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 活動内容 -->
+    <section class="section section--white">
+      <div class="container">
+        <h2 class="section__title">活動内容</h2>
+        <p class="section__subtitle">生物多様性の保全・回復と、市民・企業をつなぐ環境学習を両輪で進める</p>
+        <div class="hb-activities">
+
+          <div class="hb-activity">
+            <div class="hb-activity__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 3 C14 2 18 4 18 9 C18 14 12 20 12 20 C12 20 6 14 6 9 C6 4 10 2 12 3Z" stroke="#2C5F2D" stroke-width="1.8" fill="rgba(44,95,45,0.15)"/>
+              </svg>
+            </div>
+            <div class="hb-activity__body">
+              <h3>生物多様性に配慮した環境整備</h3>
+              <p>希少種の生息環境を維持するための湿地管理・外来種対策・再生可能エネルギー導入など、生態系に配慮した施設運営を実施。</p>
+            </div>
+          </div>
+
+          <div class="hb-activity">
+            <div class="hb-activity__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M10 6 Q12 4 14 6" stroke="#2C5F2D" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                <path d="M14 6 Q16 4 18 6" stroke="#2C5F2D" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                <circle cx="12" cy="15" r="6" stroke="#2C5F2D" stroke-width="1.8" fill="rgba(44,95,45,0.1)"/>
+              </svg>
+            </div>
+            <div class="hb-activity__body">
+              <h3>野鳥観察会「鳥観んぐ」</h3>
+              <p>ガイド付きの野鳥観察会を定期開催。渡り鳥の十字路・北九州に飛来する多様な鳥類を間近で観察できる市民向けプログラム。</p>
+            </div>
+          </div>
+
+          <div class="hb-activity">
+            <div class="hb-activity__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="5" y="5" width="14" height="14" rx="3" stroke="#2C5F2D" stroke-width="1.8" fill="rgba(44,95,45,0.1)"/>
+                <circle cx="12" cy="12" r="3" fill="#2C5F2D"/>
+              </svg>
+            </div>
+            <div class="hb-activity__body">
+              <h3>フォトミッション・環境学習</h3>
+              <p>季節ごとの生きもの写真撮影イベントや、学校・企業向け環境学習プログラムを提供。生物多様性を「体験」から理解する機会をつくる。</p>
+            </div>
+          </div>
+
+          <div class="hb-activity">
+            <div class="hb-activity__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 4 A8 8 0 1 1 4 12" stroke="#2C5F2D" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                <path d="M9 2 L12 4 L10 7" stroke="#2C5F2D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="M12 9 C13.5 8 16 9.5 12 15 C8 9.5 10.5 8 12 9Z" fill="#2C5F2D" opacity="0.3"/>
+              </svg>
+            </div>
+            <div class="hb-activity__body">
+              <h3>OECM・ネイチャーポジティブ経営支援</h3>
+              <p>福岡県内初のOECM登録拠点として、企業のネイチャーポジティブ経営・TNFDへの対応を支援。自然資本を活かしたビジネス連携の場を提供。</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- アーバンネイチャー北九州との関係 -->
+    <section class="section section--gray">
+      <div class="container">
+        <div class="content" style="max-width:800px; margin:0 auto;">
+          <h2>アーバンネイチャー北九州との関係</h2>
+          <p>響灘ビオトープ共同事業体は、<strong>北九州ネイチャーポジティブ北九州ネットワーク</strong>の会員団体として、アーバンネイチャー北九州の取り組みを現場で体現する中核的拠点のひとつです。</p>
+          <p>かつての工業廃棄物処分場が日本最大級の自然再生拠点に生まれ変わった歴史は、「工業都市でありながら豊かな自然が近接する」という北九州のアーバンネイチャーを象徴するストーリーでもあります。企業・市民・行政が一体となって自然を守り育てるこの拠点は、<strong>ネイチャーポジティブのグローバルモデル</strong>としての発信拠点にもなっています。</p>
+          <div class="highlight-box" style="margin-top:24px;">
+            <div class="highlight-box__title">福岡県 OneHealth 登録（FOH-000694）</div>
+            <p>人・動植物・環境の健康を一体的に守る「One Health」の理念のもと、生物多様性保全・自然とのふれあい機会提供・再生可能エネルギー導入など複合的な取り組みが福岡県に認定されています。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 施設情報・アクセス -->
+    <section class="section section--white">
+      <div class="container">
+        <h2 class="section__title">施設情報・アクセス</h2>
+        <div style="max-width:700px; margin:0 auto;">
+          <table class="hb-info-table">
+            <tbody>
+              <tr>
+                <th>所在地</th>
+                <td>〒808-0021 北九州市若松区響町一丁目14-32 響灘ビオトープ内</td>
+              </tr>
+              <tr>
+                <th>電話</th>
+                <td><a href="tel:0937512023">093-751-2023</a></td>
+              </tr>
+              <tr>
+                <th>開園時間</th>
+                <td>9:00〜17:00（入園は16:00まで）</td>
+              </tr>
+              <tr>
+                <th>休園日</th>
+                <td>火曜日（祝日の場合は翌日）</td>
+              </tr>
+              <tr>
+                <th>入園料</th>
+                <td>一般 100円 ／ 小中学生 無料</td>
+              </tr>
+              <tr>
+                <th>駐車場</th>
+                <td>無料（65台）</td>
+              </tr>
+              <tr>
+                <th>アクセス</th>
+                <td>JR若松駅から車で約20分</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="hb-cta-row">
+            <a href="https://www.hibikinadabiotope.com/"
+               target="_blank" rel="noopener noreferrer"
+               class="btn btn--primary btn--lg">
+              公式サイトを見る
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left:6px; vertical-align:middle;">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </a>
+            <a href="https://onehealth.pref.fukuoka.lg.jp/registrations/detail/FOH-000694"
+               target="_blank" rel="noopener noreferrer"
+               class="btn btn--outline btn--lg">
+              OneHealth 登録詳細
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left:6px; vertical-align:middle;">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </a>
+          </div>
+
+          <div style="border-radius:12px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.1); margin-top:32px;">
+            <iframe
+              src="https://maps.google.com/maps?q=%E5%8C%97%E4%B9%9D%E5%B7%9E%E5%B8%82%E8%8B%A5%E6%9D%BE%E5%8C%BA%E9%9F%BF%E7%94%BA1-14-32&output=embed&hl=ja"
+              width="100%" height="380" style="border:0; display:block;"
+              allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="響灘ビオトープの地図"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-band" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('../images/2025/03/biotope2.jpg'); background-size: cover; background-position: center;">
+      <div class="container">
+        <h2 class="cta-band__title">ネイチャーポジティブの取り組みに参加しませんか</h2>
+        <div class="cta-band__buttons">
+          <a href="../network/" class="btn btn--solid-white btn--lg">ネットワークを見る</a>
+          <a href="../join/" class="btn btn--outline-white btn--lg">会員になる</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <span class="footer__brand-name">アーバンネイチャー北九州</span>
+          <p class="footer__desc">都市と自然が近接する北九州の強みを活かし、市民・企業・行政が一体となってネイチャーポジティブの実現を目指すプラットフォームです。</p>
+        </div>
+        <div>
+          <h3 class="footer__heading">アーバンネイチャーとは？</h3>
+          <div class="footer__links">
+            <a href="../about/">全体像</a>
+            <a href="../about/biodiversity.html">生物多様性とは？</a>
+            <a href="../about/strategy.html">北九州市の取り組み</a>
+            <a href="../about/spots.html">北九州市の自然スポット</a>
+          </div>
+          <h3 class="footer__heading" style="margin-top:24px">地域との繋がり</h3>
+          <div class="footer__links">
+            <a href="../network/">北九州NPネットワーク</a>
+            <a href="../network/cases/">活動実績</a>
+            <a href="../blog/">活動ブログ</a>
+            <a href="../join/">会員募集</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__heading">活動拠点</h3>
+          <div class="footer__links">
+            <a href="../center/">拠点一覧</a>
+            <a class="nav-sub" href="../center/biotope.html">響灘ビオトープ</a>
+            <a class="nav-sub" href="../center/greenpark.html">グリーンパーク</a>
+            <a class="nav-sub" href="../center/hotarukan.html">北九州市ほたる館</a>
+            <a class="nav-sub" href="../center/inochi.html">いのちのたび博物館</a>
+            <a class="nav-sub" href="../center/itouzu.html">到津の森公園</a>
+            <a class="nav-sub" href="../center/katsuki-hotaru.html">香月・黒川ほたる館</a>
+            <a class="nav-sub" href="../center/mizukankyokan.html">水環境館</a>
+            <a class="nav-sub" href="../center/soraland.html">ソラランド平尾台</a>
+            <a class="nav-sub" href="../center/takamiya.html">タカミヤ環境ミュージアム</a>
+            <a class="nav-sub" href="../center/yamada.html">山田緑地</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__heading">その他</h3>
+          <div class="footer__links">
+            <a href="../events/">イベントを探す</a>
+            <a href="../news/">お知らせ</a>
+            <a href="../photos/">みんなの写真展</a>
+            <a href="../contact/">お問い合わせ</a>
+            <a href="../privacy/">プライバシーポリシー</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 アーバンネイチャー北九州</span>
+        <a href="../privacy/">プライバシーポリシー</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
