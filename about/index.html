@@ -50,22 +50,23 @@
     .concept-pyramid__level:hover {
       transform: scale(1.02);
     }
+    /* 逆三角形（倒立ピラミッド）：生物多様性が広い上段、アーバンネイチャーが先端の下段 */
     .concept-pyramid__level--base {
       background: linear-gradient(135deg, #1e4320, #2C5F2D);
-      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-      clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%);
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%);
       padding: 40px 60px;
     }
     .concept-pyramid__level--middle {
       background: linear-gradient(135deg, #2C5F2D, #3a7a3c);
-      clip-path: polygon(10% 0%, 90% 0%, 95% 100%, 5% 100%);
+      clip-path: polygon(5% 0%, 95% 0%, 90% 100%, 10% 100%);
       padding: 36px 80px;
       width: 90%;
     }
     .concept-pyramid__level--top {
       background: linear-gradient(135deg, #97BC62, #7aa644);
-      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-      clip-path: polygon(15% 0%, 85% 0%, 90% 100%, 10% 100%);
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      clip-path: polygon(10% 0%, 90% 0%, 85% 100%, 15% 100%);
       padding: 36px 100px;
       width: 80%;
     }
@@ -215,16 +216,16 @@
         padding: 24px 20px;
       }
       .concept-pyramid__level--base {
-        clip-path: polygon(2% 0%, 98% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0% 0%, 100% 0%, 98% 100%, 2% 100%);
         padding: 28px 24px;
       }
       .concept-pyramid__level--middle {
-        clip-path: polygon(4% 0%, 96% 0%, 98% 100%, 2% 100%);
+        clip-path: polygon(2% 0%, 98% 0%, 96% 100%, 4% 100%);
         padding: 28px 24px;
         width: 95%;
       }
       .concept-pyramid__level--top {
-        clip-path: polygon(6% 0%, 94% 0%, 96% 100%, 4% 100%);
+        clip-path: polygon(4% 0%, 96% 0%, 94% 100%, 6% 100%);
         padding: 28px 24px;
         width: 90%;
       }
@@ -383,47 +384,39 @@
     <section class="section section--white">
       <div class="container">
         <h2 class="section__title">3つのキーコンセプト</h2>
-        <p class="section__subtitle">生物多様性を守るための世界目標と、北九州独自のアプローチ</p>
+        <p class="section__subtitle">守るべき生物多様性から、世界共通の目標を経て、北九州独自の実装へ</p>
 
-        <div class="concept-pyramid">
-          <div class="concept-pyramid__level concept-pyramid__level--top">
+        <!-- aria-label で北九州市生物多様性戦略を補足 -->
+        <div class="concept-pyramid" aria-label="北九州市生物多様性戦略の3層構造">
+          <!-- 上段（ベースが広い段）：生物多様性 — 守るべき対象 -->
+          <div class="concept-pyramid__level concept-pyramid__level--base">
             <div class="concept-pyramid__icon">
-              <!-- アーバンネイチャー: ビル＋木の融合 -->
-              <svg width="64" height="52" viewBox="0 0 64 52" fill="none" aria-hidden="true">
-                <!-- 建物群 -->
-                <rect x="2" y="22" width="9" height="24" rx="1.5" fill="white" opacity="0.9"/>
-                <rect x="13" y="14" width="11" height="32" rx="1.5" fill="white" opacity="0.9"/>
-                <!-- 窓 -->
-                <rect x="4" y="25" width="3" height="3" rx="0.5" fill="rgba(0,80,40,0.3)"/>
-                <rect x="4" y="31" width="3" height="3" rx="0.5" fill="rgba(0,80,40,0.3)"/>
-                <rect x="15" y="17" width="3" height="3" rx="0.5" fill="rgba(0,80,40,0.3)"/>
-                <rect x="15" y="23" width="3" height="3" rx="0.5" fill="rgba(0,80,40,0.3)"/>
-                <rect x="15" y="29" width="3" height="3" rx="0.5" fill="rgba(0,80,40,0.3)"/>
-                <!-- 大きな木 -->
-                <circle cx="42" cy="20" r="12" fill="white" opacity="0.92"/>
-                <rect x="39" y="32" width="6" height="14" rx="3" fill="white" opacity="0.9"/>
-                <!-- 小さい木 -->
-                <circle cx="58" cy="26" r="7" fill="white" opacity="0.82"/>
-                <rect x="56" y="33" width="4" height="10" rx="2" fill="white" opacity="0.8"/>
-                <!-- 地面線 -->
-                <line x1="2" y1="47" x2="62" y2="47" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/>
+              <!-- 生物多様性: 木＋鳥＋蝶（生態系） -->
+              <svg width="64" height="56" viewBox="0 0 64 56" fill="none" aria-hidden="true">
+                <rect x="29" y="34" width="6" height="16" rx="3" fill="white" opacity="0.9"/>
+                <path d="M20 50 Q26 44 32 50 Q38 44 44 50" stroke="white" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.65"/>
+                <circle cx="32" cy="22" r="11" fill="white" opacity="0.92"/>
+                <circle cx="18" cy="27" r="8" fill="white" opacity="0.82"/>
+                <circle cx="46" cy="27" r="8" fill="white" opacity="0.82"/>
+                <path d="M6 10 Q10 6 14 10" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                <path d="M14 10 Q18 6 22 10" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                <path d="M44 8 Q48 4 52 8 Q48 12 44 8Z" fill="white" opacity="0.8"/>
+                <path d="M44 8 Q48 12 52 14 Q48 16 44 12 Q44 10 44 8Z" fill="white" opacity="0.65"/>
+                <line x1="48" y1="8" x2="48" y2="14" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
               </svg>
             </div>
-            <div class="concept-pyramid__title">アーバンネイチャー</div>
-            <div class="concept-pyramid__desc">北九州の強み：都市と自然が近接した環境を活かし、暮らしの中で自然と共生する地域モデル</div>
+            <div class="concept-pyramid__title">生物多様性</div>
+            <div class="concept-pyramid__desc">守るべき対象：あらゆる生きものの「つながり」と「多様さ」。私たちの暮らしを支える基盤</div>
           </div>
           <div class="concept-pyramid__arrow">&#9660;</div>
+          <!-- 中段：ネイチャーポジティブ — 世界共通の目標 -->
           <div class="concept-pyramid__level concept-pyramid__level--middle">
             <div class="concept-pyramid__icon">
               <!-- ネイチャーポジティブ: 植物＋上昇矢印 -->
               <svg width="56" height="56" viewBox="0 0 56 56" fill="none" aria-hidden="true">
-                <!-- 矢印の軸 -->
                 <line x1="28" y1="50" x2="28" y2="14" stroke="white" stroke-width="3.5" stroke-linecap="round" opacity="0.85"/>
-                <!-- 矢印の頭 -->
                 <path d="M17 26 L28 12 L39 26" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                <!-- 左の葉 -->
                 <path d="M28 38 C23 32 12 32 10 39 C17 39 23 37 28 38Z" fill="white" opacity="0.92"/>
-                <!-- 右の葉 -->
                 <path d="M28 29 C33 23 44 23 46 30 C39 30 33 28 28 29Z" fill="white" opacity="0.92"/>
               </svg>
             </div>
@@ -431,38 +424,33 @@
             <div class="concept-pyramid__desc">世界共通の目標：自然の損失を止め、回復に向かわせる。2030年までに生物多様性の減少傾向を反転</div>
           </div>
           <div class="concept-pyramid__arrow">&#9660;</div>
-          <div class="concept-pyramid__level concept-pyramid__level--base">
+          <!-- 下段（先端）：アーバンネイチャー北九州 — 北九州市が選んだ手段 -->
+          <div class="concept-pyramid__level concept-pyramid__level--top">
             <div class="concept-pyramid__icon">
-              <!-- 生物多様性: 木＋鳥＋水中生物（生態系） -->
-              <svg width="64" height="56" viewBox="0 0 64 56" fill="none" aria-hidden="true">
-                <!-- 幹 -->
-                <rect x="29" y="34" width="6" height="16" rx="3" fill="white" opacity="0.9"/>
-                <!-- 根 -->
-                <path d="M20 50 Q26 44 32 50 Q38 44 44 50" stroke="white" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.65"/>
-                <!-- 葉群（中央） -->
-                <circle cx="32" cy="22" r="11" fill="white" opacity="0.92"/>
-                <!-- 葉群（左） -->
-                <circle cx="18" cy="27" r="8" fill="white" opacity="0.82"/>
-                <!-- 葉群（右） -->
-                <circle cx="46" cy="27" r="8" fill="white" opacity="0.82"/>
-                <!-- 鳥（左上） -->
-                <path d="M6 10 Q10 6 14 10" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-                <path d="M14 10 Q18 6 22 10" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-                <!-- 蝶（右上） -->
-                <path d="M44 8 Q48 4 52 8 Q48 12 44 8Z" fill="white" opacity="0.8"/>
-                <path d="M44 8 Q48 12 52 14 Q48 16 44 12 Q44 10 44 8Z" fill="white" opacity="0.65"/>
-                <!-- 体 -->
-                <line x1="48" y1="8" x2="48" y2="14" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+              <!-- アーバンネイチャー: ビル＋木の融合 -->
+              <svg width="64" height="52" viewBox="0 0 64 52" fill="none" aria-hidden="true">
+                <rect x="2" y="22" width="9" height="24" rx="1.5" fill="white" opacity="0.9"/>
+                <rect x="13" y="14" width="11" height="32" rx="1.5" fill="white" opacity="0.9"/>
+                <rect x="4" y="25" width="3" height="3" rx="0.5" fill="rgba(0,80,40,0.3)"/>
+                <rect x="4" y="31" width="3" height="3" rx="0.5" fill="rgba(0,80,40,0.3)"/>
+                <rect x="15" y="17" width="3" height="3" rx="0.5" fill="rgba(0,80,40,0.3)"/>
+                <rect x="15" y="23" width="3" height="3" rx="0.5" fill="rgba(0,80,40,0.3)"/>
+                <rect x="15" y="29" width="3" height="3" rx="0.5" fill="rgba(0,80,40,0.3)"/>
+                <circle cx="42" cy="20" r="12" fill="white" opacity="0.92"/>
+                <rect x="39" y="32" width="6" height="14" rx="3" fill="white" opacity="0.9"/>
+                <circle cx="58" cy="26" r="7" fill="white" opacity="0.82"/>
+                <rect x="56" y="33" width="4" height="10" rx="2" fill="white" opacity="0.8"/>
+                <line x1="2" y1="47" x2="62" y2="47" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/>
               </svg>
             </div>
-            <div class="concept-pyramid__title">生物多様性</div>
-            <div class="concept-pyramid__desc">守るべき対象：あらゆる生きものの「つながり」と「多様さ」。私たちの暮らしを支える基盤</div>
+            <div class="concept-pyramid__title">アーバンネイチャー北九州</div>
+            <div class="concept-pyramid__desc">北九州市の手段：都市と自然が近接した強みを活かし、暮らしの中で自然と共生する独自モデル（北九州市の造語）</div>
           </div>
         </div>
 
         <div class="highlight-box">
           <div class="highlight-box__title">この3つはどう関係するの？</div>
-          <p>「生物多様性」は私たちが守るべき自然そのもの。「ネイチャーポジティブ」はその生物多様性を回復させるという世界共通の目標。そして「アーバンネイチャー」は、都市部でありながら豊かな自然が息づく北九州だからこそ実現できる、独自の取り組みです。</p>
+          <p>「生物多様性」は私たちが守るべき自然そのもの。それを回復させる世界共通の目標が「ネイチャーポジティブ」です。そして「アーバンネイチャー北九州」は、都市と自然が近接する北九州の強みを活かしてその目標を実現するために北九州市が生み出した独自の言葉と取り組みです。</p>
         </div>
       </div>
     </section>
@@ -471,6 +459,10 @@
     <section class="section section--gray">
       <div class="container">
         <div class="content">
+          <h2>北九州市の二重構造</h2>
+          <p>「アーバンネイチャー北九州」は、北九州市が策定した公式戦略<strong>「北九州市生物多様性戦略」</strong>と、市民・企業が参加しやすい実装プラットフォームの二層構造で成り立っています。</p>
+          <p>上位レイヤーの「北九州市生物多様性戦略」は行政としての公式戦略。実装レイヤーの「アーバンネイチャー北九州」は、その目標を市民・企業にわかりやすく届けるためのプラットフォームです。この2つは別物ではなく、<strong>同じ目的を異なる読者に届けるためのセット</strong>です。</p>
+
           <h2>ネイチャーポジティブとは</h2>
           <p>ネイチャーポジティブとは、自然環境の損失を食い止め、回復の軌道に乗せるという世界的な目標です。2022年12月に採択された「昆明・モントリオール生物多様性枠組」では、2030年までに生物多様性の損失を反転させ、回復軌道に乗せることが掲げられました。</p>
           <p>これは「自然を壊さない」だけでなく、「自然をより豊かにする」という積極的な姿勢を意味します。企業活動、まちづくり、日々の暮らしなど、あらゆる場面でネイチャーポジティブな選択が求められています。</p>
