@@ -147,6 +147,32 @@
       margin-top: 32px;
     }
 
+    .hb-photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .hb-photo-grid__item {
+      margin: 0;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+    }
+    .hb-photo-grid__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hb-photo-grid__caption {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      text-align: center;
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+
     @media (max-width: 768px) {
       .hb-features { grid-template-columns: 1fr; }
       .hb-activities { grid-template-columns: 1fr; }
@@ -317,8 +343,25 @@
             <span class="hb-badge">OECM登録（福岡県初）</span>
           </div>
 
-          <p style="margin-top:24px; font-size:1rem; line-height:1.85;">響灘ビオトープ共同事業体は、北九州市若松区に位置する日本最大級のビオトープ（約41ha）を運営する団体です。かつての廃棄物処分場跡地に、湿地・草原・淡水池など多様な環境を創出し、絶滅危惧種を含む多くの野生生物が生息する自然再生のモデルケースとして、国内外から注目を集めています。</p>
+          <h2 style="margin-top:28px; font-size:1.6rem; font-weight:800; line-height:1.4; color:var(--primary);">廃棄物処分場が、日本最大級の自然再生拠点へ。</h2>
+
+          <p style="margin-top:20px; font-size:1rem; line-height:1.85;">響灘ビオトープ共同事業体は、北九州市若松区に位置する日本最大級のビオトープ（約41ha）を運営する団体です。かつての廃棄物処分場跡地に、湿地・草原・淡水池など多様な環境を創出し、絶滅危惧種を含む多くの野生生物が生息する自然再生のモデルケースとして、国内外から注目を集めています。</p>
           <p style="font-size:1rem; line-height:1.85;">「都市と自然との共生するまち」をビジョンに掲げ、工業都市・北九州の環境回復の歴史を体現する場として、市民・企業・行政が連携したネイチャーポジティブな取り組みを続けています。</p>
+
+          <div class="hb-photo-grid">
+            <figure class="hb-photo-grid__item">
+              <img src="../images/2025/03/b-2-1-450x450.jpg"
+                   alt="ヨシ原と木道が広がる響灘ビオトープの湿地"
+                   loading="lazy" width="450" height="450">
+              <figcaption class="hb-photo-grid__caption">湿地の木道とヨシ原</figcaption>
+            </figure>
+            <figure class="hb-photo-grid__item">
+              <img src="../images/2025/04/チュウヒ-450x450.jpg"
+                   alt="響灘ビオトープで観察されたチュウヒ（絶滅危惧種）"
+                   loading="lazy" width="450" height="450">
+              <figcaption class="hb-photo-grid__caption">チュウヒ（絶滅危惧種）</figcaption>
+            </figure>
+          </div>
         </div>
       </div>
     </section>
