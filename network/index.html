@@ -210,6 +210,30 @@
       color: var(--text, #333);
       font-weight: 500;
     }
+    .member-item--link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.2s ease, border-color 0.2s ease;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .member-item--link:hover,
+    .member-item--link:focus-visible {
+      color: var(--primary, #2C5F2D);
+      border-color: var(--primary, #2C5F2D);
+    }
+    .member-item__external-icon {
+      flex-shrink: 0;
+      opacity: 0.6;
+    }
+    .member-item--link:hover .member-item__external-icon,
+    .member-item--link:focus-visible .member-item__external-icon {
+      opacity: 1;
+    }
 
     /* 会員募集フォーム */
     .member-tabs-join { display: flex; gap: 0; margin-bottom: 40px; border-bottom: 2px solid var(--border, #e0e0e0); }
@@ -614,7 +638,20 @@
         </div>
 
         <div class="member-grid" data-category="organization" style="display: none;">
-          <div class="member-item">響灘ビオトープ共同事業体</div>
+          <a class="member-item member-item--link"
+             href="https://onehealth.pref.fukuoka.lg.jp/registrations/detail/FOH-000694"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="響灘ビオトープ共同事業体の福岡県OneHealth登録ページ（別タブで開きます）">
+            響灘ビオトープ共同事業体
+            <svg class="member-item__external-icon" aria-hidden="true" focusable="false"
+                 viewBox="0 0 24 24" width="12" height="12" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </a>
           <div class="member-item">北九州市立大学マネジメント研究科</div>
           <div class="member-item">うみつなぎ</div>
           <div class="member-item">九州環境エネルギー産業推進機構</div>
