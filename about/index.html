@@ -239,6 +239,174 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* =========================================
+       about-intro: 公式感を冒頭で立てるセクション
+       ========================================= */
+    .about-intro__inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .about-intro__badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .about-intro__badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--primary);
+      border: 1.5px solid var(--primary);
+      border-radius: 100px;
+      padding: 4px 12px;
+      letter-spacing: 0.02em;
+    }
+    .about-intro__body {
+      margin-bottom: 32px;
+    }
+    .about-intro__heading {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    .about-intro__lead {
+      font-size: 0.98rem;
+      line-height: 1.85;
+    }
+    .about-intro__mayor {
+      display: flex;
+      gap: 36px;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(44,95,45,0.05), rgba(151,188,98,0.10));
+      border-radius: var(--radius-lg);
+      padding: 28px 36px;
+      margin: 0;
+    }
+    .about-intro__mayor-photo {
+      width: 160px;
+      height: auto;
+      flex-shrink: 0;
+      border-radius: var(--radius);
+    }
+    .about-intro__mayor-caption {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .about-intro__mayor-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.04em;
+    }
+    .about-intro__mayor-quote {
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.8;
+      color: var(--text);
+      margin: 0;
+      padding-left: 16px;
+      border-left: 3px solid var(--primary);
+    }
+    .about-intro__mayor-cite {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-style: normal;
+    }
+
+    /* =========================================
+       about-cycle: 取り組みサイクル（3ステップ）
+       ========================================= */
+    .cycle-cards {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin: 40px 0 0;
+    }
+    .cycle-card {
+      flex: 1;
+      background: var(--bg-white);
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      box-shadow: 0 2px 12px var(--shadow);
+      text-align: center;
+      border-top: 4px solid var(--primary);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .cycle-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px var(--shadow-md);
+    }
+    .cycle-card__step {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .cycle-card__icon {
+      margin: 0 auto 12px;
+      display: flex;
+      justify-content: center;
+    }
+    .cycle-card__subtitle {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+      letter-spacing: 0.04em;
+    }
+    .cycle-card__title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .cycle-card__desc {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.65;
+    }
+    .cycle-card__arrow {
+      font-size: 1.6rem;
+      color: var(--primary);
+      padding: 0 12px;
+      flex-shrink: 0;
+      opacity: 0.4;
+    }
+
+    @media (max-width: 768px) {
+      .about-intro__mayor {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+      }
+      .about-intro__mayor-photo {
+        width: 120px;
+      }
+      .about-intro__mayor-quote {
+        text-align: left;
+      }
+      .cycle-cards {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .cycle-card__arrow {
+        transform: rotate(90deg);
+        padding: 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -380,6 +548,38 @@
   <!-- メインコンテンツ -->
   <main id="main-content">
 
+    <!-- 公式感を冒頭で立てるセクション -->
+    <section class="section section--white about-intro" id="about-intro">
+      <div class="container about-intro__inner">
+
+        <!-- バッジ行 -->
+        <div class="about-intro__badges">
+          <span class="about-intro__badge">北九州市公式</span>
+          <span class="about-intro__badge">北九州市生物多様性戦略 2025-2030</span>
+        </div>
+
+        <!-- 見出し＋本文 -->
+        <div class="about-intro__body">
+          <h2 class="about-intro__heading">アーバンネイチャー北九州とは？</h2>
+          <p class="about-intro__lead">「アーバンネイチャー北九州」は<strong>北九州市の造語</strong>です。市域面積の約4割を森林が占め、響灘・周防灘・関門海峡の3つの海に囲まれ、豊かな生物多様性が息づく一方で、鉄鋼・化学工業の街として発展してきた北九州。都市と自然が近接するこの稀有な強みを活かし、世界目標「ネイチャーポジティブ」を市民・企業とともに実現するための北九州独自モデルとして生み出した言葉です。</p>
+        </div>
+
+        <!-- 市長メッセージ -->
+        <!-- TODO: 公式マスコット画像が入手できた場合は figure 内に追加する -->
+        <figure class="about-intro__mayor">
+          <img src="images/mayor.png" alt="北九州市長 武内 和久" class="about-intro__mayor-photo" loading="lazy">
+          <figcaption class="about-intro__mayor-caption">
+            <span class="about-intro__mayor-label">北九州市長メッセージ</span>
+            <blockquote class="about-intro__mayor-quote">
+              「北九州市が誇る、都市に近接する豊かな自然を『アーバンネイチャー北九州』と定義し、『都市と自然の共生』というネイチャーポジティブのグローバルモデルとなることを目指します。」
+            </blockquote>
+            <cite class="about-intro__mayor-cite">北九州市長 武内 和久｜出典：北九州市生物多様性戦略 2025-2030（令和7年5月）</cite>
+          </figcaption>
+        </figure>
+
+      </div>
+    </section>
+
     <!-- コンセプト階層図 -->
     <section class="section section--white">
       <div class="container">
@@ -459,7 +659,7 @@
     <section class="section section--gray">
       <div class="container">
         <div class="content">
-          <h2>北九州市の二重構造</h2>
+          <h2>北九州市生物多様性戦略 2025–2030</h2>
           <p>「アーバンネイチャー北九州」は、北九州市が策定した公式戦略<strong>「北九州市生物多様性戦略」</strong>と、市民・企業が参加しやすい実装プラットフォームの二層構造で成り立っています。</p>
           <p>上位レイヤーの「北九州市生物多様性戦略」は行政としての公式戦略。実装レイヤーの「アーバンネイチャー北九州」は、その目標を市民・企業にわかりやすく届けるためのプラットフォームです。この2つは別物ではなく、<strong>同じ目的を異なる読者に届けるためのセット</strong>です。</p>
 
@@ -475,6 +675,73 @@
           <h3>なぜ今ネイチャーポジティブが必要なのか</h3>
           <p>世界の野生生物の個体群は過去50年間で平均73%減少しています（WWF「生きている地球レポート2024」）。第6の大量絶滅とも呼ばれる現在の生物多様性の危機は、食料、水、気候、健康など私たちの生活基盤に直結する問題です。</p>
           <p>国際社会は「30by30目標」（2030年までに陸と海のそれぞれ30%以上を保全する目標）などを掲げ、行動を加速しています。日本でも「生物多様性国家戦略2023-2030」が策定され、地域ごとの取り組みが重要視されています。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 取り組みサイクル -->
+    <section class="section section--white about-cycle" id="about-cycle">
+      <div class="container">
+        <h2 class="section__title">取り組みのサイクル</h2>
+        <p class="section__subtitle">知ることから始まり、活動・連携を経て、持続する仕組みへ</p>
+        <div class="cycle-cards">
+
+          <div class="cycle-card">
+            <div class="cycle-card__step">1</div>
+            <div class="cycle-card__icon">
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+                <!-- ハートで「好き」を表現 -->
+                <path d="M22 36 C22 36 6 25 6 15 C6 10.8 9.2 8 13 8 C16 8 18.5 9.8 22 13 C25.5 9.8 28 8 31 8 C34.8 8 38 10.8 38 15 C38 25 22 36 22 36Z" fill="#2C5F2D" opacity="0.15"/>
+                <path d="M22 34 C22 34 8 24 8 15 C8 11.4 10.8 9 14 9 C16.8 9 19 10.6 22 14 C25 10.6 27.2 9 30 9 C33.2 9 36 11.4 36 15 C36 24 22 34 22 34Z" fill="#2C5F2D"/>
+                <path d="M16 15 Q18 12 22 14" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.5"/>
+              </svg>
+            </div>
+            <p class="cycle-card__subtitle">ファンになる</p>
+            <h3 class="cycle-card__title">知って・好きになる</h3>
+            <p class="cycle-card__desc">自然スポット紹介、写真展、イベント告知などで関心を持つ</p>
+          </div>
+
+          <div class="cycle-card__arrow" aria-hidden="true">&#8594;</div>
+
+          <div class="cycle-card">
+            <div class="cycle-card__step">2</div>
+            <div class="cycle-card__icon">
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+                <!-- 人と木のつながり -->
+                <circle cx="14" cy="11" r="5" fill="#2C5F2D"/>
+                <rect x="11" y="16" width="6" height="14" rx="3" fill="#2C5F2D"/>
+                <circle cx="31" cy="16" r="10" fill="#97BC62" opacity="0.8"/>
+                <rect x="29" y="24" width="4" height="12" rx="2" fill="#97BC62" opacity="0.8"/>
+                <line x1="17" y1="22" x2="25" y2="22" stroke="#2C5F2D" stroke-width="2" stroke-dasharray="2 2"/>
+              </svg>
+            </div>
+            <p class="cycle-card__subtitle">活動する</p>
+            <h3 class="cycle-card__title">参加する・つながる</h3>
+            <p class="cycle-card__desc">ネットワーク参加、現場活動、勉強会への参加</p>
+          </div>
+
+          <div class="cycle-card__arrow" aria-hidden="true">&#8594;</div>
+
+          <div class="cycle-card">
+            <div class="cycle-card__step">3</div>
+            <div class="cycle-card__icon">
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+                <!-- 循環矢印：持続する仕組み -->
+                <path d="M22 8 A14 14 0 1 1 8 22" stroke="#2C5F2D" stroke-width="3" stroke-linecap="round" fill="none"/>
+                <path d="M8 22 A14 14 0 0 0 22 36" stroke="#97BC62" stroke-width="3" stroke-linecap="round" fill="none"/>
+                <!-- 矢印の頭（上） -->
+                <path d="M17 6 L22 8 L19 13" stroke="#2C5F2D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <!-- 矢印の頭（下） -->
+                <path d="M27 38 L22 36 L25 31" stroke="#97BC62" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <!-- 中心の葉 -->
+                <path d="M22 17 C26 15 30 19 22 27 C14 19 18 15 22 17Z" fill="#2C5F2D" opacity="0.25"/>
+              </svg>
+            </div>
+            <p class="cycle-card__subtitle">経営に組み込む</p>
+            <h3 class="cycle-card__title">持続する仕組みにする</h3>
+            <p class="cycle-card__desc">企業の事業活動・CSR・ESG・人材育成に統合する</p>
+          </div>
+
         </div>
       </div>
     </section>
