@@ -295,8 +295,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .header__logo {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
   text-decoration: none;
   color: var(--primary);
   font-weight: 700;
@@ -307,6 +308,15 @@ h1, h2, h3, h4, h5, h6 {
 .header__logo img {
   height: 40px;
   width: auto;
+}
+
+.header__logo-sub {
+  font-size: 0.62rem;
+  font-weight: 500;
+  color: var(--text-light);
+  letter-spacing: 0.02em;
+  line-height: 1;
+  padding-left: 66px;
 }
 
 .header__nav {
