@@ -57,7 +57,7 @@
   <header class="header">
     <div class="header__inner">
       <a href="../" class="header__logo">
-        <img src="../images/2026/02/logo.png" alt="アーバンネイチャー北九州" width="160" height="40">
+        <img src="../images/2026/02/logo.png" alt="アーバンネイチャー北九州" width="160" height="40"><span class="header__logo-sub">北九州市生物多様性戦略 2025–2030</span>
       </a>
             <nav class="header__nav">
         <div class="nav-item">
@@ -99,7 +99,7 @@
         <a href="../photos/" >みんなの写真展</a>
       </nav>
       <div class="header__actions">
-        <a href="../contact/" class="btn btn--primary btn--sm">お問い合わせ</a>
+        <a href="../contact/" class="btn btn--primary btn--sm">お問合せ</a>
       
         <button class="hamburger" aria-label="メニューを開く" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -222,65 +222,15 @@
       <p class="section__subtitle">以下のフォームからお申し込みください</p>
 
       <div style="max-width: 800px; margin: 0 auto;" class="form-card">
-        <!-- タブ -->
+        <!-- タブ：企業・団体・個人の順 -->
         <div class="member-tabs" role="tablist" aria-label="会員種別">
-          <button class="member-tab active" role="tab" aria-selected="true" aria-controls="individual" data-target="individual">個人会員</button>
-          <button class="member-tab" role="tab" aria-selected="false" aria-controls="corporate" data-target="corporate">企業会員</button>
+          <button class="member-tab active" role="tab" aria-selected="true"  aria-controls="corporate"   data-target="corporate">企業会員</button>
+          <button class="member-tab"        role="tab" aria-selected="false" aria-controls="npo"         data-target="npo">団体会員</button>
+          <button class="member-tab"        role="tab" aria-selected="false" aria-controls="individual"  data-target="individual">個人会員</button>
         </div>
 
-        <!-- 個人会員フォーム -->
-        <form class="member-form active" id="individual" role="tabpanel" aria-labelledby="tab-individual">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="i-name">氏名<span class="required">*必須</span></label>
-              <input type="text" id="i-name" class="form-input" name="name" required placeholder="例：山田 太郎">
-            </div>
-            <div class="form-group">
-              <label for="i-furigana">フリガナ<span class="required">*必須</span></label>
-              <input type="text" id="i-furigana" class="form-input" name="furigana" required placeholder="例：ヤマダ タロウ">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="i-email">メールアドレス<span class="required">*必須</span></label>
-              <input type="email" id="i-email" class="form-input" name="email" required placeholder="例：example@email.com">
-            </div>
-            <div class="form-group">
-              <label for="i-phone">電話番号<span class="required">*必須</span></label>
-              <input type="tel" id="i-phone" class="form-input" name="phone" required placeholder="例：093-000-0000">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="i-address">住所<span class="required">*必須</span></label>
-            <input type="text" id="i-address" class="form-input" name="address" required placeholder="例：福岡県北九州市小倉北区...">
-          </div>
-          <div class="form-group">
-            <fieldset style="border:none;padding:0;margin:0;">
-              <legend style="font-size:inherit;margin-bottom:8px;">関心のある分野（複数選択可）</legend>
-              <div class="checkbox-group">
-                <label><input type="checkbox" name="interest" value="生態系保全"> 生態系保全</label>
-                <label><input type="checkbox" name="interest" value="環境教育"> 環境教育</label>
-                <label><input type="checkbox" name="interest" value="体験・レジャー"> 体験・レジャー</label>
-                <label><input type="checkbox" name="interest" value="ボランティア"> ボランティア</label>
-                <label><input type="checkbox" name="interest" value="写真"> 写真</label>
-              </div>
-            </fieldset>
-          </div>
-          <div class="form-group">
-            <label for="i-message">メッセージ（任意）</label>
-            <textarea id="i-message" class="form-textarea" name="message" placeholder="ご質問やご要望があればご記入ください"></textarea>
-          </div>
-          <div class="form-group">
-            <div class="form-checkbox">
-              <input type="checkbox" name="privacy" id="privacy-individual" required>
-              <label for="privacy-individual"><a href="../privacy/" target="_blank">プライバシーポリシー</a>に同意する<span class="required">*必須</span></label>
-            </div>
-          </div>
-          <button type="submit" class="btn btn--primary btn--lg btn--block">個人会員に申し込む</button>
-        </form>
-
         <!-- 企業会員フォーム -->
-        <form class="member-form" id="corporate" role="tabpanel" aria-labelledby="tab-corporate">
+        <form class="member-form active" id="corporate" role="tabpanel">
           <div class="form-row">
             <div class="form-group">
               <label for="c-company">企業名<span class="required">*必須</span></label>
@@ -293,8 +243,8 @@
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="c-email2">メールアドレス<span class="required">*必須</span></label>
-              <input type="email" id="c-email2" class="form-input" name="email" required placeholder="例：example@company.co.jp">
+              <label for="c-email">メールアドレス<span class="required">*必須</span></label>
+              <input type="email" id="c-email" class="form-input" name="email" required placeholder="例：example@company.co.jp">
             </div>
             <div class="form-group">
               <label for="c-phone">電話番号<span class="required">*必須</span></label>
@@ -356,6 +306,135 @@
           </div>
           <button type="submit" class="btn btn--primary btn--lg btn--block">企業会員に申し込む</button>
         </form>
+
+        <!-- 団体会員フォーム（NPO・大学・市民団体） -->
+        <form class="member-form" id="npo" role="tabpanel">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="n-org">団体名<span class="required">*必須</span></label>
+              <input type="text" id="n-org" class="form-input" name="org_name" required placeholder="例：〇〇自然保護の会">
+            </div>
+            <div class="form-group">
+              <label for="n-furigana">フリガナ<span class="required">*必須</span></label>
+              <input type="text" id="n-furigana" class="form-input" name="org_furigana" required placeholder="例：マルマルシゼンホゴノカイ">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="n-type">団体種別<span class="required">*必須</span></label>
+              <select id="n-type" class="form-select" name="org_type" required>
+                <option value="">選択してください</option>
+                <option value="NPO法人">NPO法人</option>
+                <option value="大学・研究機関">大学・研究機関</option>
+                <option value="市民団体・ボランティア団体">市民団体・ボランティア団体</option>
+                <option value="自治会・町内会">自治会・町内会</option>
+                <option value="その他">その他</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="n-members">構成員数</label>
+              <select id="n-members" class="form-select" name="members">
+                <option value="">選択してください</option>
+                <option value="1-10">1〜10名</option>
+                <option value="11-30">11〜30名</option>
+                <option value="31-100">31〜100名</option>
+                <option value="101+">101名以上</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="n-contact">担当者名<span class="required">*必須</span></label>
+              <input type="text" id="n-contact" class="form-input" name="contact_name" required placeholder="例：山田 太郎">
+            </div>
+            <div class="form-group">
+              <label for="n-phone">電話番号<span class="required">*必須</span></label>
+              <input type="tel" id="n-phone" class="form-input" name="phone" required placeholder="例：093-000-0000">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="n-email">メールアドレス<span class="required">*必須</span></label>
+            <input type="email" id="n-email" class="form-input" name="email" required placeholder="例：info@example.org">
+          </div>
+          <div class="form-group">
+            <label for="n-address">所在地<span class="required">*必須</span></label>
+            <input type="text" id="n-address" class="form-input" name="address" required placeholder="例：福岡県北九州市〇〇区...">
+          </div>
+          <div class="form-group">
+            <fieldset style="border:none;padding:0;margin:0;">
+              <legend style="font-size:inherit;margin-bottom:8px;">関心のある分野（複数選択可）</legend>
+              <div class="checkbox-group">
+                <label><input type="checkbox" name="interest" value="生態系保全"> 生態系保全</label>
+                <label><input type="checkbox" name="interest" value="環境教育"> 環境教育</label>
+                <label><input type="checkbox" name="interest" value="調査・研究"> 調査・研究</label>
+                <label><input type="checkbox" name="interest" value="地域活動"> 地域活動</label>
+                <label><input type="checkbox" name="interest" value="ボランティア"> ボランティア</label>
+              </div>
+            </fieldset>
+          </div>
+          <div class="form-group">
+            <label for="n-message">メッセージ（任意）</label>
+            <textarea id="n-message" class="form-textarea" name="message" placeholder="活動内容や連携希望などをご記入ください"></textarea>
+          </div>
+          <div class="form-group">
+            <div class="form-checkbox">
+              <input type="checkbox" name="privacy" id="privacy-npo" required>
+              <label for="privacy-npo"><a href="../privacy/" target="_blank">プライバシーポリシー</a>に同意する<span class="required">*必須</span></label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn--primary btn--lg btn--block">団体会員に申し込む</button>
+        </form>
+
+        <!-- 個人会員フォーム -->
+        <form class="member-form" id="individual" role="tabpanel">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="i-name">氏名<span class="required">*必須</span></label>
+              <input type="text" id="i-name" class="form-input" name="name" required placeholder="例：山田 太郎">
+            </div>
+            <div class="form-group">
+              <label for="i-furigana">フリガナ<span class="required">*必須</span></label>
+              <input type="text" id="i-furigana" class="form-input" name="furigana" required placeholder="例：ヤマダ タロウ">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="i-email">メールアドレス<span class="required">*必須</span></label>
+              <input type="email" id="i-email" class="form-input" name="email" required placeholder="例：example@email.com">
+            </div>
+            <div class="form-group">
+              <label for="i-phone">電話番号<span class="required">*必須</span></label>
+              <input type="tel" id="i-phone" class="form-input" name="phone" required placeholder="例：093-000-0000">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="i-address">住所<span class="required">*必須</span></label>
+            <input type="text" id="i-address" class="form-input" name="address" required placeholder="例：福岡県北九州市小倉北区...">
+          </div>
+          <div class="form-group">
+            <fieldset style="border:none;padding:0;margin:0;">
+              <legend style="font-size:inherit;margin-bottom:8px;">関心のある分野（複数選択可）</legend>
+              <div class="checkbox-group">
+                <label><input type="checkbox" name="interest" value="生態系保全"> 生態系保全</label>
+                <label><input type="checkbox" name="interest" value="環境教育"> 環境教育</label>
+                <label><input type="checkbox" name="interest" value="体験・レジャー"> 体験・レジャー</label>
+                <label><input type="checkbox" name="interest" value="ボランティア"> ボランティア</label>
+                <label><input type="checkbox" name="interest" value="写真"> 写真</label>
+              </div>
+            </fieldset>
+          </div>
+          <div class="form-group">
+            <label for="i-message">メッセージ（任意）</label>
+            <textarea id="i-message" class="form-textarea" name="message" placeholder="ご質問やご要望があればご記入ください"></textarea>
+          </div>
+          <div class="form-group">
+            <div class="form-checkbox">
+              <input type="checkbox" name="privacy" id="privacy-individual" required>
+              <label for="privacy-individual"><a href="../privacy/" target="_blank">プライバシーポリシー</a>に同意する<span class="required">*必須</span></label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn--primary btn--lg btn--block">個人会員に申し込む</button>
+        </form>
       </div>
     </div>
   </section>
@@ -363,9 +442,9 @@
   <!-- CTA -->
   <section class="cta-band" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('../images/cta-bg.png'); background-size: cover; background-position: center;">
     <div class="container">
-      <h2 class="cta-band__title">お気軽にお問い合わせください</h2>
+      <h2 class="cta-band__title">お気軽にお問合せください</h2>
       <div class="cta-band__buttons">
-        <a href="../contact/" class="btn btn--solid-white btn--lg">お問い合わせ</a>
+        <a href="../contact/" class="btn btn--solid-white btn--lg">お問合せ</a>
       </div>
     </div>
   </section>
@@ -417,7 +496,7 @@
             <a href="../events/">イベントを探す</a>
             <a href="../news/">お知らせ</a>
             <a href="../photos/">みんなの写真展</a>
-            <a href="../contact/">お問い合わせ</a>
+            <a href="../contact/">お問合せ</a>
             <a href="../privacy/">プライバシーポリシー</a>
           </div>
           <h3 class="footer__heading" style="margin-top:24px">ソーシャル</h3>
