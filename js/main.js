@@ -1,38 +1,65 @@
 // アーバンネイチャー北九州 - メインJS
 
-// ハンバーガーメニュー
+// aria-live リージョンを通じて画面外に通知する
+function announce(message) {
+  let region = document.getElementById('js-live-region');
+  if (!region) {
+    region = document.createElement('div');
+    region.id = 'js-live-region';
+    region.setAttribute('aria-live', 'polite');
+    region.setAttribute('aria-atomic', 'true');
+    region.className = 'sr-only';
+    document.body.appendChild(region);
+  }
+  region.textContent = '';
+  requestAnimationFrame(() => { region.textContent = message; });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+
+  // ===== ハンバーガーメニュー =====
   const hamburger = document.querySelector('.hamburger');
   const mobileNav = document.querySelector('.mobile-nav');
 
   if (hamburger && mobileNav) {
+    function openMenu() {
+      hamburger.classList.add('active');
+      mobileNav.classList.add('active');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+      const firstFocusable = mobileNav.querySelector('a, button, [tabindex]:not([tabindex="-1"])');
+      if (firstFocusable) firstFocusable.focus();
+    }
+
+    function closeMenu() {
+      hamburger.classList.remove('active');
+      mobileNav.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      hamburger.focus();
+    }
+
     hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      mobileNav.classList.toggle('active');
-      const isOpen = mobileNav.classList.contains('active');
-      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      document.body.style.overflow = isOpen ? 'hidden' : '';
+      mobileNav.classList.contains('active') ? closeMenu() : openMenu();
     });
 
-    // モバイルナビのリンククリックで閉じる
+    // Escape キーで閉じる
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileNav.classList.contains('active')) closeMenu();
+    });
+
     mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        mobileNav.classList.remove('active');
-        document.body.style.overflow = '';
-      });
+      link.addEventListener('click', closeMenu);
     });
   }
 
-  // モバイルナビ アコーディオン（サブメニュー開閉）
+  // ===== モバイルナビ アコーディオン =====
   document.querySelectorAll('.mobile-nav__toggle').forEach(btn => {
     btn.addEventListener('click', () => {
       const children = btn.closest('.mobile-nav__parent').nextElementSibling;
       const isOpen = children.classList.contains('is-open');
-      // 他を全て閉じる
       document.querySelectorAll('.mobile-nav__children').forEach(el => el.classList.remove('is-open'));
       document.querySelectorAll('.mobile-nav__toggle').forEach(el => el.setAttribute('aria-expanded', 'false'));
-      // クリックしたものをトグル
       if (!isOpen) {
         children.classList.add('is-open');
         btn.setAttribute('aria-expanded', 'true');
@@ -40,18 +67,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // アコーディオン
+  // ===== アコーディオン =====
   document.querySelectorAll('.accordion__header').forEach(header => {
     header.addEventListener('click', () => {
       const item = header.parentElement;
-      const wasActive = item.classList.contains('active');
-      // 同じグループ内の他を閉じる（任意）
-      // item.parentElement.querySelectorAll('.accordion__item').forEach(i => i.classList.remove('active'));
-      item.classList.toggle('active', !wasActive);
+      item.classList.toggle('active', !item.classList.contains('active'));
     });
   });
 
-  // タブフィルタ（events ページ: aria-pressed 管理）
+  // ===== タブフィルタ（events ページ: aria-pressed 管理）=====
   document.querySelectorAll('.tabs').forEach(tabGroup => {
     tabGroup.querySelectorAll('.tab').forEach(tab => {
       tab.addEventListener('click', () => {
@@ -64,22 +88,24 @@ document.addEventListener('DOMContentLoaded', () => {
         const category = tab.dataset.category;
         const grid = tabGroup.nextElementSibling;
         if (grid) {
+          let count = 0;
           grid.querySelectorAll('[data-category]').forEach(item => {
-            if (category === 'all' || item.dataset.category === category) {
-              item.style.display = '';
-            } else {
-              item.style.display = 'none';
-            }
+            const show = category === 'all' || item.dataset.category === category;
+            item.style.display = show ? '' : 'none';
+            if (show) count++;
           });
+          announce(`${count}件を表示中`);
         }
       });
     });
   });
 
-  // スムーススクロール（アンカーリンク）
+  // ===== スムーススクロール =====
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
-      const target = document.querySelector(anchor.getAttribute('href'));
+      const href = anchor.getAttribute('href');
+      if (href === '#') return; // プレースホルダーリンクはスキップ
+      const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -87,8 +113,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // フォームバリデーション
+  // ===== フォームバリデーション =====
   document.querySelectorAll('form').forEach(form => {
+    // aria-live 用エラー表示エリアを各フォームに追加
+    let statusEl = form.querySelector('.form-status');
+    if (!statusEl) {
+      statusEl = document.createElement('p');
+      statusEl.className = 'form-status sr-only';
+      statusEl.setAttribute('aria-live', 'assertive');
+      statusEl.setAttribute('aria-atomic', 'true');
+      form.prepend(statusEl);
+    }
+
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const requiredFields = form.querySelectorAll('[required]');
@@ -100,30 +136,31 @@ document.addEventListener('DOMContentLoaded', () => {
           field.classList.add('error');
           valid = false;
         }
-        // メールバリデーション
         if (field.type === 'email' && field.value) {
-          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!emailPattern.test(field.value)) {
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value)) {
             field.classList.add('error');
             valid = false;
           }
         }
       });
 
-      // プライバシーポリシー同意チェック
       const privacyCheck = form.querySelector('input[name="privacy"]');
       if (privacyCheck && !privacyCheck.checked) {
         valid = false;
-        alert('プライバシーポリシーへの同意が必要です。');
+        statusEl.textContent = 'プライバシーポリシーへの同意が必要です。';
+        privacyCheck.focus();
         return;
       }
 
       if (valid) {
-        alert('送信が完了しました（デモ）');
+        statusEl.textContent = '送信が完了しました。';
         form.reset();
       } else {
-        alert('必須項目を入力してください。');
+        const firstError = form.querySelector('.error');
+        if (firstError) firstError.focus();
+        statusEl.textContent = '入力内容に誤りがあります。赤くなっている項目を確認してください。';
       }
     });
   });
+
 });

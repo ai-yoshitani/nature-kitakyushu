@@ -497,6 +497,12 @@
       to   { transform: translateX(-50%); }
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      .hero-scroll-indicator { animation: none; }
+      .facilities-track { animation: none; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    }
+
     .facility-card {
       flex: 0 0 260px;
       border-radius: 16px;
@@ -1110,7 +1116,7 @@
             <h3 style="font-size:1.35rem;font-weight:800;color:var(--text);line-height:1.4;margin-bottom:10px;">株式会社マイン</h3>
             <p style="font-size:0.95rem;font-weight:600;color:var(--primary);margin-bottom:14px;">竹バイオマスと循環モデルで、未来をつなぐ</p>
             <p style="font-size:0.88rem;color:var(--text-light);line-height:1.8;margin-bottom:24px;">放置竹林を資源として活用し、地域の環境課題を解決する循環型ビジネスモデル。企業の地域貢献とネイチャーポジティブ活動を両立する先進事例をご紹介します。</p>
-            <span style="display:inline-flex;align-items:center;gap:6px;font-size:0.875rem;font-weight:700;color:var(--primary);">詳しく見る <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            <span style="display:inline-flex;align-items:center;gap:6px;font-size:0.875rem;font-weight:700;color:var(--primary);">詳しく見る <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </div>
         </a>
         <div class="section-more">
@@ -1331,9 +1337,9 @@
           </div>
           <h3 class="footer__heading" style="margin-top:24px">ソーシャル</h3>
           <div class="footer__links">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">YouTube</a>
+            <a href="#" aria-disabled="true" aria-label="Facebook（準備中）">Facebook</a>
+            <a href="#" aria-disabled="true" aria-label="Instagram（準備中）">Instagram</a>
+            <a href="#" aria-disabled="true" aria-label="YouTube（準備中）">YouTube</a>
           </div>
         </div>
       </div>
