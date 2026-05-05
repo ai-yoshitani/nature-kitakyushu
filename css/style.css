@@ -9,8 +9,8 @@
   --primary-dark: #1e4320;
   --secondary: #97BC62;
   --secondary-light: #b0d07e;
-  --accent: #028090;
-  --accent-light: #03a0b5;
+  --accent: #027a89;
+  --accent-light: #027a89;
   --bg: #F5F5F5;
   --bg-white: #FFFFFF;
   --text: #333333;
@@ -150,7 +150,8 @@ a {
 }
 
 a:hover {
-  color: var(--accent-light);
+  color: var(--accent);
+  text-decoration: underline;
 }
 
 ul, ol {
