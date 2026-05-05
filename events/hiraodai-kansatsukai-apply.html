@@ -149,6 +149,8 @@
       line-height: 1.5;
     }
 
+    fieldset { border: none; padding: 0; margin: 0; }
+    fieldset legend { font-size: inherit; font-weight: inherit; padding: 0; margin-bottom: 6px; }
     /* ── ラジオ・チェックボックス ── */
     .radio-group,
     .check-group {
@@ -423,20 +425,23 @@
               <span class="apply-section__step">STEP 3</span>主な交通手段<span class="required" style="margin-left:8px;">必須</span>
             </div>
 
-            <div class="radio-group">
-              <label class="radio-label">
-                <input type="radio" name="transport" value="car" id="transport-car" required>
-                <span>車（マイカー・レンタカー）</span>
-              </label>
-              <label class="radio-label">
-                <input type="radio" name="transport" value="public" id="transport-public">
-                <span>公共交通機関（バス・電車・タクシー）</span>
-              </label>
-              <label class="radio-label">
-                <input type="radio" name="transport" value="other" id="transport-other">
-                <span>その他</span>
-              </label>
-            </div>
+            <fieldset>
+              <legend class="sr-only">主な交通手段</legend>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="transport" value="car" id="transport-car" required>
+                  <span>車（マイカー・レンタカー）</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="transport" value="public" id="transport-public">
+                  <span>公共交通機関（バス・電車・タクシー）</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="transport" value="other" id="transport-other">
+                  <span>その他</span>
+                </label>
+              </div>
+            </fieldset>
 
             <div class="parking-note" id="parkingNote">
               🚗 駐車場のご案内：平尾台市営駐車場をご利用ください（普通車 300円/日）。<br>
@@ -450,7 +455,9 @@
               <span class="apply-section__step">STEP 4</span>このイベントを知ったきっかけ<span class="optional" style="margin-left:8px;">任意</span>
             </div>
 
-            <div class="check-group">
+            <fieldset>
+              <legend class="sr-only">このイベントを知ったきっかけ</legend>
+              <div class="check-group">
               <label class="check-label">
                 <input type="checkbox" name="source[]" value="website">
                 <span>アーバンネイチャー北九州ウェブサイト</span>
@@ -487,7 +494,8 @@
                 <input type="checkbox" name="source[]" value="other">
                 <span>その他</span>
               </label>
-            </div>
+              </div>
+            </fieldset>
           </div>
 
           <!-- ⑤ 会員登録オプトイン -->
@@ -504,7 +512,7 @@
               </label>
               <p class="optin-box__note">
                 ・いつでも配信解除できます<br>
-                ・登録情報は<a href="../privacy/" target="_blank" style="color:var(--accent);">プライバシーポリシー</a>に基づき適切に管理します<br>
+                ・登録情報は<a href="../privacy/" target="_blank" style="color:var(--accent);">プライバシーポリシー<span class="sr-only">（新しいタブで開きます）</span></a>に基づき適切に管理します<br>
                 ・チェックを外した場合も、今回のイベント応募には影響ありません
               </p>
             </div>
@@ -515,7 +523,7 @@
             <div class="privacy-check">
               <label for="privacy">
                 <input type="checkbox" id="privacy" name="privacy" required>
-                <span><a href="../privacy/" target="_blank">プライバシーポリシー</a>を読み、個人情報の取り扱いに同意する<span class="required">必須</span></span>
+                <span><a href="../privacy/" target="_blank">プライバシーポリシー<span class="sr-only">（新しいタブで開きます）</span></a>を読み、個人情報の取り扱いに同意する<span class="required">必須</span></span>
               </label>
             </div>
           </div>
