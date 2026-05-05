@@ -100,9 +100,19 @@
   .skip-link { background: var(--primary); }
 
   .header {
-    background: rgba(26, 26, 26, 0.95);
-    border-bottom: 1px solid var(--border);
+    background: #FFFFFF;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    border-bottom: none;
   }
+  .header__logo { color: #2C5F2D; }
+  .header__logo-sub { color: #666666; }
+  .header__nav > a,
+  .nav-item > a,
+  .dropdown li a { color: #333333; }
+  .dropdown { background: #FFFFFF; border-color: #F0F0F0; }
+  .hamburger span { background: #333333; }
+  .mobile-nav { background: #FFFFFF; }
+  .mobile-nav a { color: #333333; border-bottom-color: #F0F0F0; }
 
   .footer { background: #111; }
   .footer__bottom { background: #0a0a0a; }
