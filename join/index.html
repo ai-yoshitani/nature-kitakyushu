@@ -224,13 +224,13 @@
       <div style="max-width: 800px; margin: 0 auto;" class="form-card">
         <!-- タブ：企業・団体・個人の順 -->
         <div class="member-tabs" role="tablist" aria-label="会員種別">
-          <button class="member-tab active" role="tab" aria-selected="true"  aria-controls="corporate"   data-target="corporate">企業会員</button>
-          <button class="member-tab"        role="tab" aria-selected="false" aria-controls="npo"         data-target="npo">団体会員</button>
-          <button class="member-tab"        role="tab" aria-selected="false" aria-controls="individual"  data-target="individual">個人会員</button>
+          <button class="member-tab active" role="tab" aria-selected="true"  aria-controls="corporate"  id="tab-corporate"  data-target="corporate">企業会員</button>
+          <button class="member-tab"        role="tab" aria-selected="false" aria-controls="npo"        id="tab-npo"        data-target="npo">団体会員</button>
+          <button class="member-tab"        role="tab" aria-selected="false" aria-controls="individual" id="tab-individual" data-target="individual">個人会員</button>
         </div>
 
         <!-- 企業会員フォーム -->
-        <form class="member-form active" id="corporate" role="tabpanel">
+        <form class="member-form active" id="corporate" role="tabpanel" aria-labelledby="tab-corporate">
           <div class="form-row">
             <div class="form-group">
               <label for="c-company">企業名<span class="required">*必須</span></label>
@@ -308,7 +308,7 @@
         </form>
 
         <!-- 団体会員フォーム（NPO・大学・市民団体） -->
-        <form class="member-form" id="npo" role="tabpanel">
+        <form class="member-form" id="npo" role="tabpanel" aria-labelledby="tab-npo">
           <div class="form-row">
             <div class="form-group">
               <label for="n-org">団体名<span class="required">*必須</span></label>
@@ -386,7 +386,7 @@
         </form>
 
         <!-- 個人会員フォーム -->
-        <form class="member-form" id="individual" role="tabpanel">
+        <form class="member-form" id="individual" role="tabpanel" aria-labelledby="tab-individual">
           <div class="form-row">
             <div class="form-group">
               <label for="i-name">氏名<span class="required">*必須</span></label>

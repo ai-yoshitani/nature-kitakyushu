@@ -176,20 +176,20 @@
           <h2 class="contact-form-wrap__title">お問合せフォーム</h2>
           <form>
             <div class="form-group">
-              <label>お名前<span class="required">*必須</span></label>
+              <label for="c-name">お名前<span class="required">*必須</span></label>
               <input type="text" class="form-input" id="c-name" name="name" required placeholder="例：山田 太郎">
             </div>
             <div class="form-group">
-              <label>メールアドレス<span class="required">*必須</span></label>
-              <input type="email" class="form-input" name="email" required placeholder="例：example@email.com">
+              <label for="c-email">メールアドレス<span class="required">*必須</span></label>
+              <input type="email" class="form-input" id="c-email" name="email" required placeholder="例：example@email.com">
             </div>
             <div class="form-group">
-              <label>電話番号（任意）</label>
-              <input type="tel" class="form-input" name="phone" placeholder="例：093-000-0000">
+              <label for="c-phone">電話番号（任意）</label>
+              <input type="tel" class="form-input" id="c-phone" name="phone" placeholder="例：093-000-0000">
             </div>
             <div class="form-group">
-              <label>お問合せ種別<span class="required">*必須</span></label>
-              <select class="form-select" name="category" required>
+              <label for="c-category">お問合せ種別<span class="required">*必須</span></label>
+              <select class="form-select" id="c-category" name="category" required>
                 <option value="">選択してください</option>
                 <option value="一般問合せ">一般問合せ</option>
                 <option value="会員について">会員について</option>
@@ -199,8 +199,8 @@
               </select>
             </div>
             <div class="form-group">
-              <label>お問合せ内容<span class="required">*必須</span></label>
-              <textarea class="form-textarea" name="message" required placeholder="お問合せ内容をご記入ください" style="min-height: 180px;"></textarea>
+              <label for="c-message">お問合せ内容<span class="required">*必須</span></label>
+              <textarea class="form-textarea" id="c-message" name="message" required placeholder="お問合せ内容をご記入ください" style="min-height: 180px;"></textarea>
             </div>
             <div class="form-group">
               <div class="form-checkbox">
