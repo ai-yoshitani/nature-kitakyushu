@@ -24,6 +24,8 @@
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     .form-group { margin-bottom: 20px; }
     .form-group label { display: block; font-size: 0.875rem; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+    fieldset { border: none; padding: 0; margin: 0; }
+    fieldset legend { font-size: inherit; font-weight: inherit; padding: 0; margin-bottom: 6px; }
     .required { display: inline-block; font-size: 0.7rem; font-weight: 700; background: #e53935; color: #fff; padding: 1px 6px; border-radius: 3px; margin-left: 6px; vertical-align: middle; }
     .optional { display: inline-block; font-size: 0.7rem; color: var(--text-light); margin-left: 6px; }
     .form-input, .form-select, .form-textarea { width: 100%; padding: 11px 14px; border: 1px solid var(--border); border-radius: var(--radius); font-size: 0.9rem; font-family: inherit; color: var(--text); background: #fff; transition: border-color 0.2s, box-shadow 0.2s; }
@@ -202,8 +204,8 @@
             <div class="apply-section__title">
               <span class="apply-section__step">STEP 3</span>交通手段
             </div>
-            <div class="form-group">
-              <label>当日の交通手段<span class="required">必須</span></label>
+            <fieldset class="form-group">
+              <legend>当日の交通手段<span class="required">必須</span></legend>
               <div class="radio-group">
                 <label class="radio-label">
                   <input type="radio" name="transport" value="car" required>
@@ -221,7 +223,7 @@
               <div class="parking-note" id="parkingNote">
                 🚗 駐車場：キャンプ場駐車場（無料、台数限定）。乗り合わせのご協力をお願いします。
               </div>
-            </div>
+            </fieldset>
           </div>
 
           <!-- STEP 4: きっかけ -->
@@ -229,7 +231,8 @@
             <div class="apply-section__title">
               <span class="apply-section__step">STEP 4</span>このイベントを知ったきっかけ
             </div>
-            <div class="form-group">
+            <fieldset class="form-group">
+              <legend class="sr-only">このイベントを知ったきっかけ</legend>
               <div class="check-group">
                 <label class="check-label"><input type="checkbox" name="source" value="sns">SNS（Instagram / X / Facebook）</label>
                 <label class="check-label"><input type="checkbox" name="source" value="website">当サイト（アーバンネイチャー北九州）</label>
@@ -240,7 +243,7 @@
                 <label class="check-label"><input type="checkbox" name="source" value="school">学校・職場での案内</label>
                 <label class="check-label"><input type="checkbox" name="source" value="other">その他</label>
               </div>
-            </div>
+            </fieldset>
           </div>
 
           <!-- STEP 5: 会員オプトイン -->
