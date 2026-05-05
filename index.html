@@ -693,6 +693,10 @@
         grid-template-columns: repeat(3, 1fr);
       }
     }
+    .video-transcript { margin-top: 6px; }
+    .video-transcript summary { font-size: 0.8rem; color: var(--color-accent, #028090); cursor: pointer; padding: 4px 0; }
+    .video-transcript summary:hover { text-decoration: underline; }
+    .video-transcript__body { margin-top: 8px; padding: 12px 16px; background: #f5f5f5; border-radius: 8px; font-size: 0.82rem; line-height: 1.7; color: #444; }
   </style>
 </head>
 <body>
@@ -935,22 +939,36 @@
           <div>
             <div style="position:relative;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;">
               <video controls preload="none" style="width:100%;height:100%;object-fit:cover;"
+                aria-label="アーバンネイチャー北九州"
                 poster="https://nature-kitakyushu.com/wp-content/uploads/2026/02/0202-1.png">
                 <source src="https://nature-kitakyushu.com/wp-content/uploads/2025/03/J30Y_WEBmix.mp4" type="video/mp4">
               </video>
             </div>
             <p style="margin-top:12px;font-weight:700;font-size:0.95rem;color:#2C5F2D;">アーバンネイチャー北九州</p>
+            <details class="video-transcript">
+              <summary>テキスト版を見る</summary>
+              <div class="video-transcript__body">
+                <p>※この動画のテキスト代替は準備中です。動画「アーバンネイチャー北九州」は、都市と自然が共存する北九州市のネイチャーポジティブな取り組みを紹介するプロモーション映像です。</p>
+              </div>
+            </details>
           </div>
 
           <div>
             <div style="position:relative;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;">
               <video controls preload="none" style="width:100%;height:100%;object-fit:cover;"
+                aria-label="北九州ネイチャーポジティブセンター PR動画：屋内施設編"
                 poster="https://nature-kitakyushu.com/wp-content/uploads/2026/03/20260318-41.png">
                 <source src="https://nature-kitakyushu.com/wp-content/uploads/2026/03/Kitakyushu-Nataure-Positive-Center_PR_Museum.mp4" type="video/mp4">
               </video>
             </div>
             <p style="margin-top:12px;font-weight:700;font-size:0.95rem;color:#2C5F2D;">北九州ネイチャーポジティブセンター PR動画：屋内施設編</p>
             <p style="font-size:0.8rem;color:#666;margin-top:4px;">制作：北九州市立大学映像制作集団 ROMANDOM</p>
+            <details class="video-transcript">
+              <summary>テキスト版を見る</summary>
+              <div class="video-transcript__body">
+                <p>※この動画のテキスト代替は準備中です。動画「アーバンネイチャーあふれるまち・北九州」は、北九州ネイチャーポジティブセンターの屋内施設を紹介するPR映像です。制作：北九州市立大学映像制作集団 ROMANDOM。</p>
+              </div>
+            </details>
           </div>
 
           <div>
@@ -963,6 +981,12 @@
             </div>
             <p lang="en" style="margin-top:12px;font-weight:700;font-size:0.95rem;color:#2C5F2D;">Kitakyushu — The City of Altruism and Regeneration</p>
             <p style="font-size:0.8rem;color:#666;margin-top:4px;">『利他』と『再生』のまち、北九州市</p>
+            <details class="video-transcript">
+              <summary>テキスト版を見る</summary>
+              <div class="video-transcript__body">
+                <p>※この動画のテキスト代替は準備中です。動画「Kitakyushu — The City of Altruism and Regeneration（利他と再生のまち、北九州市）」は、北九州市の都市としての歩みとネイチャーポジティブな未来像を英語で紹介する映像です。</p>
+              </div>
+            </details>
           </div>
 
         </div>
