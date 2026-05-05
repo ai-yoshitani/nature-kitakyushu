@@ -1010,9 +1010,10 @@ tr:nth-child(even) {
 .form-input:focus,
 .form-textarea:focus,
 .form-select:focus {
-  outline: 2px solid transparent;
+  outline: 2px solid var(--primary);
+  outline-offset: 0;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(44, 95, 45, 0.1);
+  box-shadow: 0 0 0 3px rgba(44, 95, 45, 0.15);
 }
 
 .form-textarea {
