@@ -73,6 +73,20 @@
     }
 
     /* 同意チェックリスト */
+    .consent-fieldset {
+      border: none;
+      padding: 0;
+      margin: 0;
+      min-width: 0;
+    }
+    .consent-fieldset__legend {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 16px;
+      padding: 0;
+      width: 100%;
+    }
     .consent-list {
       display: flex;
       flex-direction: column;
@@ -480,7 +494,8 @@
         </div>
 
         <!-- 同意チェックリスト -->
-        <h2 style="font-size:1.05rem; font-weight:700; color:var(--text); margin-bottom:16px;">上記の規約に同意してください <span style="color:#e53e3e; font-size:0.85rem;">（全項目必須）</span></h2>
+        <fieldset class="consent-fieldset">
+          <legend class="consent-fieldset__legend">上記の規約に同意してください <span style="color:#e53e3e; font-size:0.85rem;">（全項目必須）</span></legend>
         <div class="consent-list" id="consent-list">
           <div class="consent-item">
             <input type="checkbox" id="c1" name="consent[]" value="著作権帰属に同意" required>
@@ -503,6 +518,7 @@
             <label for="c5">掲載の可否はアーバンネイチャー北九州が判断することに同意します（第7条）</label>
           </div>
         </div>
+        </fieldset>
 
         <!-- 投稿フォーム -->
         <!-- TODO: action属性にFormspree等のエンドポイントを設定してください -->
