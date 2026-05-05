@@ -15,7 +15,7 @@
   --bg-white: #FFFFFF;
   --text: #333333;
   --text-light: #666666;
-  --text-muted: #999999;
+  --text-muted: #767676;
   --border: #E0E0E0;
   --border-light: #F0F0F0;
   --shadow: rgba(0, 0, 0, 0.08);
@@ -88,7 +88,7 @@
     --bg-white: #242424;
     --text: #e8e8e8;
     --text-light: #aaaaaa;
-    --text-muted: #777777;
+    --text-muted: #999999;
     --border: #3a3a3a;
     --border-light: #2e2e2e;
     --shadow: rgba(0, 0, 0, 0.4);
@@ -455,7 +455,7 @@ h1, h2, h3, h4, h5, h6 {
 .footer__links a.nav-sub {
   padding-left: 12px;
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: rgba(255,255,255,0.75);
 }
 
 /* モバイルナビ - アコーディオン */
