@@ -7,11 +7,9 @@
   <title>アーバンネイチャー北九州 | 都市と自然、近いからこそおもしろい。</title>
   <meta name="description" content="アーバンネイチャー北九州は、北九州市の都市と自然の共生を推進するプラットフォームです。10の自然・環境施設が連携し、ネイチャーポジティブな地域づくりに取り組んでいます。">
   <meta name="keywords" content="アーバンネイチャー,北九州,自然,環境,ネイチャーポジティブ,生物多様性,SDGs">
-
   <!-- ファビコン -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="favicon.svg">
-
   <!-- OGP -->
   <meta property="og:title" content="アーバンネイチャー北九州 | 都市と自然、近いからこそおもしろい。">
   <meta property="og:description" content="アーバンネイチャー北九州は、北九州市の都市と自然の共生を推進するプラットフォームです。10の自然・環境施設が連携し、ネイチャーポジティブな地域づくりに取り組んでいます。">
@@ -24,15 +22,12 @@
   <meta name="twitter:title" content="アーバンネイチャー北九州 | 都市と自然、近いからこそおもしろい。">
   <meta name="twitter:description" content="アーバンネイチャー北九州は、北九州市の都市と自然の共生を推進するプラットフォームです。10の自然・環境施設が連携し、ネイチャーポジティブな地域づくりに取り組んでいます。">
   <meta name="twitter:image" content="https://ai-yoshitani.github.io/nature-kitakyushu/images/2025/03/main1-scaled.jpg">
-
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
-
   <style>
     /* ===== リセット & ベース ===== */
     *, *::before, *::after {
@@ -40,7 +35,6 @@
       padding: 0;
       box-sizing: border-box;
     }
-
     :root {
       --color-primary: #2C5F2D;
       --color-secondary: #97BC62;
@@ -53,11 +47,9 @@
       --section-padding: 80px 0;
       --container-width: 1200px;
     }
-
     html {
       scroll-behavior: smooth;
     }
-
     body {
       font-family: 'Noto Sans JP', sans-serif;
       color: var(--color-text);
@@ -65,28 +57,23 @@
       line-height: 1.8;
       -webkit-font-smoothing: antialiased;
     }
-
     img {
       max-width: 100%;
       height: auto;
       display: block;
     }
-
     a {
       color: inherit;
       text-decoration: none;
     }
-
     ul {
       list-style: none;
     }
-
     .container {
       max-width: var(--container-width);
       margin: 0 auto;
       padding: 0 20px;
     }
-
     .section-title {
       font-size: 1.75rem;
       font-weight: 700;
@@ -94,16 +81,13 @@
       text-align: center;
       margin-bottom: 12px;
     }
-
     .section-subtitle {
       font-size: 0.95rem;
       color: var(--color-text-light);
       text-align: center;
       margin-bottom: 48px;
     }
-
     /* ===== ヒーロー ===== */
-
     .hero {
       position: relative;
       height: 100vh;
@@ -113,13 +97,11 @@
       justify-content: center;
       overflow: hidden;
     }
-
     /* スライドショー */
     .hero-slides {
       position: absolute;
       inset: 0;
     }
-
     .hero-slide {
       position: absolute;
       inset: 0;
@@ -129,11 +111,9 @@
       transform: scale(1.12);
       transition: opacity 1.2s ease;
     }
-
     .hero-slide.is-active {
       opacity: 1;
     }
-
     /* スライドごとの写真 */
     .hero-slide:nth-child(1) { background-image: url('images/2025/03/main1-scaled.jpg'); background-position: center center; }
     .hero-slide:nth-child(2) { background-image: url('images/2025/03/b-2.jpg'); background-position: center 40%; }
@@ -141,7 +121,6 @@
     .hero-slide:nth-child(4) { background-image: url('images/2025/03/sarakurayama.jpg'); background-position: center center; }
     .hero-slide:nth-child(5) { background-image: url('images/2025/03/biotope.jpg'); background-position: center center; }
     .hero-slide:nth-child(6) { background-image: url('images/2025/03/higata.jpg'); background-position: center 30%; }
-
     .hero-content {
       position: relative;
       z-index: 2;
@@ -150,7 +129,6 @@
       padding: 40px 20px;
       max-width: 800px;
     }
-
     .hero-catch {
       font-size: clamp(2rem, 5.5vw, 3.5rem);
       font-weight: 900;
@@ -159,7 +137,6 @@
       color: #ffffff;
       text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
     }
-
     .hero-sub {
       font-size: clamp(0.9rem, 2vw, 1.1rem);
       font-weight: 400;
@@ -168,14 +145,12 @@
       color: #ffffff;
       text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
     }
-
     .hero-buttons {
       display: flex;
       gap: 16px;
       justify-content: center;
       flex-wrap: wrap;
     }
-
     /* ドットインジケーター */
     .hero-dots {
       position: absolute;
@@ -186,7 +161,6 @@
       display: flex;
       gap: 10px;
     }
-
     .hero-dot {
       width: 8px;
       height: 8px;
@@ -203,12 +177,10 @@
       position: absolute;
       inset: -18px;
     }
-
     .hero-dot.is-active {
       background: #ffffff;
       transform: scale(1.3);
     }
-
     /* スクロール誘導 */
     .hero-scroll {
       position: absolute;
@@ -226,7 +198,6 @@
       text-transform: uppercase;
       animation: bounce 2s infinite;
     }
-
     .hero-scroll-arrow {
       width: 20px;
       height: 20px;
@@ -234,24 +205,20 @@
       border-bottom: 2px solid rgba(255,255,255,0.8);
       transform: rotate(45deg);
     }
-
     @keyframes bounce {
       0%, 100% { transform: translateX(-50%) translateY(0); }
       50% { transform: translateX(-50%) translateY(6px); }
     }
-
     /* ===== ペルソナ選択 ===== */
     .persona {
       padding: var(--section-padding);
       background: #f4f7f4;
     }
-
     .persona-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
     }
-
     .persona-card {
       display: flex;
       flex-direction: column;
@@ -264,7 +231,6 @@
       transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
       position: relative;
     }
-
     .persona-card:hover,
     .persona-card:focus-within {
       border-color: var(--color-primary);
@@ -272,7 +238,6 @@
       box-shadow: 0 8px 24px rgba(44, 95, 45, 0.14);
       transform: translateY(-4px);
     }
-
     .persona-icon {
       width: 64px;
       height: 64px;
@@ -284,7 +249,6 @@
       justify-content: center;
       margin-bottom: 4px;
     }
-
     .persona-icon svg {
       width: 34px;
       height: 34px;
@@ -294,28 +258,24 @@
       stroke-linecap: round;
       stroke-linejoin: round;
     }
-
     .persona-label {
       font-size: 1.15rem;
       color: var(--color-primary);
       font-weight: 800;
       line-height: 1.3;
     }
-
     .persona-name {
       font-size: 0.95rem;
       font-weight: 700;
       color: var(--color-text);
       line-height: 1.5;
     }
-
     .persona-desc {
       font-size: 0.83rem;
       color: var(--color-text-light, #666);
       line-height: 1.7;
       flex-grow: 1;
     }
-
     .persona-arrow {
       color: var(--color-secondary);
       font-size: 1rem;
@@ -323,25 +283,21 @@
       margin-top: 4px;
       text-decoration: none;
     }
-
     .persona-arrow::after {
       content: '';
       position: absolute;
       inset: 0;
       border-radius: 16px;
     }
-
     /* ===== イベント ===== */
     .events {
       padding: var(--section-padding);
     }
-
     .events-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 24px;
     }
-
     .event-card {
       border-radius: 16px;
       overflow: hidden;
@@ -349,27 +305,22 @@
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
       transition: transform 0.2s, box-shadow 0.2s;
     }
-
     .event-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     }
-
     .event-card-image {
       aspect-ratio: 16 / 10;
       overflow: hidden;
     }
-
     .event-card-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-
     .event-card-body {
       padding: 20px;
     }
-
     .event-date {
       display: inline-block;
       font-size: 0.8rem;
@@ -377,24 +328,20 @@
       color: var(--color-accent);
       margin-bottom: 8px;
     }
-
     .event-card-title {
       font-size: 1rem;
       font-weight: 700;
       line-height: 1.5;
       margin-bottom: 8px;
     }
-
     .event-card-meta {
       font-size: 0.8rem;
       color: var(--color-text-light);
     }
-
     .section-more {
       text-align: center;
       margin-top: 36px;
     }
-
     .more-link {
       display: inline-flex;
       align-items: center;
@@ -404,50 +351,41 @@
       color: var(--color-primary);
       transition: gap 0.2s;
     }
-
     .more-link:hover {
       gap: 12px;
     }
-
     /* ===== ネットワーク活動 ===== */
     .network {
       padding: var(--section-padding);
       background: var(--color-white);
     }
-
     .network-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 24px;
     }
-
     .blog-card {
       border-radius: 16px;
       overflow: hidden;
       background: var(--color-bg);
       transition: transform 0.2s, box-shadow 0.2s;
     }
-
     .blog-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     }
-
     .blog-card-image {
       aspect-ratio: 16 / 10;
       overflow: hidden;
     }
-
     .blog-card-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-
     .blog-card-body {
       padding: 20px;
     }
-
     .blog-card-tag {
       display: inline-block;
       font-size: 0.75rem;
@@ -456,62 +394,51 @@
       border-radius: 4px;
       margin-bottom: 8px;
     }
-
     .tag-blog {
       background: #E8F5E9;
       color: var(--color-primary);
     }
-
     .tag-case {
       background: #E0F7FA;
       color: var(--color-accent);
     }
-
     .blog-card-title {
       font-size: 1rem;
       font-weight: 700;
       line-height: 1.5;
       margin-bottom: 8px;
     }
-
     .blog-card-excerpt {
       font-size: 0.85rem;
       color: var(--color-text-light);
       line-height: 1.6;
     }
-
     /* ===== 10施設 ===== */
     .facilities {
       padding: var(--section-padding);
     }
-
     .facilities-scroll {
       overflow: hidden;
       padding: 8px 0 24px;
     }
-
     .facilities-track {
       display: flex;
       gap: 20px;
       width: max-content;
       animation: facilities-auto-scroll 50s linear infinite;
     }
-
     .facilities:hover .facilities-track {
       animation-play-state: paused;
     }
-
     @keyframes facilities-auto-scroll {
       from { transform: translateX(0); }
       to   { transform: translateX(-50%); }
     }
-
     @media (prefers-reduced-motion: reduce) {
       .hero-scroll-indicator { animation: none; }
       .facilities-track { animation: none; }
       *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
     }
-
     .facility-card {
       flex: 0 0 260px;
       border-radius: 16px;
@@ -520,43 +447,36 @@
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
       transition: transform 0.2s, box-shadow 0.2s;
     }
-
     .facility-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     }
-
     .facility-card-image {
       aspect-ratio: 4 / 3;
       overflow: hidden;
       background: #e0e0e0;
     }
-
     .facility-card-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-
     .facility-card-name {
       padding: 14px 16px;
       font-size: 0.9rem;
       font-weight: 700;
       text-align: center;
     }
-
     /* ===== フリー素材 ===== */
     .photos {
       padding: var(--section-padding);
       background: var(--color-white);
     }
-
     .photos-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 12px;
     }
-
     .photo-category {
       position: relative;
       border-radius: 12px;
@@ -564,18 +484,15 @@
       aspect-ratio: 1;
       cursor: pointer;
     }
-
     .photo-category img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.3s;
     }
-
     .photo-category:hover img {
       transform: scale(1.08);
     }
-
     .photo-category-overlay {
       position: absolute;
       inset: 0;
@@ -584,39 +501,33 @@
       align-items: flex-end;
       padding: 16px;
     }
-
     .photo-category-name {
       color: var(--color-white);
       font-size: 1rem;
       font-weight: 700;
     }
-
     /* ===== 数字バー ===== */
     .stats {
       background: var(--color-dark);
       padding: 48px 0;
     }
-
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 24px;
       text-align: center;
     }
-
     .stat-item-number {
       font-size: clamp(1.75rem, 4vw, 2.5rem);
       font-weight: 900;
       color: var(--color-secondary);
       line-height: 1.2;
     }
-
     .stat-item-label {
       font-size: 0.8rem;
       color: rgba(255, 255, 255, 0.8);
       margin-top: 4px;
     }
-
     /* ===== CTAバンド ===== */
     .cta-band {
       background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
@@ -624,33 +535,27 @@
       text-align: center;
       color: #fff;
     }
-
     .cta-band-title {
       font-size: 1.5rem;
       font-weight: 700;
       color: var(--color-white);
       margin-bottom: 8px;
     }
-
     .cta-band-sub {
       font-size: 0.9rem;
       color: rgba(255, 255, 255, 0.85);
       margin-bottom: 32px;
     }
-
     .cta-buttons {
       display: flex;
       gap: 12px;
       justify-content: center;
       flex-wrap: wrap;
     }
-
     .cta-buttons .btn {
       min-width: 180px;
     }
-
     /* ===== レスポンシブ ===== */
-
     @media (max-width: 639px) {
       .persona-grid {
         grid-template-columns: 1fr;
@@ -659,45 +564,35 @@
       .mine-card .mine-card-img { max-width: 100% !important; flex: none !important; }
       .mine-card .mine-card-body { padding: 24px !important; }
     }
-
     @media (min-width: 640px) {
       .persona-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-
       .events-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-
       .photos-grid {
         grid-template-columns: repeat(4, 1fr);
       }
-
       .stats-grid {
         grid-template-columns: repeat(4, 1fr);
       }
     }
-
     @media (min-width: 768px) {
       .events-grid {
         grid-template-columns: repeat(3, 1fr);
       }
-
       .network-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
-
     @media (min-width: 1024px) {
-
       .persona-grid {
         grid-template-columns: repeat(4, 1fr);
       }
-
       .persona-card {
         padding: 28px 20px;
       }
-
       .network-grid {
         grid-template-columns: repeat(3, 1fr);
       }
@@ -710,7 +605,6 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">メインコンテンツへスキップ</a>
-
   <!-- ヘッダー -->
   <header class="header">
     <div class="header__inner">
@@ -732,7 +626,7 @@
           <ul class="dropdown">
             <li><a href="center/">拠点一覧</a></li>
             <li class="nav-sub"><a class="nav-sub" href="center/biotope.html">響灘ビオトープ</a></li>
-            <li class="nav-sub"><a class="nav-sub" href="center/greenpark.html">グリーンパーク</a></li>
+            <li class="nav-sub"><a class="nav-sub" href="center/greenpark.html">響灘グリーンパーク</a></li>
             <li class="nav-sub"><a class="nav-sub" href="center/hotarukan.html">北九州市ほたる館</a></li>
             <li class="nav-sub"><a class="nav-sub" href="center/inochi.html">いのちのたび博物館</a></li>
             <li class="nav-sub"><a class="nav-sub" href="center/itouzu.html">到津の森公園</a></li>
@@ -764,7 +658,6 @@
       </div>
     </div>
   </header>
-
   <!-- モバイルナビ -->
   <nav class="mobile-nav" id="js-mobile-nav" aria-label="モバイルナビゲーション">
     <div class="mobile-nav__group">
@@ -821,9 +714,7 @@
     <a href="photos/">みんなの写真展</a>
     <a href="contact/">お問合せ</a>
   </nav>
-
   <main id="main-content">
-
     <!-- ===== ヒーロー ===== -->
     <section class="hero">
       <!-- スライドショー -->
@@ -835,12 +726,10 @@
         <div class="hero-slide"></div>
         <div class="hero-slide"></div>
       </div>
-
       <div class="hero-content">
         <h1 class="hero-catch">都市と自然、<br>近いからこそおもしろい。</h1>
         <p class="hero-sub">北九州市の10の自然・環境施設が連携し、<br>市民・企業・団体とともにネイチャーポジティブな地域づくりに取り組んでいます。</p>
       </div>
-
       <!-- ドットインジケーター -->
       <div class="hero-dots" role="tablist" aria-label="スライド選択">
         <button class="hero-dot is-active" role="tab" aria-selected="true" aria-label="スライド1"></button>
@@ -850,19 +739,16 @@
         <button class="hero-dot" role="tab" aria-selected="false" aria-label="スライド5"></button>
         <button class="hero-dot" role="tab" aria-selected="false" aria-label="スライド6"></button>
       </div>
-
       <!-- スクロール誘導 -->
       <div class="hero-scroll" aria-hidden="true">
         <div class="hero-scroll-arrow"></div>
         <span>Scroll</span>
       </div>
     </section>
-
     <!-- ===== ペルソナ選択 ===== -->
     <section class="persona">
       <div class="container">
         <div class="persona-grid">
-
           <div class="persona-card">
             <span class="persona-icon">
               <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -882,7 +768,6 @@
             <a href="network/cases/" class="persona-arrow">活動事例を見る &rarr;</a>
             <a href="network/" class="persona-arrow">ネットワークを知る &rarr;</a>
           </div>
-
           <div class="persona-card">
             <span class="persona-icon">
               <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -901,7 +786,6 @@
             <a href="network/cases/" class="persona-arrow">活動事例を見る &rarr;</a>
             <a href="network/" class="persona-arrow">ネットワークを知る &rarr;</a>
           </div>
-
           <div class="persona-card">
             <span class="persona-icon">
               <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -917,7 +801,6 @@
             <p class="persona-desc">北九州には、森・海・湿地・カルストなど多様な自然が市内に広がっています。体験イベントや10の施設で、あなたのペースで自然と関わってみてください。</p>
             <a href="events/" class="persona-arrow">イベントを探す &rarr;</a>
           </div>
-
           <div class="persona-card">
             <span class="persona-icon">
               <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -935,18 +818,15 @@
             <p class="persona-desc">教育・広報・制作活動に使える北九州の自然写真素材を無料で公開しています。美しい生態系の記録を、学校・行政・メディア・デザインの現場でご活用ください。</p>
             <a href="photos/" class="persona-arrow">写真素材を見る &rarr;</a>
           </div>
-
         </div>
       </div>
     </section>
-
     <!-- ===== 動画セクション ===== -->
     <section style="padding:80px 0;background:#fff;">
       <div class="container">
         <h2 class="section-title">アーバンネイチャー北九州 動画一覧</h2>
         <p class="section-subtitle">北九州の自然とネイチャーポジティブを映像でご覧ください</p>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;">
-
           <div>
             <div style="position:relative;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;">
               <video controls preload="none" style="width:100%;height:100%;object-fit:cover;"
@@ -964,7 +844,6 @@
               </div>
             </details>
           </div>
-
           <div>
             <div style="position:relative;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;">
               <video controls preload="none" style="width:100%;height:100%;object-fit:cover;"
@@ -983,7 +862,6 @@
               </div>
             </details>
           </div>
-
           <div>
             <div style="position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;">
               <iframe style="position:absolute;inset:0;width:100%;height:100%;border:0;"
@@ -1006,11 +884,9 @@
               </div>
             </details>
           </div>
-
         </div>
       </div>
     </section>
-
     <!-- ===== 北九州市の自然スポット ===== -->
     <section style="padding: 80px 0; background: #f5f7f5;">
       <div class="container">
@@ -1044,7 +920,6 @@
         </div>
       </div>
     </section>
-
     <!-- ===== 活動拠点 ===== -->
     <section class="facilities">
       <div class="container">
@@ -1143,7 +1018,6 @@
         </div>
       </div>
     </section>
-
     <!-- ===== 地域との繋がり ===== -->
     <section class="network">
       <div class="container">
@@ -1166,7 +1040,6 @@
         </div>
       </div>
     </section>
-
     <!-- ===== イベントを探す ===== -->
     <section class="events">
       <div class="container">
@@ -1209,27 +1082,23 @@
         </div>
       </div>
     </section>
-
     <!-- ===== お知らせ ===== -->
     <section style="padding:80px 0;background:#fff;">
       <div class="container">
         <h2 class="section-title">お知らせ</h2>
         <p class="section-subtitle">アーバンネイチャー北九州からの最新情報</p>
         <div style="margin-top:40px;border-top:1px solid var(--border);">
-
           <a href="news/site-renewal.html" class="news-item-link">
             <span style="flex-shrink:0;font-size:0.72rem;font-weight:700;background:rgba(2,128,144,0.12);color:var(--accent);padding:3px 12px;border-radius:20px;white-space:nowrap;">お知らせ</span>
             <span style="flex-shrink:0;font-size:0.82rem;color:var(--text-light);white-space:nowrap;">2026.04.18</span>
             <span style="font-size:0.95rem;font-weight:600;color:var(--text);">アーバンネイチャー北九州のサイトをリニューアルしました</span>
           </a>
-
         </div>
         <div class="section-more">
           <a href="news/" class="more-link">お知らせをもっと見る <span>&rarr;</span></a>
         </div>
       </div>
     </section>
-
     <!-- ===== みんなの写真展 ===== -->
     <section class="photos">
       <div class="container">
@@ -1290,7 +1159,6 @@
         </div>
       </div>
     </section>
-
   <!-- CTA -->
   <section class="cta-band" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('images/cta-bg.png'); background-size: cover; background-position: center;">
     <div class="container">
@@ -1300,10 +1168,7 @@
       </div>
     </div>
   </section>
-
-
   </main>
-
   <!-- ===== フッター ===== -->
   <footer class="footer">
     <div class="container">
@@ -1333,7 +1198,7 @@
           <div class="footer__links">
             <a href="center/">拠点一覧</a>
             <a class="nav-sub" href="center/biotope.html">響灘ビオトープ</a>
-            <a class="nav-sub" href="center/greenpark.html">グリーンパーク</a>
+            <a class="nav-sub" href="center/greenpark.html">響灘グリーンパーク</a>
             <a class="nav-sub" href="center/hotarukan.html">北九州市ほたる館</a>
             <a class="nav-sub" href="center/inochi.html">いのちのたび博物館</a>
             <a class="nav-sub" href="center/itouzu.html">到津の森公園</a>
@@ -1367,7 +1232,6 @@
       </div>
     </div>
   </footer>
-
   <!-- JavaScript -->
   <script src="js/main.js"></script>
   <script>
@@ -1377,7 +1241,6 @@
       const dots = document.querySelectorAll('.hero-dot');
       let current = 0;
       let timer;
-
       function activateSlide(slide) {
         // scale(1.12) からスタートして scale(1.0) へゆっくり引く
         slide.style.transition = 'opacity 1.2s ease';
@@ -1386,7 +1249,6 @@
         slide.style.transition = 'opacity 1.2s ease, transform 7s ease-out';
         slide.style.transform = 'scale(1.0)';
       }
-
       function deactivateSlide(slide) {
         // フェードアウト中はtransformを固定、完了後にリセット
         const currentScale = getComputedStyle(slide).transform;
@@ -1397,7 +1259,6 @@
           slide.style.transform = 'scale(1.12)';
         }, 1200);
       }
-
       function goTo(index) {
         const prev = slides[current];
         prev.classList.remove('is-active');
@@ -1410,15 +1271,12 @@
         dots[current].setAttribute('aria-selected', 'true');
         activateSlide(slides[current]);
       }
-
       function next() {
         goTo((current + 1) % slides.length);
       }
-
       function startTimer() {
         timer = setInterval(next, 5000);
       }
-
       // ドットクリックで手動切り替え
       dots.forEach((dot, i) => {
         dot.addEventListener('click', () => {
@@ -1427,12 +1285,10 @@
           startTimer();
         });
       });
-
       // 最初のスライドもズームアウト開始
       activateSlide(slides[0]);
       startTimer();
     })();
-
     // モバイルナビ サブメニューアコーディオン
     document.querySelectorAll('#js-mobile-nav .mobile-nav__toggle').forEach(btn => {
       btn.addEventListener('click', () => {
