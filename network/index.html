@@ -4,11 +4,9 @@
   <meta charset="UTF-8">
   <meta name="robots" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <!-- ファビコン -->
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../favicon.svg">
-
   <!-- OGP -->
   <meta property="og:title" content="ネットワーク | アーバンネイチャー北九州">
   <meta property="og:description" content="企業・団体・教育機関・個人がつながり、ネイチャーポジティブの取組を広げるネットワーク。参加費無料。">
@@ -27,7 +25,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
-
   <style>
     /* 参加ステップ */
     .join-steps {
@@ -90,7 +87,6 @@
     .join-steps-arrow {
       display: none;
     }
-
     /* 参加メリット */
     .benefit-list {
       display: grid;
@@ -132,7 +128,6 @@
       color: var(--text-light, #666);
       line-height: 1.7;
     }
-
     /* 中間CTA */
     .mid-cta {
       background: linear-gradient(135deg, #2C5F2D 0%, #3a7a3b 100%);
@@ -158,7 +153,6 @@
       font-size: 0.8rem;
       opacity: 0.7;
     }
-
     /* 実績数字 */
     .stats-highlight {
       display: flex;
@@ -192,7 +186,6 @@
       margin-top: 8px;
       opacity: 0.8;
     }
-
     /* 会員ロゴグリッド */
     .member-grid {
       display: grid;
@@ -209,6 +202,14 @@
       text-align: center;
       color: var(--text, #333);
       font-weight: 500;
+    }
+    .member-item a {
+      color: inherit !important;
+      text-decoration: none !important;
+    }
+    .member-item a:hover {
+      color: inherit !important;
+      text-decoration: underline !important;
     }
     .member-item--link {
       display: inline-flex;
@@ -234,7 +235,6 @@
     .member-item--link:focus-visible .member-item__external-icon {
       opacity: 1;
     }
-
     /* 会員募集フォーム */
     .member-tabs-join { display: flex; gap: 0; margin-bottom: 40px; border-bottom: 2px solid var(--border, #e0e0e0); }
     .member-tab-join { padding: 14px 32px; font-size: 1rem; font-weight: 700; cursor: pointer; border: none; background: none; color: #999; border-bottom: 3px solid transparent; margin-bottom: -2px; transition: all 0.2s; }
@@ -250,7 +250,6 @@
     .benefit-card-net__icon { font-size: 2.2rem; margin-bottom: 10px; }
     .benefit-card-net__title { font-size: 0.95rem; font-weight: 700; color: var(--primary, #2C5F2D); margin-bottom: 6px; }
     .benefit-card-net__desc { font-size: 0.82rem; color: #666; line-height: 1.6; }
-
     @media (max-width: 768px) {
       .form-row-2 { grid-template-columns: 1fr; }
       .benefits-grid-net { grid-template-columns: 1fr; }
@@ -268,7 +267,6 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">メインコンテンツへスキップ</a>
-
   <!-- ヘッダー -->
   <header class="header">
     <div class="header__inner">
@@ -322,7 +320,6 @@
       </div>
     </div>
   </header>
-
   <!-- モバイルナビ -->
   <nav class="mobile-nav" id="js-mobile-nav">
     <div class="mobile-nav__group">
@@ -381,7 +378,6 @@
       <a href="#join" class="btn btn--primary btn--block">参加する</a>
     </div>
   </nav>
-
   <!-- パンくずリスト -->
   <nav class="breadcrumb" aria-label="パンくずリスト">
     <div class="container">
@@ -391,7 +387,6 @@
       </ol>
     </div>
   </nav>
-
   <!-- ページヘッダー -->
   <section class="page-header" id="main-content" style="background-image: url('../images/2025/03/wakamatsu-coast.jpg'); background-size: cover; background-position: center center;">
     <div class="container">
@@ -399,7 +394,6 @@
       <p class="page-header__desc">業種も規模も関係ない。自然を守る取り組みを、一緒に広げていきませんか。</p>
     </div>
   </section>
-
   <!-- 導入 -->
   <section class="section section--white">
     <div class="container" style="max-width: 820px;">
@@ -413,7 +407,6 @@
         互いに刺激しながら広げていくためのコミュニティです。<br>
         参加費無料。登録は数分。退会も自由です。</p>
       </div>
-
       <!-- 参加ステップ -->
       <div class="join-steps">
         <!-- STEP 1: フォーム送信のイラスト風 -->
@@ -440,7 +433,6 @@
             <div class="join-step__desc">お名前・所属・連絡先を入力するだけ。無料・審査なし。3分で完了します。</div>
           </div>
         </div>
-
         <!-- STEP 2: メール受信のイラスト風 -->
         <div class="join-step">
           <div class="join-step__visual">
@@ -463,7 +455,6 @@
             <div class="join-step__desc">勉強会・現地見学・企業交流など、会員向けの案内がメールで届きます。</div>
           </div>
         </div>
-
         <!-- STEP 3: 人々・自然のイラスト風 -->
         <div class="join-step">
           <div class="join-step__visual">
@@ -489,14 +480,12 @@
           </div>
         </div>
       </div>
-
       <div style="text-align: center; margin-top: 40px;">
         <a href="../join/" class="btn btn--primary btn--lg">無料でエントリーする</a>
         <p style="margin-top: 12px; font-size: 0.82rem; color: #888;">登録後も、いつでも退会できます</p>
       </div>
     </div>
   </section>
-
   <!-- メリット -->
   <section class="section section--gray">
     <div class="container">
@@ -540,7 +529,6 @@
           </div>
         </div>
       </div>
-
       <!-- 中間CTA -->
       <div class="mid-cta">
         <div class="mid-cta__title">まず、話だけ聞いてみませんか？</div>
@@ -550,7 +538,6 @@
       </div>
     </div>
   </section>
-
   <!-- 実績数字 -->
   <section class="section section--white">
     <div class="container">
@@ -576,7 +563,6 @@
       </div>
     </div>
   </section>
-
   <!-- 活動実績リンク -->
   <section class="section section--gray">
     <div class="container" style="text-align: center;">
@@ -587,56 +573,116 @@
       </div>
     </div>
   </section>
-
   <!-- 会員一覧 -->
   <section class="section section--white" id="members">
     <div class="container">
       <h2 class="section__title">会員一覧</h2>
       <p class="section__subtitle">この中に、あなたの知っている名前はありますか？</p>
-
       <!-- タブ -->
       <div class="tabs" id="member-tabs" style="margin-top: 32px;">
         <button class="tab active" data-category="corporate">企業会員（34社）</button>
         <button class="tab" data-category="organization">団体・教育関連等会員（13団体）</button>
         <button class="tab" data-category="supporting">賛助会員（9名）</button>
       </div>
-
       <div id="member-list">
         <div class="member-grid" data-category="corporate">
-          <div class="member-item">エコプラン研究所</div>
-          <div class="member-item">イマナガ</div>
-          <div class="member-item">TOMUSHI</div>
-          <div class="member-item">西原商事</div>
-          <div class="member-item">ビートルエンジニアリング</div>
-          <div class="member-item">西部ガスグループ</div>
-          <div class="member-item">ブリヂストン</div>
-          <div class="member-item">井筒屋</div>
-          <div class="member-item">ホクザイ運輸</div>
-          <div class="member-item">丸清</div>
-          <div class="member-item">マイン</div>
-          <div class="member-item">東京海上日動火災保険</div>
-          <div class="member-item">日揮触媒化成</div>
-          <div class="member-item">ギラヴァンツ北九州</div>
-          <div class="member-item">日産自動車九州</div>
-          <div class="member-item">九州電力</div>
-          <div class="member-item">TOTOアクアテクノ</div>
-          <div class="member-item">NRS</div>
-          <div class="member-item">Nature</div>
-          <div class="member-item">日鉄高炉セメント</div>
-          <div class="member-item">エコボスコ</div>
-          <div class="member-item">ツネミ</div>
-          <div class="member-item">クリーンセンター</div>
-          <div class="member-item">中辻特許事務所</div>
-          <div class="member-item">JOYCLE</div>
-          <div class="member-item">西日本ガラスリサイクルセンター</div>
-          <div class="member-item">日鉄エンジニアリング</div>
-          <div class="member-item">ウエルクリエイト</div>
-          <div class="member-item">三井住友信託銀行</div>
-          <div class="member-item">大幸組</div>
-          <div class="member-item">タカギ</div>
-          <div class="member-item">トヨタ自動車九州</div>
+          <div class="member-item">
+            <a href="https://www.ecoplan.jp/" target="_blank" rel="noopener noreferrer">エコプラン研究所</a>
+          </div>
+          <div class="member-item">
+            <a href="https://www.imanaga-r.co.jp/" target="_blank" rel="noopener noreferrer">イマナガ</a>
+          </div>
+          <div class="member-item">
+            <a href="https://www.tomushi.com/" target="_blank" rel="noopener noreferrer">TOMUSHI</a>
+          </div>
+          <div class="member-item">
+            <a href="https://www.nishihara-corp.jp/" target="_blank" rel="noopener noreferrer">西原商事</a>
+          </div>
+          <div class="member-item">
+            <a href="https://www.beetleengineering.jp/" target="_blank" rel="noopener noreferrer">ビートルエンジニアリング</a>
+          </div>
+          <div class="member-item">
+            <a href="https://hd.saibugas.co.jp/" target="_blank" rel="noopener noreferrer">西部ガスグループ</a>
+          </div>
+          <div class="member-item">
+            <a href="https://www.bridgestone.com/" target="_blank" rel="noopener noreferrer">ブリヂストン</a>
+          </div>
+          <div class="member-item">
+            <a href="https://www.izutsuya.co.jp/" target="_blank" rel="noopener noreferrer">井筒屋</a>
+          </div>
+          <div class="member-item">
+            <a href="https://www.hokuzaiunyu.co.jp/" target="_blank" rel="noopener noreferrer">ホクザイ運輸</a>
+          </div>
+          <div class="member-item">
+            <a href="https://j-marusei.com/" target="_blank" rel="noopener noreferrer">丸清</a>
+          </div>
+          <div class="member-item">
+            <a href="https://www.mine-jp.com/" target="_blank" rel="noopener noreferrer">マイン</a>
+          </div>
+          <div class="member-item">
+            <a href="https://www.tokiomarine-nichido.co.jp/" target="_blank" rel="noopener noreferrer">東京海上日動火災保険</a>
+          </div>
+          <div class="member-item">
+            <a href="https://www.jgccc.com/" target="_blank" rel="noopener noreferrer">日揮触媒化成</a>
+          </div>
+          <div class="member-item">
+            <a href="https://www.giravanz.jp/" target="_blank" rel="noopener noreferrer">ギラヴァンツ北九州</a>
+          </div>
+          <div class="member-item">
+            <a href="https://www.nissankyushu.co.jp/index.html" target="_blank" rel="noopener noreferrer">日産自動車九州</a>
+          </div>
+          <div class="member-item">
+            <a href="https://www.kyuden.co.jp/" target="_blank" rel="noopener noreferrer">九州電力</a>
+          </div>
+          <div class="member-item">
+            <a href="https://tat.jp.toto.com/" target="_blank" rel="noopener noreferrer">TOTOアクアテクノ</a>
+          </div>
+          <div class="member-item">
+            <a href="https://www.nrs-inc.co.jp/" target="_blank" rel="noopener noreferrer">NRS</a>
+          </div>
+          <div class="member-item">
+            <a href="https://nature.global/" target="_blank" rel="noopener noreferrer">Nature</a>
+          </div>
+          <div class="member-item">
+            <a href="https://www.kourocement.co.jp/" target="_blank" rel="noopener noreferrer">日鉄高炉セメント</a>
+          </div>
+          <div class="member-item">
+            <a href="https://sytem.sakuraweb.com/home" target="_blank" rel="noopener noreferrer">エコボスコ</a>
+          </div>
+          <div class="member-item">
+            <a href="https://k-tsunemi.co.jp/" target="_blank" rel="noopener noreferrer">ツネミ</a>
+          </div>
+          <div class="member-item">
+            <a href="https://clean-center.co.jp/" target="_blank" rel="noopener noreferrer">クリーンセンター</a>
+          </div>
+          <div class="member-item">
+            <a href="https://nakatsuji-ip.com/" target="_blank" rel="noopener noreferrer">中辻特許事務所</a>
+          </div>
+          <div class="member-item">
+            <a href="https://joycle.net/" target="_blank" rel="noopener noreferrer">JOYCLE</a>
+          </div>
+          <div class="member-item">
+            <a href="https://www.wjgrc.jp/" target="_blank" rel="noopener noreferrer">西日本ガラスリサイクルセンター</a>
+          </div>
+          <div class="member-item">
+            <a href="https://www.eng.nipponsteel.com/" target="_blank" rel="noopener noreferrer">日鉄エンジニアリング</a>
+          </div>
+          <div class="member-item">
+            <a href="https://www.well-c.co.jp/" target="_blank" rel="noopener noreferrer">ウエルクリエイト</a>
+          </div>
+          <div class="member-item">
+            <a href="https://www.smtb.jp/" target="_blank" rel="noopener noreferrer">三井住友信託銀行</a>
+          </div>
+          <div class="member-item">
+            <a href="https://taikou.co.jp/" target="_blank" rel="noopener noreferrer">大幸組</a>
+          </div>
+          <div class="member-item">
+            <a href="https://www.takagi.co.jp/" target="_blank" rel="noopener noreferrer">タカギ</a>
+          </div>
+          <div class="member-item">
+            <a href="https://www.toyota-kyushu.com/" target="_blank" rel="noopener noreferrer">トヨタ自動車九州</a>
+          </div>
         </div>
-
         <div class="member-grid" data-category="organization" style="display: none;">
           <a class="member-item member-item--link"
              href="https://www.hibikinadabiotope.com/"
@@ -666,20 +712,17 @@
           <div class="member-item">環境ネットワーク</div>
           <div class="member-item">九州工業大学環境デザイン研究室</div>
         </div>
-
         <div class="member-grid" data-category="supporting" style="display: none;">
           <div class="member-item" style="grid-column: 1 / -1; text-align: center; padding: 24px;">賛助会員：9名が参加しています</div>
         </div>
       </div>
     </div>
   </section>
-
   <!-- 会員募集 -->
   <section class="section section--white" id="join">
     <div class="container">
       <h2 class="section__title">会員募集</h2>
       <p class="section__subtitle">参加費無料。企業・団体・個人を問わず、どなたでもご参加いただけます</p>
-
       <!-- メリット -->
       <div class="benefits-grid-net">
         <div class="benefit-card-net">
@@ -713,14 +756,12 @@
           <div class="benefit-card-net__desc">ネイチャーポジティブの動向・政策・事例を定期的にお届けします。</div>
         </div>
       </div>
-
       <!-- 会員募集ページへ誘導 -->
       <div style="text-align:center; margin-top:40px;">
         <a href="../join/" class="btn btn--primary btn--lg">会員募集ページへ（無料エントリー）</a>
       </div>
     </div>
   </section>
-
   <!-- CTA -->
   <section class="cta-band" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('../images/cta-bg.png'); background-size: cover; background-position: center;">
     <div class="container">
@@ -730,7 +771,6 @@
       </div>
     </div>
   </section>
-
   <!-- フッター -->
   <footer class="footer">
     <div class="container">
@@ -794,7 +834,6 @@
       </div>
     </div>
   </footer>
-
   <script src="../js/main.js"></script>
   <script>
     // 会員一覧タブ切り替え
@@ -808,7 +847,6 @@
         });
       });
     });
-
     // 会員募集フォームタブ切り替え
     document.querySelectorAll('#join-tabs .member-tab-join').forEach(tab => {
       tab.addEventListener('click', () => {
