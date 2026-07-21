@@ -308,7 +308,7 @@
     /* 世界的背景 */
     .world-context {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 24px;
       margin-top: 40px;
     }
@@ -690,26 +690,6 @@
             <div class="world-context__label">自然状態と比べた絶滅スピード</div>
             <h3 class="world-context__title">第6の大量絶滅</h3>
             <p class="world-context__body">現在の種の絶滅スピードは自然状態の約100〜1,000倍。隕石衝突や火山噴火が原因だった過去5度の大量絶滅と異なり、今回は<strong>人間活動が原因</strong>という点で前例のない危機です。食料・水・気候・健康など私たちの生活基盤に直結します。</p>
-          </div>
-          <!-- ネイチャーポジティブの位置づけ -->
-          <div class="world-context__card world-context__card--positive">
-            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" aria-hidden="true">
-              <circle cx="30" cy="30" r="28" fill="rgba(44,95,45,0.08)"/>
-              <line x1="8" y1="48" x2="52" y2="48" stroke="#ddd" stroke-width="1.5"/>
-              <line x1="8" y1="14" x2="8" y2="48" stroke="#ddd" stroke-width="1.5"/>
-              <!-- 目標ライン -->
-              <line x1="8" y1="20" x2="52" y2="20" stroke="#97BC62" stroke-width="1.2" stroke-dasharray="3 2.5"/>
-              <!-- 下降→回復カーブ -->
-              <path d="M 10 32 C 20 38 28 42 34 36 C 40 30 46 22 52 20" stroke="#2C5F2D" stroke-width="2.8" fill="none" stroke-linecap="round"/>
-              <!-- 目標点 -->
-              <circle cx="52" cy="20" r="4" fill="#2C5F2D"/>
-              <!-- "2030"ラベル -->
-              <text x="34" y="48" font-size="8" fill="#2C5F2D" text-anchor="middle" font-weight="700" font-family="sans-serif">2030</text>
-            </svg>
-            <div class="world-context__num">2030年</div>
-            <div class="world-context__label">生物多様性損失の「反転」目標</div>
-            <h3 class="world-context__title">ネイチャーポジティブの位置づけ</h3>
-            <p class="world-context__body">2022年COP15で採択された「昆明・モントリオール生物多様性枠組」は、<strong>2030年までに損失を反転、2050年までに完全回復</strong>を掲げます。この国際合意が「ネイチャーポジティブ」を世界共通の目標に押し上げた歴史的な転換点です。</p>
           </div>
         </div>
       </div>
