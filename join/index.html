@@ -66,7 +66,6 @@
       color: var(--text-light, #666);
       line-height: 1.7;
     }
-
     /* 会員タブ切り替え */
     .member-tabs { display: flex; gap: 0; margin-bottom: 40px; border-bottom: 2px solid var(--border); }
     .member-tab { padding: 14px 32px; font-size: 1rem; font-weight: 700; cursor: pointer; border: none; background: none; color: var(--text-light); border-bottom: 3px solid transparent; margin-bottom: -2px; transition: all var(--transition); }
@@ -211,7 +210,6 @@
       <p class="page-header__desc">北九州の自然と共に歩む仲間を募集しています</p>
     </div>
   </div>
-
   <!-- メリット -->
   <section class="section section--gray">
     <div class="container">
@@ -257,7 +255,6 @@
       </div>
     </div>
   </section>
-
   <!-- 会員特典 -->
   <!--<section class="section section--white">
     <div class="container">
@@ -301,15 +298,18 @@
   <section class="section section--gray">
     <div class="container">
       <h2 class="section__title">会員申込</h2>
-      <p class="section__subtitle">以下のフォームからお申し込みください</p>
+      <div style="text-align: center; margin-top: 40px">
+        <a href="https://ttzk.graffer.jp/city-kitakyushu/smart-apply/apply-procedure-alias/npnw/door" class="btn btn--primary btn--lg"
+          >お申込みはこちらから</a
+        >
+      </div>
+      <!--<p class="section__subtitle">以下のフォームからお申し込みください</p>
       <div style="max-width: 800px; margin: 0 auto;" class="form-card">
-        <!-- タブ：企業・団体・個人の順 -->
         <div class="member-tabs" role="tablist" aria-label="会員種別">
           <button class="member-tab active" role="tab" aria-selected="true"  aria-controls="corporate"  id="tab-corporate"  data-target="corporate">企業会員</button>
           <button class="member-tab"        role="tab" aria-selected="false" aria-controls="npo"        id="tab-npo"        data-target="npo">団体会員</button>
           <button class="member-tab"        role="tab" aria-selected="false" aria-controls="individual" id="tab-individual" data-target="individual">個人会員</button>
         </div>
-        <!-- 企業会員フォーム -->
         <form class="member-form active" id="corporate" role="tabpanel" aria-labelledby="tab-corporate">
           <div class="form-row">
             <div class="form-group">
@@ -386,7 +386,6 @@
           </div>
           <button type="submit" class="btn btn--primary btn--lg btn--block">企業会員に申し込む</button>
         </form>
-        <!-- 団体会員フォーム（NPO・大学・市民団体） -->
         <form class="member-form" id="npo" role="tabpanel" aria-labelledby="tab-npo">
           <div class="form-row">
             <div class="form-group">
@@ -463,7 +462,6 @@
           </div>
           <button type="submit" class="btn btn--primary btn--lg btn--block">団体会員に申し込む</button>
         </form>
-        <!-- 個人会員フォーム -->
         <form class="member-form" id="individual" role="tabpanel" aria-labelledby="tab-individual">
           <div class="form-row">
             <div class="form-group">
@@ -513,10 +511,9 @@
           </div>
           <button type="submit" class="btn btn--primary btn--lg btn--block">個人会員に申し込む</button>
         </form>
-      </div>
+      </div>-->
     </div>
   </section>
-  <!-- CTA -->
   <section class="cta-band" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('../images/cta-bg.png'); background-size: cover; background-position: center;">
     <div class="container">
       <h2 class="cta-band__title">お気軽にお問合せください</h2>

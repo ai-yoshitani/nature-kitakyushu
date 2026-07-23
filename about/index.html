@@ -362,12 +362,14 @@
        ========================================= */
     .cycle-cards {
       display: flex;
-      align-items: center;
+      align-items: stretch;
       gap: 0;
       margin: 40px 0 0;
     }
     .cycle-card {
       flex: 1;
+      display: flex;
+      flex-direction: column;
       background: var(--bg-white);
       border-radius: var(--radius-lg);
       padding: 32px 24px;
@@ -392,6 +394,7 @@
       font-size: 1rem;
       font-weight: 800;
       margin-bottom: 12px;
+      align-self: center;
     }
     .cycle-card__icon {
       margin: 0 auto 12px;
@@ -418,6 +421,7 @@
       line-height: 1.65;
     }
     .cycle-card__arrow {
+      align-self: center;
       font-size: 1.6rem;
       color: var(--primary);
       padding: 0 12px;
@@ -723,7 +727,7 @@
             </div>
             <p class="cycle-card__subtitle">ファンになる</p>
             <h3 class="cycle-card__title">知って・好きになる</h3>
-            <p class="cycle-card__desc">自然スポット紹介、写真展、イベント告知などで関心を持つ</p>
+            <p class="cycle-card__desc">自然スポット紹介、写真展、イベント告知などで関心を持つ。<br>（自然や生き物のフリー写真素材も利用できます）</p>
           </div>
           <div class="cycle-card__arrow" aria-hidden="true">&#8594;</div>
           <div class="cycle-card">
@@ -742,7 +746,7 @@
             <h3 class="cycle-card__title">
               <a href="/network/" class="hover-underline">参加する・つながる</a>
             </h3>
-            <p class="cycle-card__desc">ネットワーク参加、現場活動、勉強会への参加</p>
+            <p class="cycle-card__desc">イベントや保全活動、勉強会への参加。<br>ネットワークへの加入など。</p>
           </div>
           <div class="cycle-card__arrow" aria-hidden="true">&#8594;</div>
           <div class="cycle-card">
@@ -760,11 +764,11 @@
                 <path d="M22 17 C26 15 30 19 22 27 C14 19 18 15 22 17Z" fill="#2C5F2D" opacity="0.25"/>
               </svg>
             </div>
-            <p class="cycle-card__subtitle">経営に組み込む</p>
+            <p class="cycle-card__subtitle">継続する</p>
             <h3 class="cycle-card__title">
-              <a href="/network/cases/" class="hover-underline">持続する仕組みにする</a>
+              <a href="/network/cases/" class="hover-underline">発信する・創出する</a>
             </h3>
-            <p class="cycle-card__desc">企業の事業活動・CSR・ESG・人材育成に統合する</p>
+            <p class="cycle-card__desc">取組や活動の紹介。ネットワークを活用した各主体間の連携事業の創出など。</p>
           </div>
         </div>
       </div>
