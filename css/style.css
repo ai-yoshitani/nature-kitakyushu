@@ -3,20 +3,20 @@
    ============================================ */
 /* --- CSS変数 --- */
 :root {
-  --primary: #2C5F2D;
+  --primary: #2c5f2d;
   --primary-light: #3a7a3c;
   --primary-dark: #1e4320;
-  --secondary: #97BC62;
+  --secondary: #97bc62;
   --secondary-light: #b0d07e;
   --accent: #027a89;
   --accent-light: #027a89;
-  --bg: #F5F5F5;
-  --bg-white: #FFFFFF;
+  --bg: #f5f5f5;
+  --bg-white: #ffffff;
   --text: #333333;
   --text-light: #666666;
   --text-muted: #767676;
-  --border: #E0E0E0;
-  --border-light: #F0F0F0;
+  --border: #e0e0e0;
+  --border-light: #f0f0f0;
   --shadow: rgba(0, 0, 0, 0.08);
   --shadow-md: rgba(0, 0, 0, 0.12);
   --radius: 8px;
@@ -64,7 +64,9 @@
   border-radius: 2px;
 }
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
@@ -77,20 +79,24 @@
   color: inherit;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 .spot-card-link:hover,
 .spot-card-link:focus-visible {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 .mine-card {
-  transition: box-shadow 0.3s, transform 0.3s;
+  transition:
+    box-shadow 0.3s,
+    transform 0.3s;
 }
 .mine-card:hover,
 .mine-card:focus-visible {
-  box-shadow: 0 8px 40px rgba(0,0,0,0.14) !important;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.14) !important;
   transform: translateY(-4px);
 }
 .news-item-link {
@@ -108,7 +114,9 @@
   background: #f5f7f5;
 }
 /* --- リセット・ベース --- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -119,7 +127,9 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
-  font-family: 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif;
+  font-family:
+    "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic",
+    "Meiryo", sans-serif;
   color: var(--text);
   background-color: var(--bg);
   line-height: 1.8;
@@ -139,20 +149,20 @@ a {
 }
 /**************************************************** 新たに追加 **********************************************************/
 .hover-underline {
-  color: inherit;         /* 文字色は親と同じ */
-  text-decoration: none;  /* 通常時は下線なし */
+  color: inherit; /* 文字色は親と同じ */
+  text-decoration: none; /* 通常時は下線なし */
 }
 .hover-underline:hover {
   color: inherit !important;
   text-decoration: underline; /* ホバー時だけ下線を表示 */
 }
 a.link-black {
-  color: inherit !important;       /* 強制的に黒色にする */
+  color: inherit !important; /* 強制的に黒色にする */
   text-decoration: none !important; /* 下線を消す */
 }
 /* ホバー時：文字色は黒のまま、下線だけを表示する */
 a.link-black:hover {
-  color: inherit !important;           /* ホバー時も黒色をキープ */
+  color: inherit !important; /* ホバー時も黒色をキープ */
   text-decoration: underline !important; /* 下線を表示 */
 }
 /******************************************************* ここまで ********************************************************/
@@ -160,10 +170,16 @@ a:hover {
   color: var(--accent);
   text-decoration: underline;
 }
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1.4;
   font-weight: 700;
   color: var(--text);
@@ -203,7 +219,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.95rem;
 }
 .section--primary .section__subtitle {
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
 }
 .section__more {
   text-align: center;
@@ -338,7 +354,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 .nav-item > a::after {
-  content: '';
+  content: "";
   display: inline-block;
   width: 6px;
   height: 6px;
@@ -392,7 +408,7 @@ h1, h2, h3, h4, h5, h6 {
 .footer__links a.nav-sub {
   padding-left: 12px;
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255, 255, 255, 0.75);
 }
 /* モバイルナビ - アコーディオン */
 .mobile-nav__group {
@@ -525,7 +541,11 @@ h1, h2, h3, h4, h5, h6 {
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(30, 67, 32, 0.3) 0%, rgba(30, 67, 32, 0.7) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(30, 67, 32, 0.3) 0%,
+    rgba(30, 67, 32, 0.7) 100%
+  );
 }
 .hero__sub {
   font-size: 1.1rem;
@@ -673,7 +693,7 @@ h1, h2, h3, h4, h5, h6 {
 /* --- フッター --- */
 .footer {
   background: var(--primary-dark);
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
   padding: 60px 0 0;
   margin-top: auto;
 }
@@ -711,7 +731,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .footer__links a {
   display: block;
-  color: rgba(255,255,255,0.9);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 0.85rem;
   padding: 4px 0;
   transition: color var(--transition);
@@ -720,7 +740,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 .footer__bottom {
-  border-top: 1px solid rgba(255,255,255,0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding: 20px 0;
   display: flex;
   justify-content: space-between;
@@ -728,7 +748,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.8rem;
 }
 .footer__bottom a {
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
 }
 .footer__bottom a:hover {
   color: #fff;
@@ -747,7 +767,7 @@ h1, h2, h3, h4, h5, h6 {
   flex-wrap: wrap;
 }
 .breadcrumb__list li::after {
-  content: '>';
+  content: ">";
   margin-left: 8px;
   color: var(--text-muted);
 }
@@ -776,7 +796,7 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 .page-header::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.42);
@@ -820,7 +840,8 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 16px;
   line-height: 1.8;
 }
-.content ul, .content ol {
+.content ul,
+.content ol {
   margin: 16px 0;
   padding-left: 24px;
 }
@@ -844,7 +865,8 @@ table {
   border-collapse: collapse;
   font-size: 0.9rem;
 }
-th, td {
+th,
+td {
   padding: 12px 16px;
   text-align: left;
   border-bottom: 1px solid var(--border);
