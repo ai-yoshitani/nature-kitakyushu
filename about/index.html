@@ -281,6 +281,7 @@
     /* ネイチャーポジティブブロック */
     .about-intro__np-block {
       display: flex;
+      flex-direction: column;
       gap: 28px;
       align-items: center;
       background: linear-gradient(135deg, rgba(44,95,45,0.06), rgba(151,188,98,0.10));
@@ -289,7 +290,18 @@
       padding: 24px 28px;
       margin-top: 32px;
     }
-    .about-intro__np-visual { flex-shrink: 0; }
+    .about-intro__np-body {
+      width: 100%;
+    }
+    .about-intro__np-visual {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .about-intro__np-visual img {
+      max-width: 100%;
+      height: auto;
+    }
     .about-intro__np-title {
       font-size: 1.1rem;
       font-weight: 700;
@@ -300,10 +312,6 @@
       font-size: 0.92rem;
       line-height: 1.75;
       margin: 0;
-    }
-    @media (max-width: 640px) {
-      .about-intro__np-block { flex-direction: column; gap: 16px; }
-      .about-intro__np-visual svg { width: 100%; height: auto; }
     }
     /* 世界的背景 */
     .world-context {
@@ -606,47 +614,12 @@
         </figure>
         <!-- ネイチャーポジティブ説明 -->
         <div class="about-intro__np-block">
-          <div class="about-intro__np-visual">
-            <!-- Bend the Curve グラフ -->
-            <svg width="220" height="155" viewBox="0 0 220 155" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="ネイチャーポジティブ：自然の損失を止め、回復に転換するグラフ">
-              <rect width="220" height="155" rx="10" fill="rgba(245,252,245,0.8)"/>
-              <!-- 軸 -->
-              <line x1="36" y1="18" x2="36" y2="128" stroke="#bbb" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="36" y1="128" x2="212" y2="128" stroke="#bbb" stroke-width="1.5" stroke-linecap="round"/>
-              <!-- Y軸ラベル -->
-              <text x="12" y="80" font-size="9" fill="#888" text-anchor="middle" transform="rotate(-90 12 80)" font-family="sans-serif">生物多様性</text>
-              <!-- X軸ラベル -->
-              <text x="124" y="145" font-size="8.5" fill="#888" text-anchor="middle" font-family="sans-serif">時間 →</text>
-              <!-- 2030縦線 -->
-              <line x1="162" y1="24" x2="162" y2="128" stroke="#97BC62" stroke-width="1.2" stroke-dasharray="4 3"/>
-              <text x="162" y="141" font-size="8.5" fill="#2C5F2D" text-anchor="middle" font-weight="700" font-family="sans-serif">2030</text>
-              <!-- 損失エリア（薄い赤） -->
-              <path d="M44 27 C76 32 112 72 140 110 L140 128 L36 128 L36 27Z" fill="rgba(208,64,64,0.07)"/>
-              <!-- 回復エリア（薄い緑） -->
-              <path d="M140 110 C160 100 180 74 210 42 L210 128 L140 128Z" fill="rgba(44,95,45,0.09)"/>
-              <!-- 減少曲線（赤） -->
-              <path d="M44 27 C76 32 112 72 140 110" stroke="#c94040" stroke-width="2.8" stroke-linecap="round" fill="none"/>
-              <!-- 回復曲線（緑） -->
-              <path d="M140 110 C160 100 180 74 210 42" stroke="#2C5F2D" stroke-width="2.8" stroke-linecap="round" fill="none"/>
-              <!-- 現在の点 -->
-              <circle cx="140" cy="110" r="5.5" fill="white" stroke="#c94040" stroke-width="2.5"/>
-              <text x="140" y="123" font-size="7.5" fill="#c94040" text-anchor="middle" font-family="sans-serif">現在</text>
-              <!-- ラベル -->
-              <text x="82" y="21" font-size="7.5" fill="#c94040" text-anchor="middle" font-family="sans-serif" opacity="0.85">生物多様性の損失</text>
-              <text x="182" y="67" font-size="7.5" fill="#2C5F2D" text-anchor="middle" font-family="sans-serif" font-weight="700">自然の回復</text>
-              <!-- 葉アイコン -->
-              <path d="M198 33 C205 22 215 30 206 40 C202 37 198 33 198 33Z" fill="#97BC62" opacity="0.9"/>
-              <line x1="202" y1="36" x2="208" y2="43" stroke="#2C5F2D" stroke-width="1.5" stroke-linecap="round"/>
-              <!-- 鳥（2羽） -->
-              <path d="M184 25 Q187 21 190 25" stroke="#2C5F2D" stroke-width="1.7" stroke-linecap="round" fill="none"/>
-              <path d="M190 25 Q193 21 196 25" stroke="#2C5F2D" stroke-width="1.7" stroke-linecap="round" fill="none"/>
-              <path d="M193 33 Q196 29 199 33" stroke="#2C5F2D" stroke-width="1.4" stroke-linecap="round" fill="none" opacity="0.7"/>
-              <path d="M199 33 Q202 29 205 33" stroke="#2C5F2D" stroke-width="1.4" stroke-linecap="round" fill="none" opacity="0.7"/>
-            </svg>
-          </div>
           <div class="about-intro__np-body">
             <div class="about-intro__np-title">ネイチャーポジティブとは？</div>
             <p class="about-intro__np-text">ネイチャーポジティブとは、2022年12月に採択された「昆明・モントリオール生物多様性枠組（COP15）」で掲げられた世界共通の目標です。<strong>「自然の損失を止め、回復の軌道に乗せる」</strong>ことを意味し、2030年までに生物多様性の減少傾向を反転させることを目指しています。単に自然を守るだけでなく、自然をより豊かにしていく考え方であり、企業、行政、市民を含む社会全体に積極的な行動が求められています。</p>
+          </div>
+          <div class="about-intro__np-visual">
+             <img src="../images/2026/07/nature-positive_graph.png" alt="ネイチャーポジティブ：自然の損失を止め、回復に転換するグラフ" loading="lazy">
           </div>
         </div>
       </div>
