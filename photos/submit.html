@@ -17,7 +17,6 @@
       max-width: 760px;
       margin: 0 auto;
     }
-
     /* 利用規約ボックス */
     .terms-box {
       background: #fff;
@@ -71,7 +70,6 @@
       font-weight: 700;
       margin-bottom: 4px;
     }
-
     /* 同意チェックリスト */
     .consent-fieldset {
       border: none;
@@ -122,7 +120,6 @@
       color: var(--text);
       cursor: pointer;
     }
-
     /* フォームフィールド */
     .form-section {
       margin-bottom: 40px;
@@ -184,7 +181,6 @@
       background-position: right 14px center;
       padding-right: 36px;
     }
-
     /* ファイルアップロード */
     .upload-area {
       border: 2px dashed var(--border);
@@ -238,7 +234,6 @@
       border-radius: var(--radius);
       border: 1px solid var(--border);
     }
-
     /* 送信ボタンエリア */
     .submit-area {
       background: rgba(44,95,45,0.04);
@@ -261,7 +256,6 @@
       transform: none !important;
       box-shadow: none !important;
     }
-
     /* 注記バナー */
     .notice-banner {
       background: #fff8e1;
@@ -274,7 +268,6 @@
       line-height: 1.6;
     }
     .notice-banner strong { color: #5a4600; }
-
     @media (max-width: 640px) {
       .terms-item { flex-direction: row; }
       .submit-area { padding: 24px 16px; }
@@ -283,7 +276,6 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">メインコンテンツへスキップ</a>
-
   <!-- ヘッダー -->
   <header class="header">
     <div class="header__inner">
@@ -305,7 +297,7 @@
           <ul class="dropdown">
             <li><a href="../center/">拠点一覧</a></li>
             <li class="nav-sub"><a class="nav-sub" href="../center/biotope.html">響灘ビオトープ</a></li>
-            <li class="nav-sub"><a class="nav-sub" href="../center/greenpark.html">グリーンパーク</a></li>
+            <li class="nav-sub"><a class="nav-sub" href="../center/greenpark.html">響灘グリーンパーク</a></li>
             <li class="nav-sub"><a class="nav-sub" href="../center/hotarukan.html">北九州市ほたる館</a></li>
             <li class="nav-sub"><a class="nav-sub" href="../center/inochi.html">いのちのたび博物館</a></li>
             <li class="nav-sub"><a class="nav-sub" href="../center/itouzu.html">到津の森公園</a></li>
@@ -337,7 +329,6 @@
       </div>
     </div>
   </header>
-
   <!-- モバイルナビ -->
   <nav class="mobile-nav" id="js-mobile-nav">
     <div class="mobile-nav__group">
@@ -364,7 +355,7 @@
       <div class="mobile-nav__children">
         <a href="../center/">拠点一覧</a>
         <a class="nav-sub" href="../center/biotope.html">響灘ビオトープ</a>
-        <a class="nav-sub" href="../center/greenpark.html">グリーンパーク</a>
+        <a class="nav-sub" href="../center/greenpark.html">響灘グリーンパーク</a>
         <a class="nav-sub" href="../center/hotarukan.html">北九州市ほたる館</a>
         <a class="nav-sub" href="../center/inochi.html">いのちのたび博物館</a>
         <a class="nav-sub" href="../center/itouzu.html">到津の森公園</a>
@@ -396,7 +387,6 @@
       <a href="../join/" class="btn btn--primary btn--block">参加する</a>
     </div>
   </nav>
-
   <!-- パンくずリスト -->
   <nav class="breadcrumb" aria-label="パンくずリスト" id="main-content">
     <div class="container">
@@ -407,22 +397,17 @@
       </ol>
     </div>
   </nav>
-
   <!-- ページヘッダー -->
   <div class="page-header" style="background-image: url('../images/2025/03/nature2.jpg'); background-size: cover; background-position: center center;">
     <div class="container">
       <h1 class="page-header__title">写真を投稿する</h1>
-      <p class="page-header__desc">北九州の自然写真をアーカイブに提供していただけますか</p>
+      <p class="page-header__desc">北九州市の自然写真を是非アーカイブにご提供ください！</p>
     </div>
   </div>
-
   <!-- メインコンテンツ -->
   <section class="section section--white">
     <div class="container">
       <div class="submit-wrap">
-
-
-
         <!-- 利用規約 -->
         <div class="terms-box">
           <div class="terms-box__header">
@@ -492,7 +477,6 @@
             </div>
           </div>
         </div>
-
         <!-- 同意チェックリスト -->
         <fieldset class="consent-fieldset">
           <legend class="consent-fieldset__legend">上記の規約に同意してください <span style="color:#e53e3e; font-size:0.85rem;">（全項目必須）</span></legend>
@@ -519,11 +503,9 @@
           </div>
         </div>
         </fieldset>
-
         <!-- 投稿フォーム -->
         <!-- TODO: action属性にFormspree等のエンドポイントを設定してください -->
         <form id="photo-submit-form" action="#" method="POST" enctype="multipart/form-data" novalidate>
-
           <!-- 投稿者情報 -->
           <div class="form-section">
             <h2 class="form-section__title">投稿者情報</h2>
@@ -541,7 +523,6 @@
               <input type="text" id="display-name" name="display_name" class="form-control" placeholder="例：山田 太郎 / 山田さん / 匿名">
             </div>
           </div>
-
           <!-- 写真情報 -->
           <div class="form-section">
             <h2 class="form-section__title">写真の情報</h2>
@@ -584,7 +565,6 @@
               <textarea id="description" name="description" class="form-control" placeholder="写真に写っている生き物や風景、撮影時のエピソードなどをお書きください。"></textarea>
             </div>
           </div>
-
           <!-- 送信 -->
           <div class="submit-area">
             <p>すべての同意項目にチェックを入れ、必須項目を入力してから送信してください。<br>投稿内容を確認後、2週間以内にご登録のメールアドレスへご連絡します。</p>
@@ -592,13 +572,10 @@
               上記に同意して写真を投稿する
             </button>
           </div>
-
         </form>
-
       </div>
     </div>
   </section>
-
   <!-- フッター -->
   <footer class="footer">
     <div class="container">
@@ -628,7 +605,7 @@
           <div class="footer__links">
             <a href="../center/">拠点一覧</a>
             <a class="nav-sub" href="../center/biotope.html">響灘ビオトープ</a>
-            <a class="nav-sub" href="../center/greenpark.html">グリーンパーク</a>
+            <a class="nav-sub" href="../center/greenpark.html">響灘グリーンパーク</a>
             <a class="nav-sub" href="../center/hotarukan.html">北九州市ほたる館</a>
             <a class="nav-sub" href="../center/inochi.html">いのちのたび博物館</a>
             <a class="nav-sub" href="../center/itouzu.html">到津の森公園</a>
@@ -648,39 +625,28 @@
             <a href="../contact/">お問合せ</a>
             <a href="../privacy/">プライバシーポリシー</a>
           </div>
-          <h3 class="footer__heading" style="margin-top:24px">ソーシャル</h3>
-          <div class="footer__links">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">YouTube</a>
-          </div>
         </div>
       </div>
       <div class="footer__bottom">
-        <span>&copy; 2026 アーバンネイチャー北九州</span>
+        <span>Copyright (C) 2026 CITY OF KITAKYUSHU All Rights Reserved.</span>
         <a href="../privacy/">プライバシーポリシー</a>
       </div>
     </div>
   </footer>
-
   <script src="../js/main.js"></script>
   <script>
     (function () {
       const checkboxes = document.querySelectorAll('#consent-list input[type="checkbox"]');
       const submitBtn = document.getElementById('submit-btn');
-
       function updateSubmitState() {
         const allChecked = Array.from(checkboxes).every(cb => cb.checked);
         submitBtn.disabled = !allChecked;
       }
-
       checkboxes.forEach(cb => cb.addEventListener('change', updateSubmitState));
-
       // ファイルプレビュー
       const fileInput = document.getElementById('photo-file');
       const preview = document.getElementById('upload-preview');
       const uploadArea = document.getElementById('upload-area');
-
       fileInput.addEventListener('change', function () {
         preview.innerHTML = '';
         const files = Array.from(this.files).slice(0, 5);
@@ -700,7 +666,6 @@
           preview.style.display = 'none';
         }
       });
-
       // ドラッグ＆ドロップ
       uploadArea.addEventListener('dragover', function (e) {
         e.preventDefault();
