@@ -1,226 +1,69 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="robots" content="noindex, nofollow" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="ソラランド平尾台 - 日本有数のカルスト台地・平尾台にある自然体験公園。北九州市小倉南区。"
-    />
-    <meta
-      name="keywords"
-      content="ソラランド平尾台,カルスト台地,北九州,小倉南区,自然体験,ネイチャーポジティブセンター"
-    />
-    <!-- ファビコン -->
-    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="../favicon.svg" />
-    <!-- OGP -->
-    <meta
-      property="og:title"
-      content="ソラランド平尾台 | アーバンネイチャー北九州"
-    />
-    <meta
-      property="og:description"
-      content="ソラランド平尾台 - 日本有数のカルスト台地・平尾台にある自然体験公園。北九州市小倉南区。"
-    />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content="https://ai-yoshitani.github.io/nature-kitakyushu/center/soraland.html"
-    />
-    <meta
-      property="og:image"
-      content="https://ai-yoshitani.github.io/nature-kitakyushu/images/2025/08/APC_6937-450x450.jpg"
-    />
-    <meta property="og:site_name" content="アーバンネイチャー北九州" />
-    <meta property="og:locale" content="ja_JP" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="ソラランド平尾台 | アーバンネイチャー北九州"
-    />
-    <meta
-      name="twitter:description"
-      content="ソラランド平尾台 - 日本有数のカルスト台地・平尾台にある自然体験公園。北九州市小倉南区。"
-    />
-    <meta
-      name="twitter:image"
-      content="https://ai-yoshitani.github.io/nature-kitakyushu/images/2025/08/APC_6937-450x450.jpg"
-    />
-    <title>ソラランド平尾台 | アーバンネイチャー北九州</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../css/style.css" />
-    <style>
-      .event-card {
-        background: var(--bg-white);
-        border-radius: var(--radius-lg);
-        overflow: hidden;
-        box-shadow: 0 2px 12px var(--shadow);
-        transition: all var(--transition);
-        text-decoration: none;
-        color: var(--text);
-        display: flex;
-        flex-direction: column;
-      }
-      .event-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 24px var(--shadow-md);
-      }
-      .event-card__image-wrap {
-        position: relative;
-      }
-      .event-card__image {
-        width: 100%;
-        aspect-ratio: 16 / 10;
-        object-fit: cover;
-      }
-      .event-card__date-badge {
-        position: absolute;
-        top: 12px;
-        left: 12px;
-        background: var(--primary);
-        color: #fff;
-        border-radius: var(--radius);
-        padding: 8px 12px;
-        text-align: center;
-        line-height: 1;
-      }
-      .event-card__date-month {
-        font-size: 0.7rem;
-        display: block;
-        margin-bottom: 2px;
-      }
-      .event-card__date-day {
-        font-size: 1.4rem;
-        font-weight: 800;
-        display: block;
-      }
-      .event-card__type-tag {
-        position: absolute;
-        top: 12px;
-        right: 12px;
-        padding: 4px 12px;
-        border-radius: 20px;
-        font-size: 0.7rem;
-        font-weight: 700;
-      }
-      .event-card__type-tag--募集中 {
-        background: #e8f5e9;
-        color: #2e7d32;
-      }
-      .event-card__type-tag--告知 {
-        background: #e3f2fd;
-        color: #1565c0;
-      }
-      .event-card__body {
-        padding: 20px;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-      }
-      .event-card__tags {
-        display: flex;
-        gap: 6px;
-        flex-wrap: wrap;
-        margin-bottom: 8px;
-      }
-      .event-card__category {
-        display: inline-block;
-        padding: 2px 10px;
-        border-radius: 20px;
-        font-size: 0.7rem;
-        font-weight: 600;
-        background: rgba(44, 95, 45, 0.1);
-        color: var(--primary);
-      }
-      .event-card__target {
-        display: inline-block;
-        padding: 2px 10px;
-        border-radius: 20px;
-        font-size: 0.7rem;
-        font-weight: 600;
-        background: rgba(2, 128, 144, 0.1);
-        color: var(--accent);
-      }
-      .event-card__title {
-        font-size: 1rem;
-        font-weight: 700;
-        margin-bottom: 8px;
-        line-height: 1.5;
-      }
-      .event-card__location {
-        font-size: 0.8rem;
-        color: var(--text-muted);
-        margin-top: auto;
-      }
-    </style>
-  </head>
-  <body>
-    <a class="skip-link" href="#main-content">メインコンテンツへスキップ</a>
-    <!-- ヘッダー -->
-    <header class="header">
-      <div class="header__inner">
-        <a href="../" class="header__logo">
-          <img
-            src="../images/2026/02/logo.png"
-            alt="アーバンネイチャー北九州"
-            width="160"
-            height="40"
-          /><span class="header__logo-sub" aria-hidden="true"
-            >北九州市生物多様性戦略 2025–2030</span
-          >
-        </a>
-        <nav class="header__nav" aria-label="メインナビゲーション">
-          <a href="../news/">お知らせ</a>
-          <div class="nav-item">
-            <a href="../about/" class="active"
-              >アーバンネイチャー北九州とは？</a
-            >
-            <ul class="dropdown">
-              <li><a href="../about/">全体像</a></li>
-              <li><a href="../about/biodiversity.html">生物多様性とは？</a></li>
-              <li><a href="../about/strategy.html">北九州市の取り組み</a></li>
-              <li><a href="../about/spots.html">北九州市の自然スポット</a></li>
-              <li><a href="../center/">活動拠点</a></li>
-            </ul>
-          </div>
-          <div class="nav-item">
-            <a href="../network/">地域との繋がり</a>
-            <ul class="dropdown">
-              <li>
-                <a href="../network/">北九州ネイチャーポジティブネットワーク</a>
-              </li>
-              <li><a href="../join/">会員募集</a></li>
-            </ul>
-          </div>
-          <div class="nav-item">
-            <a href="../network/cases/">活動紹介</a>
-            <ul class="dropdown">
-              <li><a href="../network/cases/">NP実践事例</a></li>
-              <li><a href="../blog/">企業の活動ブログ</a></li>
-              <li><a href="../blog/">団体等の活動ブログ</a></li>
-            </ul>
-          </div>
-          <a href="../events/">イベントを探す</a>
-          <a href="../photos/">みんなの写真展</a>
-        </nav>
-        <div class="header__actions">
-          <a href="../contact/" class="btn btn--primary btn--sm">お問合せ</a>
-          <button
-            class="hamburger"
-            aria-label="メニューを開く"
-            aria-expanded="false"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ソラランド平尾台 - 日本有数のカルスト台地・平尾台にある自然体験公園。北九州市小倉南区。">
+  <meta name="keywords" content="ソラランド平尾台,カルスト台地,北九州,小倉南区,自然体験,ネイチャーポジティブセンター">
+  <!-- ファビコン -->
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../favicon.svg">
+  <!-- OGP -->
+  <meta property="og:title" content="ソラランド平尾台 | アーバンネイチャー北九州">
+  <meta property="og:description" content="ソラランド平尾台 - 日本有数のカルスト台地・平尾台にある自然体験公園。北九州市小倉南区。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ai-yoshitani.github.io/nature-kitakyushu/center/soraland.html">
+  <meta property="og:image" content="https://ai-yoshitani.github.io/nature-kitakyushu/images/2025/08/APC_6937-450x450.jpg">
+  <meta property="og:site_name" content="アーバンネイチャー北九州">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ソラランド平尾台 | アーバンネイチャー北九州">
+  <meta name="twitter:description" content="ソラランド平尾台 - 日本有数のカルスト台地・平尾台にある自然体験公園。北九州市小倉南区。">
+  <meta name="twitter:image" content="https://ai-yoshitani.github.io/nature-kitakyushu/images/2025/08/APC_6937-450x450.jpg">
+  <title>ソラランド平尾台 | アーバンネイチャー北九州</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .event-card { background: var(--bg-white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 2px 12px var(--shadow); transition: all var(--transition); text-decoration: none; color: var(--text); display: flex; flex-direction: column; }
+    .event-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px var(--shadow-md); }
+    .event-card__image-wrap { position: relative; }
+    .event-card__image { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+    .event-card__date-badge { position: absolute; top: 12px; left: 12px; background: var(--primary); color: #fff; border-radius: var(--radius); padding: 8px 12px; text-align: center; line-height: 1; }
+    .event-card__date-month { font-size: 0.7rem; display: block; margin-bottom: 2px; }
+    .event-card__date-day { font-size: 1.4rem; font-weight: 800; display: block; }
+    .event-card__type-tag { position: absolute; top: 12px; right: 12px; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 700; }
+    .event-card__type-tag--募集中 { background: #e8f5e9; color: #2e7d32; }
+    .event-card__type-tag--告知 { background: #e3f2fd; color: #1565c0; }
+    .event-card__body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+    .event-card__tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+    .event-card__category { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; background: rgba(44, 95, 45, 0.1); color: var(--primary); }
+    .event-card__target { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; background: rgba(2, 128, 144, 0.1); color: var(--accent); }
+    .event-card__title { font-size: 1rem; font-weight: 700; margin-bottom: 8px; line-height: 1.5; }
+    .event-card__location { font-size: 0.8rem; color: var(--text-muted); margin-top: auto; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">メインコンテンツへスキップ</a>
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="../" class="header__logo">
+        <img src="../images/2026/02/logo.png" alt="アーバンネイチャー北九州" width="160" height="40"><span class="header__logo-sub" aria-hidden="true">北九州市生物多様性戦略 2025–2030</span>
+      </a>
+            <nav class="header__nav" aria-label="メインナビゲーション">
+        <a href="../news/" >お知らせ</a>
+        <div class="nav-item">
+          <a href="../about/" class="active" >アーバンネイチャー北九州とは？</a>
+          <ul class="dropdown">
+            <li><a href="../about/">全体像</a></li>
+            <li><a href="../about/biodiversity.html">生物多様性とは？</a></li>
+            <li><a href="../about/strategy.html">北九州市の取り組み</a></li>
+            <li><a href="../center/">活動拠点</a></li>
+            <li><a href="../about/spots.html">北九州市の自然スポット</a></li>
+          </ul>
         </div>
         <div class="nav-item">
           <a href="../network/" >地域との繋がり</a>
@@ -414,7 +257,6 @@
         <!-- <p>現在予定されているイベントはありません。</p> -->
         <a href="../events/" class="btn btn--outline btn--sm" style="margin-top:16px;">全てのイベントを見る</a>
       </div>
-        
       </div>
     </section>
     <!-- 戻るリンク -->
@@ -438,11 +280,12 @@
             <a href="../about/">全体像</a>
             <a href="../about/biodiversity.html">生物多様性とは？</a>
             <a href="../about/strategy.html">北九州市の取り組み</a>
+            <a href="../center/">活動拠点</a>
             <a href="../about/spots.html">北九州市の自然スポット</a>
           </div>
           <h3 class="footer__heading" style="margin-top:24px">地域との繋がり</h3>
           <div class="footer__links">
-            <a href="../network/">北九州NPネットワーク</a>
+            <a href="../network/">北九州ネイチャーポジティブ<br class="footer__br">ネットワーク</a>
             <a href="../join/">会員募集</a>
           </div>
         </div>
@@ -452,20 +295,6 @@
             <a href="../network/cases/">NP実践事例</a>
             <a href="../blog/">企業の活動ブログ</a>
             <a href="../blog/">団体等の活動ブログ</a>
-          </div>
-          <h3 class="footer__heading">活動拠点</h3>
-          <div class="footer__links">
-            <a href="../center/">拠点一覧</a>
-            <a class="nav-sub" href="../center/biotope.html">響灘ビオトープ</a>
-            <a class="nav-sub" href="../center/greenpark.html">響灘緑地グリーンパーク</a>
-            <a class="nav-sub" href="../center/hotarukan.html">北九州市ほたる館</a>
-            <a class="nav-sub" href="../center/inochi.html">いのちのたび博物館</a>
-            <a class="nav-sub" href="../center/itouzu.html">到津の森公園</a>
-            <a class="nav-sub" href="../center/katsuki-hotaru.html">香月・黒川ほたる館</a>
-            <a class="nav-sub" href="../center/mizukankyokan.html">水環境館</a>
-            <a class="nav-sub" href="../center/soraland.html">ソラランド平尾台</a>
-            <a class="nav-sub" href="../center/takamiya.html">タカミヤ環境ミュージアム</a>
-            <a class="nav-sub" href="../center/yamada.html">山田緑地</a>
           </div>
         </div>
         <div>
