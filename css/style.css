@@ -1083,6 +1083,9 @@ tr:nth-child(even) {
     grid-template-columns: 1fr;
     gap: 24px;
   }
+  .footer__br {
+    display: none;
+  }
   .footer__bottom {
     flex-direction: column;
     gap: 8px;
