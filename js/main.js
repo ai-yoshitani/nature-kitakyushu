@@ -100,6 +100,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ===== パンくずのカテゴリ階層（#cat= の遷移元に追従）=====
+  // ハッシュを使う理由: ホストによっては .html → 拡張子なしへのリダイレクトで
+  // クエリ文字列が失われるため。ハッシュはリダイレクトを跨いでも保持される。
+  // ※Phase 1 で WordPress 化する際は PHP のサーバーサイド出力に置き換える
+  const photoCategories = {
+    sea: '海・干潟・ビオトープ', mountain: '山', river: '川', animal: '動物',
+    plant: '植物', urbannature: '街と自然', produce: '農産品',
+    etc: '昆虫・その他', contest: 'コンテスト作品'
+  };
+  // HTML側は主カテゴリを静的に出力済み。#cat= があればそれで上書きする
+  const catCrumb = document.querySelector('.breadcrumb__list .js-cat-crumb a');
+  if (catCrumb) {
+    const cat = new URLSearchParams(location.hash.slice(1)).get('cat')
+             || new URLSearchParams(location.search).get('cat');
+    if (photoCategories[cat]) {
+      catCrumb.href = cat + '.html';
+      catCrumb.textContent = photoCategories[cat];
+    }
+  }
+
   // ===== スムーススクロール =====
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
